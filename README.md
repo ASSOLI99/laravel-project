@@ -1,2 +1,1 @@
-hi
 # laravel-project
