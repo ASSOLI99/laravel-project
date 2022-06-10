@@ -1007,9 +1007,9 @@ section
 .register_section
 {
 	width: 100%;
-	background: #ffb606;
+	/* background: #ffb606; */
 	padding-top: 156px;
-	padding-bottom: 161px;
+	padding-bottom: 120px;
 }
 .register_content
 {

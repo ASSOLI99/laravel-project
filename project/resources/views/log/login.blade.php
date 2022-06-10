@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="log/css/style.css">
 
 	</head>
-	<body class="img js-fullheight" style="background-image: url(images/back10.jpg);">
+	<body class="img js-fullheight" style="background-image: url(log/images/back10.jpg);">
 	
 
 	<section class="ftco-section">
@@ -53,8 +53,8 @@
 	          </form>
 	          <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
 	          <div class="social d-flex text-center">
-	          	<a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
-	          	<a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Instagram</a>
+	          	<a href="#" class="px-2 py-2 mr-md-1 rounded"><span><i style='font-size:18px' class='fab'>&#xf39e;</i></span> Facebook</a>
+	          	<a href="#" class="px-2 py-2 ml-md-1 rounded"><span><i style='font-size:18px' class='fab'>&#xf16d;</i></span> Instagram</a>
 	          </div>
 		      </div>
 				</div>
