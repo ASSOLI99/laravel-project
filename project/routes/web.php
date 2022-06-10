@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,7 +38,9 @@ Route::group([],function(){
 });
 // End Admin page route
 
-Route::view('create-post', 'books/create_post');
+//create post 
+Route::get('create-post', [CategoryController::class , 'show_category']);
+Route::post('create-post' , [CategoryController::class , 'add_post']);
 
 // login
 Route::view('login', 'log/login');
