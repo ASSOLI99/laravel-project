@@ -20,17 +20,6 @@
 
 <body>
     <div class="container-scroller">
-        <div class="row p-0 m-0 proBanner" id="proBanner">
-            <div class="col-md-12 p-0 m-0">
-                <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="https://www.bootstrapdash.com/product/royalui/"></a>
-                        <button id="bannerClose" class="btn border-0 p-0">
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- partial:partials/_navbar.html / header-->
         @include('Admin_common.header');
         <!-- partial -->
@@ -379,7 +368,7 @@
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
-                @include('Admin_common.footer');
+                @include('Admin_common.footer')
                 <!-- partial -->
             </div>
             <!-- main-panel ends -->
