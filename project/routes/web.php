@@ -47,3 +47,11 @@ Route::view('order', 'user/Order_history');
 Route::view('profile', 'user/user_profile');
 
 
+Route::view('contact', 'common/contact');
+
+// user
+Route::view('order', 'user/Order_history');
+Route::view('profile', 'user/user_profile');
+
+
+
