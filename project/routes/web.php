@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,3 +22,6 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('Admin.index');
 });
+=======
+Route::view('create-post', 'books/create_post');
+>>>>>>> 37bb451d3ba6d689387943534ffafeb61757128d
