@@ -10,6 +10,87 @@
 <link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="style/contact_styles.css">
 <link rel="stylesheet" type="text/css" href="style/contact_responsive.css">
+
+
+<style>
+
+
+#team {
+    padding: 60px 0;
+    text-align: center;
+    /* background-color: #d1d1d1; */
+    color: #145889;
+}
+#team h2 {
+    position: relative;
+    padding: 0px 0px 15px;
+}
+#team p {
+    font-size: 15px;
+    font-style: italic;
+    padding: 0px;
+    margin: 25px 0px 40px;
+}
+#team h2::after {
+    content: '';
+    border-bottom: 2px solid #fff;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    width: 90px;
+    margin: 0 auto;
+    display: block;
+}
+#team .member {
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 15px 0px 15px 0px;
+    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.4);
+}
+#team .member .member-info {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: -200px;
+    transition: 0.4s;
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+#team .member:hover .member-info {
+    left: 0px;
+    right: 0px;
+}
+#team .member h4 {
+    font-weight: 700;
+    margin-bottom: 2px;
+    font-size: 18px;
+    color: #fff;
+}
+#team .member span {
+    font-style: italic;
+    display: block;
+    font-size: 13px;
+}
+#team .member .social-links {
+    margin-top: 15px;
+}
+#team .member .social-links a {
+    transition: none;
+    color: #fff;
+}
+#team .member .social-links a:hover {
+    color: #ffc107;
+}
+#team .member .social-links i {
+    font-size: 18px;
+    margin: 0 2px;
+}
+</style>
+
 </head>
 <body>
 
@@ -99,68 +180,137 @@
 			<div class="home_background prlx" style="background-image:url(style/images/contact_background.jpg)"></div>
 		</div>
 		<div class="home_content">
-			<h1>Contact</h1>
+			<h1>about us</h1>
 		</div>
 	</div>
 
-	<!-- Contact -->
 
-	<div class="contact">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
 
-					<!-- Contact Form -->
-					<div class="contact_form">
-						<div class="contact_title">Get in touch</div>
-
-						<div class="contact_form_container">
-							<form action="post">
-								<input id="contact_form_name" class="input_field contact_form_name" type="text" placeholder="Name" required="required" data-error="Name is required.">
-								<input id="contact_form_email" class="input_field contact_form_email" type="email" placeholder="E-mail" required="required" data-error="Valid email is required.">
-								<textarea id="contact_form_message" class="text_field contact_form_message" name="message" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
-								<button id="contact_send_btn" type="button" class="contact_send_btn trans_200" value="Submit">send message</button>
-							</form>
+			<section id="team">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-6 mb-4">
+						  <h1 style="color: #3a3a3a;font-size:45px;">Our team is here to help</h1>
+						  <p>It is true that you can succeed best and quickest by helping others to succeed</p>
 						</div>
 					</div>
-
-				</div>
-
-				<div class="col-lg-4">
-					<div class="about">
-						<div class="about_title">Join Courses</div>
-						<p class="about_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Etiam eu purus nec eros varius luctus. Praesent finibus risus facilisis ultricies. Etiam eu purus nec eros varius luctus.</p>
-
-						<div class="contact_info">
-							<ul>
-								<li class="contact_info_item">
-									<div class="contact_info_icon">
-										<img src="style/images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
+					<div class="row">
+						<div class="col-lg-4 col-md-6">
+							<div class="member">
+							  <div class="member-img">
+								  <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" class="img-fluid" alt="">
+							  </div>
+								<div class="member-info">
+									<h4>Aiman jaradat</h4>
+									<span>Team leader </span>
+									<div class="social-links">
+										<a href="#"><i class="fab fa-facebook-f"></i></a>
+										<a href="#"><i class="fab fa-twitter"></i></a>
+										<a href="#"><i class="fab fa-linkedin-in"></i></a>
+										<!-- <a href="#"><i class="fab fa-pinterest-p"></i></a> -->
+										<a href="#"><i class="fab fa-instagram"></i></a>
 									</div>
-									Blvd Libertad, 34 m05200 Arévalo
-								</li>
-								<li class="contact_info_item">
-									<div class="contact_info_icon">
-										<img src="style/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>
-									0034 37483 2445 322
-								</li>
-								<li class="contact_info_item">
-									<div class="contact_info_icon">
-										<img src="style/images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hello@company.com
-								</li>
-							</ul>
+								</div>
+							</div>
 						</div>
 
+						<div class="col-lg-4 col-md-6">
+							<div class="member">
+							  <div class="member-img">
+								  <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" class="img-fluid" alt="">
+							  </div>
+								<div class="member-info">
+									<h4>Abdullah assoli</h4>
+									<span>Web Developer</span>
+									<div class="social-links">
+										<a href="#"><i class="fab fa-facebook-f"></i></a>
+										<a href="#"><i class="fab fa-twitter"></i></a>
+										<a href="#"><i class="fab fa-linkedin-in"></i></a>
+										<!-- <a href="#"><i class="fab fa-pinterest-p"></i></a> -->
+										<a href="#"><i class="fab fa-instagram"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="member">
+							  <div class="member-img">
+								  <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" class="img-fluid" alt="">
+							  </div>
+								<div class="member-info">
+									<h4>Baha Zyoud</h4>
+									<span>Web Developer</span>
+									<div class="social-links">
+										<a href="#"><i class="fab fa-facebook-f"></i></a>
+										<a href="#"><i class="fab fa-twitter"></i></a>
+										<a href="#"><i class="fab fa-linkedin-in"></i></a>
+										<!-- <a href="#"><i class="fab fa-pinterest-p"></i></a> -->
+										<a href="#"><i class="fab fa-instagram"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="member">
+							  <div class="member-img">
+								  <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" class="img-fluid" alt="">
+							  </div>
+								<div class="member-info">
+									<h4>kaled Bani_amer</h4>
+									<span>SEO Expert</span>
+									<div class="social-links">
+										<a href="#"><i class="fab fa-facebook-f"></i></a>
+										<a href="#"><i class="fab fa-twitter"></i></a>
+										<a href="#"><i class="fab fa-linkedin-in"></i></a>
+										<!-- <a href="#"><i class="fab fa-pinterest-p"></i></a> -->
+										<a href="#"><i class="fab fa-instagram"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-6">
+							<div class="member">
+							  <div class="member-img">
+								  <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg" class="img-fluid" alt="">
+							  </div>
+								<div class="member-info">
+									<h4>Tasnem Baibars</h4>
+									<span>ISO Developer</span>
+									<div class="social-links">
+										<a href="#"><i class="fab fa-facebook-f"></i></a>
+										<a href="#"><i class="fab fa-twitter"></i></a>
+										<a href="#"><i class="fab fa-linkedin-in"></i></a>
+										<!-- <a href="#"><i class="fab fa-pinterest-p"></i></a> -->
+										<a href="#"><i class="fab fa-instagram"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-6">
+							<div class="member">
+							  <div class="member-img">
+								  <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg" class="img-fluid" alt="">
+							  </div>
+								<div class="member-info">
+									<h4>shifa alkasasbeh</h4>
+									<span>ISO Developer</span>
+									<div class="social-links">
+										<a href="#"><i class="fab fa-facebook-f"></i></a>
+										<a href="#"><i class="fab fa-twitter"></i></a>
+										<a href="#"><i class="fab fa-linkedin-in"></i></a>
+										<!-- <a href="#"><i class="fab fa-pinterest-p"></i></a> -->
+										<a href="#"><i class="fab fa-instagram"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+			</section>
 
-			</div>
 
-		
-		</div>
-	</div>
 
 	<!-- Footer -->
 

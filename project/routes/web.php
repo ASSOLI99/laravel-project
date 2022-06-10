@@ -46,11 +46,18 @@ Route::post('create-post' , [CategoryController::class , 'add_post']);
 Route::view('login', 'log/login');
 Route::view('signup', 'log/signup');
 
+
+
+//about
+
 Route::view('order', 'user/Order_history');
 Route::view('profile', 'user/user_profile');
 
 
 Route::view('contact', 'common/contact');
+Route::view('about', 'common/about');
+Route::view('post', 'common/post');
+
 
 // user
 Route::view('order', 'user/Order_history');

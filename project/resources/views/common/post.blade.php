@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Course - Contact</title>
+<title>Course - News Post</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Course Project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
 <link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="style/contact_styles.css">
-<link rel="stylesheet" type="text/css" href="style/contact_responsive.css">
+<link rel="stylesheet" type="text/css" href="style/news_post_styles.css">
+<link rel="stylesheet" type="text/css" href="style/news_post_responsive.css">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
 						<li class="main_nav_item"><a href="courses.html">courses</a></li>
 						<li class="main_nav_item"><a href="elements.html">elements</a></li>
 						<li class="main_nav_item"><a href="news.html">news</a></li>
-						<li class="main_nav_item"><a href="#">contact</a></li>
+						<li class="main_nav_item"><a href="contact.html">contact</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -70,7 +70,7 @@
 					<li class="menu_item menu_mm"><a href="courses.html">Courses</a></li>
 					<li class="menu_item menu_mm"><a href="elements.html">Elements</a></li>
 					<li class="menu_item menu_mm"><a href="news.html">News</a></li>
-					<li class="menu_item menu_mm"><a href="#">Contact</a></li>
+					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
 				</ul>
 
 				<!-- Menu Social -->
@@ -93,72 +93,93 @@
 	</div>
 
 	<!-- Home -->
-
 	<div class="home">
 		<div class="home_background_container prlx_parent">
-			<div class="home_background prlx" style="background-image:url(style/images/contact_background.jpg)"></div>
+			<div class="home_background prlx" style="background-image:url(style/images/book4.jpg)"></div>
 		</div>
-		<div class="home_content">
-			<h1>Contact</h1>
-		</div>
+		<!-- <div class="home_content">
+			<h1>The News</h1>
+		</div> -->
 	</div>
-
-	<!-- Contact -->
-
-	<div class="contact">
+	<!-- News -->
+	<div class="news">
 		<div class="container">
 			<div class="row">
+				<!-- News Post Column -->
 				<div class="col-lg-8">
+					<div class="news_post_container">
+						<!-- News Post -->
+						<div class="news_post">
+							<div class="news_post_image">
+								<img src="style/images/book3.jpg" alt="https://unsplash.com/@dsmacinnes">
+							</div>
+							<div class="news_post_top d-flex flex-column flex-sm-row">
+								<div class="news_post_date_container">
+									<div class="news_post_date d-flex flex-column align-items-center justify-content-center">
 
-					<!-- Contact Form -->
-					<div class="contact_form">
-						<div class="contact_title">Get in touch</div>
-
-						<div class="contact_form_container">
-							<form action="post">
-								<input id="contact_form_name" class="input_field contact_form_name" type="text" placeholder="Name" required="required" data-error="Name is required.">
-								<input id="contact_form_email" class="input_field contact_form_email" type="email" placeholder="E-mail" required="required" data-error="Valid email is required.">
-								<textarea id="contact_form_message" class="text_field contact_form_message" name="message" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
-								<button id="contact_send_btn" type="button" class="contact_send_btn trans_200" value="Submit">send message</button>
-							</form>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-lg-4">
-					<div class="about">
-						<div class="about_title">Join Courses</div>
-						<p class="about_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Etiam eu purus nec eros varius luctus. Praesent finibus risus facilisis ultricies. Etiam eu purus nec eros varius luctus.</p>
-
-						<div class="contact_info">
-							<ul>
-								<li class="contact_info_item">
-									<div class="contact_info_icon">
-										<img src="style/images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
+										<div>date</div>
 									</div>
-									Blvd Libertad, 34 m05200 Arévalo
-								</li>
-								<li class="contact_info_item">
-									<div class="contact_info_icon">
-										<img src="style/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
+								</div>
+								<div class="news_post_title_container">
+									<div class="news_post_title">
+										<a href="news_post.html">book Name </a>
 									</div>
-									0034 37483 2445 322
-								</li>
-								<li class="contact_info_item">
-									<div class="contact_info_icon">
-										<img src="style/images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hello@company.com
-								</li>
-							</ul>
+									<div class="news_post_meta">
+										<span class="news_post_author"><a href="#">auther name</a></span>
+										<span>|book gener</span>
+										<span class="news_post_comments"><a href="#"> </a></span>
+									</div>
+								</div>
+							</div>
+							<div class="news_post_text">
+								<p>desicription </p>
+							</div>
+
+							<div class="news_post_quote">
+								<p class="news_post_quote_text"><span>quote</span>tiam eu purus nec eros varius luctus. Praesent finibus risus facilisis ultricies venena tis. Suspendisse fermentum sodales lacus, lacinia gravida elit.</p>
+							</div>
+
+							<!-- <p class="news_post_text" style="margin-top: 59px;">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Etiam eu purus nec eros varius luctus. Praesent finibus risus facilisis ultricies. Etiam eu purus nec eros varius luctus. Praesent finibus risus facilisis ultricies venenatis. Suspendisse fermentum sodales lacus, lacinia gravida elit dapibus sed. Cras in lectus elit. Maecenas tempus nunc vitae mi egestas venenatis. Aliquam rhoncus, purus in vehicula porttitor, lacus ante consequat purus, id elementum enim purus nec enim. In sed odio rhoncus, tristique ipsum id, pharetra neque. </p> -->
 						</div>
 
 					</div>
+
+					<!-- Comments -->
+					<div class="news_post_comments">
+						<div class="comments_title"> publisher reivew </div>
+						<ul class="comments_list">
+
+							<!-- Comment -->
+							<li class="comment">
+								<div class="comment_container d-flex flex-row">
+									<div>
+										<div class="comment_image">
+											<img src="style/images/comment_1.jpg" alt="">
+										</div>
+									</div>
+									<div class="comment_content">
+										<div class="comment_meta">
+											<span class="comment_name"><a href="#">publisher name</a></span>
+											<span class="comment_separator">|</span>
+											<span class="comment_date">Dec 18, 2017</span>
+											<span class="comment_separator">|</span>
+											<!-- <span class="comment_reply_link"><a href="#">Reply</a></span> -->
+										</div>
+										<p class="comment_text">review </p>
+									</div>
+								</div>
+							</li>
+
+
+						</ul>
+
+					</div>
+
+
+
 				</div>
 
 			</div>
-
-		
 		</div>
 	</div>
 
@@ -223,7 +244,7 @@
 								<li class="footer_list_item"><a href="#">About Us</a></li>
 								<li class="footer_list_item"><a href="courses.html">Courses</a></li>
 								<li class="footer_list_item"><a href="news.html">News</a></li>
-								<li class="footer_list_item"><a href="#">Contact</a></li>
+								<li class="footer_list_item"><a href="contact.html">Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -306,9 +327,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="plugins/greensock/animation.gsap.min.js"></script>
 <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
 <script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
 <script src="plugins/easing/easing.js"></script>
-<script src="js/contact_custom.js"></script>
+<script src="js/news_post_custom.js"></script>
 
 </body>
 </html>

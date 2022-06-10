@@ -8166,7 +8166,7 @@ a {
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
   line-height: 1.5;
-  font-weight: 300;
+  font-weight: 380;
   font-family: "Lato", Arial, sans-serif;
   color: #000; }
 
@@ -8226,7 +8226,7 @@ h1, h2, h3, h4, h5,
   background: transparent;
   border: none;
   height: 50px;
-  color: white !important;
+  color: #ab9177 !important;
   border: 1px solid transparent;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 40px;
@@ -8296,7 +8296,7 @@ textarea.form-control {
   content: "\f0c8";
   font-family: "FontAwesome";
   position: absolute;
-  color: rgba(255, 255, 255, 0.1);
+  color:rgb(235 165 10);
   font-size: 20px;
   margin-top: -4px;
   -webkit-transition: 0.3s;
