@@ -21,9 +21,21 @@ Route::get('/', function () {
 
 
 // Admin page route
-Route::get('/home', function () {
-    return view('Admin.index');
+Route::group([],function(){
+    Route::get('/dashboard', function () {
+        return view('Admin.index');
+    });
+    Route::get('/user', function () {
+        return view('Admin.user');
+    });
+    Route::get('/products', function () {
+        return view('Admin.products');
+    });
+    Route::get('/posts', function () {
+        return view('Admin.posts');
+    });
 });
+// End Admin page route
 
 Route::view('create-post', 'books/create_post');
 
@@ -31,9 +43,12 @@ Route::view('create-post', 'books/create_post');
 Route::view('login', 'log/login');
 Route::view('signup', 'log/signup');
 
+
 //about
-Route::view('about', 'homepage/aboutus');
-Route::view('contact', 'homepage/contact');
+
+Route::view('contact', 'common/contact');
+Route::view('about', 'common/about');
+Route::view('post', 'common/post');
 
 
 
