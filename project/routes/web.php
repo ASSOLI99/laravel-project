@@ -31,6 +31,9 @@ Route::view('create-post', 'books/create_post');
 Route::view('login', 'log/login');
 Route::view('signup', 'log/signup');
 
+//about
+Route::view('about', 'homepage/aboutus');
+Route::view('contact', 'homepage/contact');
 
 
 
