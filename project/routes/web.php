@@ -43,4 +43,7 @@ Route::view('create-post', 'books/create_post');
 Route::view('login', 'log/login');
 Route::view('signup', 'log/signup');
 
+Route::view('order', 'user/Order_history');
+Route::view('profile', 'user/user_profile');
+
 
