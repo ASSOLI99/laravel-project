@@ -13,7 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+// Admin page route
+Route::get('/home', function () {
+    return view('Admin.index');
+});
+
+Route::view('create-post', 'books/create_post');
+
+// login
+Route::view('login', 'log/login');
+Route::view('signup', 'log/signup');
+
+
+
 
