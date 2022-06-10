@@ -21,9 +21,21 @@ Route::get('/', function () {
 
 
 // Admin page route
-Route::get('/home', function () {
-    return view('Admin.index');
+Route::group([],function(){
+    Route::get('/dashboard', function () {
+        return view('Admin.index');
+    });
+    Route::get('/user', function () {
+        return view('Admin.user');
+    });
+    Route::get('/products', function () {
+        return view('Admin.products');
+    });
+    Route::get('/posts', function () {
+        return view('Admin.posts');
+    });
 });
+// End Admin page route
 
 Route::view('create-post', 'books/create_post');
 
