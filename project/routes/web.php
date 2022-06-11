@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -35,11 +37,13 @@ Route::group([],function(){
         return view('Admin.user');
     });
     //admins
-    Route::get('/admins', function () {
-        return view('Admin.admins');
+    Route::get('/admins',[AdminController::class, 'index']);
+    Route::get('/admins/create', function () {
+        return view('/Admin/admins/create');
     });
     //posts
     Route::get('/posts',[PostController::class, 'index']);
+    Route::get('/posts/create',[PostController::class, 'create']);
     //messages
     Route::get('/messages', function () {
         return view('Admin.messages');
@@ -56,8 +60,10 @@ Route::get('create-post', [CategoryController::class , 'show_category']);
 Route::post('create-post' , [CategoryController::class , 'add_post']);
 
 // login
-Route::view('login', 'log/login');
-Route::view('signup', 'log/signup');
+Route::view('/login', 'log/login');
+Route::view('/signup', 'log/signup');
+Route::post('/signup',[userController::class,'data']);
+Route::post('/login',[userController::class,'login']);
 
 //home page
 
