@@ -38,7 +38,7 @@ Route::group([],function(){
 });
 // End Admin page route
 
-//create post 
+//create post
 Route::get('create-post', [CategoryController::class , 'show_category']);
 Route::post('create-post' , [CategoryController::class , 'add_post']);
 
@@ -48,7 +48,7 @@ Route::view('signup', 'log/signup');
 
 //home page
 
-Route::view('/home', '/public/component/index');
+Route::view('/home', '/Home_page/index');
 
 //about
 

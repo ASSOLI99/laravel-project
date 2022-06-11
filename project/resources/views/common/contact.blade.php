@@ -128,7 +128,7 @@
 
 				<div class="col-lg-4">
 					<div class="about">
-						<div class="about_title">Join Courses</div>
+						<div class="about_title">Join us</div>
 						<p class="about_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Etiam eu purus nec eros varius luctus. Praesent finibus risus facilisis ultricies. Etiam eu purus nec eros varius luctus.</p>
 
 						<div class="contact_info">
@@ -137,13 +137,13 @@
 									<div class="contact_info_icon">
 										<img src="style/images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									Blvd Libertad, 34 m05200 Arévalo
+									jordan
 								</li>
 								<li class="contact_info_item">
 									<div class="contact_info_icon">
 										<img src="style/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									0034 37483 2445 322
+									0777777777
 								</li>
 								<li class="contact_info_item">
 									<div class="contact_info_icon">
@@ -158,7 +158,7 @@
 
 			</div>
 
-		
+
 		</div>
 	</div>
 

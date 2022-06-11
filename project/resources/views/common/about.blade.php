@@ -13,8 +13,6 @@
 
 
 <style>
-
-
 #team {
     padding: 60px 0;
     text-align: center;
