@@ -101,5 +101,8 @@ Route::get('shop',[BookController::class,'show']);
 Route::post('shop',[BookController::class,'show']);
 
 
-Route::view('resetpassword','log/reset_pass');
+Route::get('reset_password',[userController::class, 'view_rest']);
+Route::view('forgetpassword','log/forget');
+Route::post('/forget' , [userController::class , 'forget_password']);
+Route::post('/rest' , [userController::class , 'rested_password']);
 
