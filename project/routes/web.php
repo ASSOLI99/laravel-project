@@ -81,14 +81,14 @@ Route::view('post', 'common/post');
 
 
 // user
-Route::view('order', 'user/Order_history');
+
 Route::view('profile', 'user/user_profile');
+Route::view('order', 'user/Order_history');
 
 //shop
 // Route::view('shop', 'shop/shop');
 //oute::get('shop' , [BookController::class , 'show']);
 
-//route::get('shop/{cat_id}', [BookController::class , 'show']);
 
 Route::get('shop',[BookController::class,'show']);
 Route::post('shop',[BookController::class,'show']);
