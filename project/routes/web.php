@@ -99,3 +99,5 @@ Route::get('shop',[BookController::class,'show']);
 Route::post('shop',[BookController::class,'show']);
 
 
+Route::view('resetpassword','log/reset_pass');
+
