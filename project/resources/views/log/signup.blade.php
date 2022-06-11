@@ -36,14 +36,34 @@
 		      	<form action="signup" class="signin-form" method="post">
 					@csrf
 		      		<div class="form-group ">
-		      	  <input type="text" class="form-control" placeholder="Firstname" name="fname" required style="margin-bottom: 10px"> 
-				  <input type="text" class="form-control" placeholder="Lastname" name="lname" required style="margin-bottom: 10px">
-				  <input type="email" name="email" id="" class="form-control" placeholder="Email" required style="margin-bottom: 10px">
-	              <input id="password-field" type="password" name="pass" class="form-control" placeholder="Set Password" required style="margin-bottom: 10px">
-				  <input id="password-field" type="password" name="pass2" class="form-control " placeholder="Confirm Password" required style="margin-bottom: 10px">  
+		      	  <input type="text" class="form-control" placeholder="Firstname" name="fname"  style="margin-bottom: 10px" required>
+				  @error('fname')
+					  <div style="color: red">{{$message}}</div>
+				  @enderror 
+				  <input type="text" class="form-control" placeholder="Lastname" name="lname"  style="margin-bottom: 10px" required>
+				  @error('lname')
+				  <div style="color: red">{{$message}}</div>
+				@enderror 
+				  <input type="email" name="email" id="" class="form-control" placeholder="Email"  style="margin-bottom: 10px" required>
 
+				  @error('email')
+				  <div style="color: red">{{$message}}</div>
+				@enderror 
+	              <input id="password-field" type="password" name="pass" class="form-control" placeholder="Set Password"  style="margin-bottom: 10px" required>
+				  @error('pass')
+				  <div style="color: red">{{$message}}</div>
+				@enderror 
+
+				  <input id="password-field" type="password" name="pass2" class="form-control " placeholder="Confirm Password"  style="margin-bottom: 10px" required>  
+				  @error('pass2')
+				  <div style="color: red">{{$message}}</div>
+				@enderror 
 				 
-				  <input type="text" name="phone" id="" class="form-control" placeholder="Phone number" required style="margin-bottom: 10px">
+				  <input type="text" name="phone" id="" class="form-control" placeholder="Phone number"  style="margin-bottom: 10px" required>
+
+				  @error('phone')
+				  <div style="color: red">{{$message}}</div>
+				@enderror 
 
 	            </div>
                 <select class="form-control mb-3" name="address">
@@ -61,6 +81,10 @@
 					<option value="balqaa"> Balqaa</option>
 					<option value="ma'adaba"> Ma'adaba</option>
                   </select>
+
+				  @error('address')
+				  <div style="color: red">{{$message}}</div>
+				@enderror 
 	            <div class="form-group">
 	            	<button type="submit" class="form-control btn btn-primary submit px-3" name="signup">Sign Up</button>
 	            </div>
