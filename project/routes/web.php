@@ -4,8 +4,12 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\contactcontroller;
+
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
+
 
 
 /*
@@ -38,9 +42,11 @@ Route::group([],function(){
     });
     //admins
     Route::get('/admins',[AdminController::class, 'index']);
+    Route::post('/admins',[AdminController::class, 'store']);
     Route::get('/admins/create', function () {
         return view('/Admin/admins/create');
     });
+
     //posts
     Route::get('/posts',[PostController::class, 'index']);
     Route::get('/posts/create',[PostController::class, 'create']);
@@ -76,6 +82,7 @@ Route::view('profile', 'user/user_profile');
 
 
 Route::view('contact', 'common/contact');
+Route::post('contact',[contactcontroller::class,'message']);
 Route::view('about', 'common/about');
 Route::view('post', 'common/post');
 
@@ -93,4 +100,6 @@ Route::view('order', 'user/Order_history');
 Route::get('shop',[BookController::class,'show']);
 Route::post('shop',[BookController::class,'show']);
 
+
+Route::view('resetpassword','log/reset_pass');
 
