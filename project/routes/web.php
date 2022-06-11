@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/Home_page/index');
 });
 
 
@@ -48,7 +48,7 @@ Route::view('signup', 'log/signup');
 
 //home page
 
-Route::view('/home', '/public/component/index');
+Route::view('/home', '/Home_page/index');
 
 //about
 
