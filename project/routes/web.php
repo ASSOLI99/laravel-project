@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,24 +20,34 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/Home_page/index');
 });
 
 
 
 // Admin page route
 Route::group([],function(){
+    //dashboard
     Route::get('/dashboard', function () {
         return view('Admin.index');
     });
+    //users
     Route::get('/user', function () {
         return view('Admin.user');
     });
-    Route::get('/products', function () {
-        return view('Admin.products');
+    //admins
+    Route::get('/admins', function () {
+        return view('Admin.admins');
     });
-    Route::get('/posts', function () {
-        return view('Admin.posts');
+    //posts
+    Route::get('/posts',[PostController::class, 'index']);
+    //messages
+    Route::get('/messages', function () {
+        return view('Admin.messages');
+    });
+    //categories
+    Route::get('/category', function () {
+        return view('Admin.category');
     });
 });
 // End Admin page route
@@ -49,7 +62,9 @@ Route::view('/signup', 'log/signup');
 Route::post('/signup',[userController::class,'data']);
 Route::post('/login',[userController::class,'login']);
 
+//home page
 
+Route::view('/home', '/Home_page/index');
 
 //about
 
@@ -65,6 +80,14 @@ Route::view('post', 'common/post');
 // user
 Route::view('order', 'user/Order_history');
 Route::view('profile', 'user/user_profile');
+
+//shop
+// Route::view('shop', 'shop/shop');
+//oute::get('shop' , [BookController::class , 'show']);
+
+//route::get('shop/{cat_id}', [BookController::class , 'show']);
+
+Route::resource('shop', BookController::class);
 
 
 
