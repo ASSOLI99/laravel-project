@@ -71,7 +71,7 @@ Route::post('/login',[userController::class,'login']);
 
 //home page
 
-Route::view('/home', '/Home_page/index');
+//Route::view('/home', '/Home_page/index');
 
 //about
 
@@ -81,6 +81,7 @@ Route::view('profile', 'user/user_profile');
 
 Route::view('contact', 'common/contact');
 Route::post('contact',[contactcontroller::class,'message']);
+Route::get('/home',[CategoryController::class,'show']);
 Route::view('about', 'common/about');
 Route::view('post', 'common/post');
 

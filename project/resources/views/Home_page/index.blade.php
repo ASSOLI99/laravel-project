@@ -6,7 +6,7 @@
 		<!-- Hero Slider -->
 		<div class="hero_slider_container">
 			<div class="hero_slider owl-carousel">
-				
+
 				<!-- Hero Slide -->
 				<div class="hero_slide">
 					<div class="hero_slide_background" style="background-image:url({{asset('layout/images/slider_background.jpg')}})"></div>
@@ -16,7 +16,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- Hero Slide -->
 				<div class="hero_slide">
 					<div class="hero_slide_background" style="background-image:url({{asset('layout/images/slider_background.jpg')}})"></div>
@@ -26,7 +26,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- Hero Slide -->
 				<div class="hero_slide">
 					<div class="hero_slide_background" style="background-image:url({{asset('layout/images/slider_background.jpg')}})"></div>
@@ -92,33 +92,33 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h1>Popular Courses</h1>
+						<h1>Books categories</h1>
 					</div>
 				</div>
 			</div>
-
+            @foreach($catig as $item)
 			<div class="row course_boxes">
-				
+
 				<!-- Popular Course Item -->
 				<div class="col-lg-4 course_box">
 					<div class="card">
-						<img class="card-img-top" src="{{asset('layout/images/course_1.jpg')}}" alt="https://unsplash.com/@kellybrito">
+						<img class="card-img-top" src="{{asset('layout/images/'.$item->book_image)}}" alt="https://unsplash.com/@kellybrito">
 						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.html">A complete guide to design</a></div>
-							<div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+							<!-- <div class="card-title"><a href="courses.html">{{$item->name}}</a></div>
+							<div class="card-text">{{$item->book_description}}</div> -->
 						</div>
 						<div class="price_box d-flex flex-row align-items-center">
 							<div class="course_author_image">
-								<img src="{{asset('layout/images/author.jpg')}}" alt="https://unsplash.com/@mehdizadeh">
+								<!-- <img src="{{asset('layout/images/author.jpg')}}" alt="https://unsplash.com/@mehdizadeh"> -->
 							</div>
-							<div class="course_author_name">Michael Smith, <span>Author</span></div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$29</span></div>
+							<div class="course_author_name"><span>{{$item->book_genre}}</span></div>
+							<!-- <div class="course_price d-flex flex-column align-items-center justify-content-center"><span>{{$item->name}}</span></div> -->
 						</div>
 					</div>
 				</div>
-
+@endforeach
 				<!-- Popular Course Item -->
-				<div class="col-lg-4 course_box">
+				<!-- <div class="col-lg-4 course_box">
 					<div class="card">
 						<img class="card-img-top" src="{{asset('layout/images/course_2.jpg')}}" alt="https://unsplash.com/@cikstefan">
 						<div class="card-body text-center">
@@ -133,10 +133,10 @@
 							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$29</span></div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 				<!-- Popular Course Item -->
-				<div class="col-lg-4 course_box">
+				<!-- <div class="col-lg-4 course_box">
 					<div class="card">
 						<img class="card-img-top" src="{{asset('layout/images/course_3.jpg')}}" alt="https://unsplash.com/@dsmacinnes">
 						<div class="card-body text-center">
@@ -150,10 +150,10 @@
 							<div class="course_author_name">Michael Smith, <span>Author</span></div>
 							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$29</span></div>
 						</div>
-					</div>
-				</div>
+					</div> -->
+				<!-- </div> -->
 			</div>
-		</div>		
+		</div>
 	</div>
 
 	<!-- Register -->
@@ -161,10 +161,10 @@
 	<div class="register">
 
 		<div class="container-fluid">
-			
+
 			<div class="row row-eq-height">
 				<div class="col-lg-6 nopadding">
-					
+
 					<!-- Register -->
 
 					<div class="register_section d-flex flex-column align-items-center justify-content-center">
@@ -178,7 +178,7 @@
 				</div>
 
 				<div class="col-lg-6 nopadding">
-					
+
 					<!-- Search -->
 
 					<div class="search_section d-flex flex-column align-items-center justify-content-center">
@@ -191,7 +191,7 @@
 								<input id="search_form_degree" class="input_field search_form_degree" type="text" placeholder="Degree">
 								<button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">search course</button>
 							</form>
-						</div> 
+						</div>
 					</div>
 
 				</div>
@@ -202,7 +202,7 @@
 	<!-- Services -->
 
 	<div class="services page_section">
-		
+
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -285,12 +285,12 @@
 
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
-					
+
 					<div class="testimonials_slider_container">
 
 						<!-- Testimonials Slider -->
 						<div class="owl-carousel owl-theme testimonials_slider">
-							
+
 							<!-- Testimonials Item -->
 							<div class="owl-item">
 								<div class="testimonials_item text-center">
@@ -349,7 +349,7 @@
 
 	<div class="events page_section">
 		<div class="container">
-			
+
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
@@ -357,7 +357,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="event_items">
 
 				<!-- Event Item -->
@@ -386,7 +386,7 @@
 								</div>
 							</div>
 
-						</div>	
+						</div>
 					</div>
 				</div>
 
@@ -416,7 +416,7 @@
 								</div>
 							</div>
 
-						</div>	
+						</div>
 					</div>
 				</div>
 
@@ -446,12 +446,12 @@
 								</div>
 							</div>
 
-						</div>	
+						</div>
 					</div>
 				</div>
 
 			</div>
-				
+
 		</div>
 	</div>
     @endsection
