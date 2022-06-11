@@ -37,3 +37,4 @@ class CategoryController extends Controller
         return redirect('create-post')->with('succe' , 'Your book will publish after admin approvement');
     }
 }
+

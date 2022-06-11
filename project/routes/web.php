@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\contactcontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,6 +63,7 @@ Route::view('profile', 'user/user_profile');
 
 
 Route::view('contact', 'common/contact');
+Route::post('contact',[contactcontroller::class,'message']);
 Route::view('about', 'common/about');
 Route::view('post', 'common/post');
 
