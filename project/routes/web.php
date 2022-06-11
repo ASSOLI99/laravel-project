@@ -42,9 +42,11 @@ Route::group([],function(){
     });
     //admins
     Route::get('/admins',[AdminController::class, 'index']);
+    Route::post('/admins',[AdminController::class, 'store']);
     Route::get('/admins/create', function () {
         return view('/Admin/admins/create');
     });
+
     //posts
     Route::get('/posts',[PostController::class, 'index']);
     Route::get('/posts/create',[PostController::class, 'create']);
@@ -59,7 +61,7 @@ Route::group([],function(){
 });
 // End Admin page route
 
-//create post
+//create post 
 Route::get('create-post', [CategoryController::class , 'show_category']);
 Route::post('create-post' , [CategoryController::class , 'add_post']);
 
