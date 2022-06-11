@@ -84,7 +84,7 @@ Route::view('profile', 'user/user_profile');
 
 //route::get('shop/{cat_id}', [BookController::class , 'show']);
 
-Route::resource('shop', BookController::class);
-
+Route::get('shop',[BookController::class,'show']);
+Route::post('shop',[BookController::class,'show']);
 
 

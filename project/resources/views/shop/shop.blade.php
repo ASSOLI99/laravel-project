@@ -178,10 +178,11 @@
 								@foreach ($category as $item)
 
 
-								<form method="POST" action="{{ route('shop.index' , $item->id) }}" accept-charset="UTF-8" style="display:inline">
+								<form method="POST" action="shop" accept-charset="UTF-8" style="display:inline">
 									{{ csrf_field() }}
 									<li class="category-item has-child-cate">
-										<a href="#" class="cate-link">{{$item->name}}</a>
+										<input type="hidden" name="cat_id" value="{{$item->id}}">
+										<button class="cate-link" style="background: none ; border: none ; margin-bottom: 10px" >{{$item->name}}</button >
 									</li>
 									
 								</form>
