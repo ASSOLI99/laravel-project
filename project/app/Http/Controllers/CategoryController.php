@@ -14,6 +14,12 @@ class CategoryController extends Controller
         return view('books/create_post' , ['categories'=>$categories]);
     }
 
+    public function view_category()
+    {
+        $categories = Category::all();
+        return view('shop/shop' , ['categories'=>$categories]);
+    }
+
     public function add_post(Request $request)
     {
         $image = $request->file('book_image')->storeAs('public/book_images' , $request->book_image->getClientOriginalName());

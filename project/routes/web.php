@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -64,6 +65,14 @@ Route::view('post', 'common/post');
 // user
 Route::view('order', 'user/Order_history');
 Route::view('profile', 'user/user_profile');
+
+//shop
+// Route::view('shop', 'shop/shop');
+//oute::get('shop' , [BookController::class , 'show']);
+
+//route::get('shop/{cat_id}', [BookController::class , 'show']);
+
+Route::resource('shop', BookController::class);
 
 
 
