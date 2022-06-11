@@ -50,7 +50,7 @@ Route::group([],function(){
 });
 // End Admin page route
 
-//create post 
+//create post
 Route::get('create-post', [CategoryController::class , 'show_category']);
 Route::post('create-post' , [CategoryController::class , 'add_post']);
 
@@ -70,7 +70,7 @@ Route::view('profile', 'user/user_profile');
 
 Route::view('contact', 'common/contact');
 Route::view('about', 'common/about');
-Route::view('post', 'common/post');
+Route::view('post/{id}', [PostController::class,'singlePage'])->name('singlePage');
 
 
 // user
