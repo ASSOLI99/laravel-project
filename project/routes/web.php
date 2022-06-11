@@ -2,8 +2,14 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\contactcontroller;
+
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
+
 
 
 /*
@@ -35,11 +41,15 @@ Route::group([],function(){
         return view('Admin.user');
     });
     //admins
-    Route::get('/admins', function () {
-        return view('Admin.admins');
+    Route::get('/admins',[AdminController::class, 'index']);
+    Route::post('/admins',[AdminController::class, 'store']);
+    Route::get('/admins/create', function () {
+        return view('/Admin/admins/create');
     });
+
     //posts
     Route::get('/posts',[PostController::class, 'index']);
+    Route::get('/posts/create',[PostController::class, 'create']);
     //messages
     Route::get('/messages', function () {
         return view('Admin.messages');
@@ -56,8 +66,10 @@ Route::get('create-post', [CategoryController::class , 'show_category']);
 Route::post('create-post' , [CategoryController::class , 'add_post']);
 
 // login
-Route::view('login', 'log/login');
-Route::view('signup', 'log/signup');
+Route::view('/login', 'log/login');
+Route::view('/signup', 'log/signup');
+Route::post('/signup',[userController::class,'data']);
+Route::post('/login',[userController::class,'login']);
 
 //home page
 
@@ -70,21 +82,27 @@ Route::view('profile', 'user/user_profile');
 
 
 Route::view('contact', 'common/contact');
+Route::post('contact',[contactcontroller::class,'message']);
 Route::view('about', 'common/about');
 Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
 
 
 // user
-Route::view('order', 'user/Order_history');
+
 Route::view('profile', 'user/user_profile');
+Route::view('order', 'user/Order_history');
 
 //shop
 // Route::view('shop', 'shop/shop');
 //oute::get('shop' , [BookController::class , 'show']);
 
-//route::get('shop/{cat_id}', [BookController::class , 'show']);
 
-Route::resource('shop', BookController::class);
+Route::get('shop',[BookController::class,'show']);
+Route::post('shop',[BookController::class,'show']);
 
 
+Route::get('reset_password',[userController::class, 'view_rest']);
+Route::view('forgetpassword','log/forget');
+Route::post('/forget' , [userController::class , 'forget_password']);
+Route::post('/rest' , [userController::class , 'rested_password']);
 

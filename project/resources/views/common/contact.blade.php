@@ -115,11 +115,17 @@
 						<div class="contact_title">Get in touch</div>
 
 						<div class="contact_form_container">
-							<form action="post">
-								<input id="contact_form_name" class="input_field contact_form_name" type="text" placeholder="Name" required="required" data-error="Name is required.">
-								<input id="contact_form_email" class="input_field contact_form_email" type="email" placeholder="E-mail" required="required" data-error="Valid email is required.">
+                        @if ($message = Session::get('success'))
+     <div class="alert alert-success">
+<p>{{ $message }}</p>
+</div>
+@endif
+							<form action="contact" method="POST">
+                               @csrf
+								<input id="contact_form_name" class="input_field contact_form_name" type="text" placeholder="Name" required="required" data-error="Name is required." name="name">
+								<input id="contact_form_email" class="input_field contact_form_email" name="email" type="email" placeholder="E-mail" required="required" data-error="Valid email is required.">
 								<textarea id="contact_form_message" class="text_field contact_form_message" name="message" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
-								<button id="contact_send_btn" type="button" class="contact_send_btn trans_200" value="Submit">send message</button>
+								<button id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="Submit">send message</button>
 							</form>
 						</div>
 					</div>
@@ -128,7 +134,7 @@
 
 				<div class="col-lg-4">
 					<div class="about">
-						<div class="about_title">Join Courses</div>
+						<div class="about_title">Join us</div>
 						<p class="about_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Etiam eu purus nec eros varius luctus. Praesent finibus risus facilisis ultricies. Etiam eu purus nec eros varius luctus.</p>
 
 						<div class="contact_info">
@@ -137,13 +143,13 @@
 									<div class="contact_info_icon">
 										<img src="style/images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									Blvd Libertad, 34 m05200 Arévalo
+									jordan
 								</li>
 								<li class="contact_info_item">
 									<div class="contact_info_icon">
 										<img src="style/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									0034 37483 2445 322
+									0777777777
 								</li>
 								<li class="contact_info_item">
 									<div class="contact_info_icon">
@@ -158,7 +164,7 @@
 
 			</div>
 
-		
+
 		</div>
 	</div>
 
