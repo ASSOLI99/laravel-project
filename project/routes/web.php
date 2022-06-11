@@ -3,6 +3,8 @@
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,17 +26,27 @@ Route::get('/', function () {
 
 // Admin page route
 Route::group([],function(){
+    //dashboard
     Route::get('/dashboard', function () {
         return view('Admin.index');
     });
+    //users
     Route::get('/user', function () {
         return view('Admin.user');
     });
-    Route::get('/products', function () {
-        return view('Admin.products');
+    //admins
+    Route::get('/admins', function () {
+        return view('Admin.admins');
     });
-    Route::get('/posts', function () {
-        return view('Admin.posts');
+    //posts
+    Route::get('/posts',[PostController::class, 'index']);
+    //messages
+    Route::get('/messages', function () {
+        return view('Admin.messages');
+    });
+    //categories
+    Route::get('/category', function () {
+        return view('Admin.category');
     });
 });
 // End Admin page route
