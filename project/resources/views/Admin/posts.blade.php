@@ -27,7 +27,7 @@
             </header>
 
 <div class="page-heading">
-    <h3>Profile Statistics</h3>
+    <h3><a href="/dashboard">Dashboard</a><span> / Posts</span></h3>
 </div>
 
         @include('Admin.Admin_common.footer')

@@ -23,7 +23,7 @@
             <li class="sidebar-title">Menu</li>
 
             <li
-                class="sidebar-item active ">
+                class="sidebar-item">
                 <a href="{{url('dashboard')}}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
@@ -33,19 +33,33 @@
             <li style="list-style-type:none;">
                 <a href="{{url('user')}}" class='sidebar-link'>
                     <i class="bi bi-stack"></i>
-                    <span>users</span>
+                    <span>Users</span>
                 </a>
             </li>
 
-            <li style="list-style-type:none;">
-                <a href="{{url('products')}}" class='sidebar-link'>
-                    <i class="bi bi-collection-fill"></i>
-                    <span>products</span>
-                </a>
+           
             <li style="list-style-type:none;">
                 <a href="{{url('posts')}}" class='sidebar-link'>
                     <i class="bi bi-grid-1x2-fill"></i>
-                    <span>posts</span>
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li style="list-style-type:none;">
+                <a href="{{url('messages')}}" class='sidebar-link'>
+                    <i class="bi bi-envelope-paper"></i>
+                    <span>Messages</span>
+                </a>
+            </li>
+            <li style="list-style-type:none;">
+                <a href="{{url('admins')}}" class='sidebar-link'>
+                    <i class="bi bi-person-circle"></i>
+                    <span>Admins</span>
+                </a>
+            </li>
+            <li style="list-style-type:none;">
+                <a href="{{url('admins')}}" class='sidebar-link'>
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Logout</span>
                 </a>
             </li>
     </div>

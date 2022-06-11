@@ -27,7 +27,7 @@
             </header>
 
 <div class="page-heading">
-    <h3><a href="/dashboard">Dashboard</a><span> / Users</span></h3>
+    <h3><a href="/dashboard">Dashboard</a><span> / Messages</span></h3>
 </div>
 
         @include('Admin.Admin_common.footer')

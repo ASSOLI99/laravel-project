@@ -29,11 +29,14 @@ Route::group([],function(){
     Route::get('/user', function () {
         return view('Admin.user');
     });
-    Route::get('/products', function () {
-        return view('Admin.products');
+    Route::get('/admins', function () {
+        return view('Admin.admins');
     });
     Route::get('/posts', function () {
         return view('Admin.posts');
+    });
+    Route::get('/messages', function () {
+        return view('Admin.messages');
     });
 });
 // End Admin page route
