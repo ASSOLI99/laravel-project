@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,8 +44,10 @@ Route::get('create-post', [CategoryController::class , 'show_category']);
 Route::post('create-post' , [CategoryController::class , 'add_post']);
 
 // login
-Route::view('login', 'log/login');
-Route::view('signup', 'log/signup');
+Route::view('/login', 'log/login');
+Route::view('/signup', 'log/signup');
+Route::post('/signup',[userController::class,'data']);
+Route::post('/login',[userController::class,'login']);
 
 
 
