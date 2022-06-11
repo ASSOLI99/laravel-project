@@ -42,9 +42,11 @@ Route::group([],function(){
     });
     //admins
     Route::get('/admins',[AdminController::class, 'index']);
+    Route::post('/admins',[AdminController::class, 'store']);
     Route::get('/admins/create', function () {
         return view('/Admin/admins/create');
     });
+
     //posts
     Route::get('/posts',[PostController::class, 'index']);
     Route::get('/posts/create',[PostController::class, 'create']);
@@ -71,7 +73,7 @@ Route::post('/login',[userController::class,'login']);
 
 //home page
 
-//Route::view('/home', '/Home_page/index');
+
 
 //about
 
@@ -99,4 +101,6 @@ Route::view('profile', 'user/user_profile');
 Route::get('shop',[BookController::class,'show']);
 Route::post('shop',[BookController::class,'show']);
 
+
+Route::view('resetpassword','log/reset_pass');
 

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
+use App\Mail\ResetMail;
+use App\Models\Forget;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 // use Illuminate\Validation\Rules\Password;
@@ -15,11 +18,14 @@ class userController extends Controller
         
       
         $validated = $request->validate([
-            'fname' => 'required|unique:user|max:255',
-            'lname' => 'required|max:255',
+            'fname' => 'required|max:255|regex:/(^([a-zA-Z]+)(\d+)?$)/u', 
+            'lname' => 'required|max:255|regex:/(^([a-zA-Z]+)(\d+)?$)/u',
             'email' => 'required|unique:user|email',
-            // 'phone' => 'required|regex:/^([0]{1}[7-9]{1})([0-9]{10})$/|digits:10|unique:user,phone',
-            'pass' => 'required|max:25|min:8|'
+            'phone' => 'required|regex:/^([0]{1}[7-9]{1})([0-9]{8})$/|digits:10|unique:user,phone',
+            'pass' => 'required|max:25|min:8|',
+            'pass2' => 'required|max:25|min:8|',
+            'pass2' => 'required|max:25|min:8|',
+            'address' => 'required',
 
         ]);
      
@@ -69,5 +75,68 @@ class userController extends Controller
        {
            return "Email Does not Exist"; 
        }
+    }
+
+    public function forget_password(Request $request)
+    {
+        
+        $user = User::where('email' , $request->forget_email)->first();
+        $token =  $request->input('_token');
+        if(!isset($user))
+        {
+            return redirect('forget')->with('miss_email' , 'Email Does not exist');
+        }
+        $forget_data = new Forget();
+        $forget_data->email = $request->forget_email;
+        $forget_data->token = $token;
+
+        $forget_data->save();
+
+        
+
+        $tokenData = Forget::where('email' , $request->forget_email)->first();
+
+        if($this->sendRestEmail($request->forget_email ,$tokenData->token ))
+        {
+            return redirect('forget')->with('sent' , 'Email Sent');
+        }else
+        {
+            return redirect('forget')->with('connect' , 'Network issue');
+        }
+    }
+
+    public function sendRestEmail($email , $token)
+    {
+        $user = User::where('email' , $email)->first();
+
+        $link = asset('/reset_password?token='.$token);
+        
+        try {
+            //Here send the link with CURL with an external email API 
+            Mail::to($email)->send(new ResetMail($link));
+            return true;
+        }catch (\Exception $e) {
+                return false;
+        }
+    }
+
+    public function view_rest(Request $request)
+    {
+        $token = $request->input('token');
+        return view('students/reset_password' , ['token'=>$token]);
+    }
+
+    public function rested_password(Request $request)
+    {
+        $password1 = $request->pass;
+        $password2 = $request->pass2;
+
+        if ($password1 === $password2) {
+            
+        }else
+        {
+
+        }
+        return $request->input();
     }
 }

@@ -522,6 +522,10 @@ class ComposerStaticInitf52015f22b9a837418c4a39a3ee6c7a1
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
+
+        'App\\Http\\Controllers\\userController' => __DIR__ . '/../..' . '/app/Http/Controllers/userController.php',
+
+
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -535,6 +539,12 @@ class ComposerStaticInitf52015f22b9a837418c4a39a3ee6c7a1
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
 
 
+
+        'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
+
+
+        'App\\Models\\Forget' => __DIR__ . '/../..' . '/app/Models/Forget.php',
+        'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
         'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
 
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
