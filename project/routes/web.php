@@ -71,7 +71,7 @@ Route::view('profile', 'user/user_profile');
 
 Route::view('contact', 'common/contact');
 Route::view('about', 'common/about');
-Route::view('post/{id}', [PostController::class,'singlePage'])->name('singlePage');
+Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
 
 
 // user
