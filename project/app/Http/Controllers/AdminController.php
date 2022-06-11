@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Http\Request;
@@ -28,4 +29,27 @@ class AdminController extends Controller
         $admin = Admin::create($formFields);
         return redirect('/admins')->with('message','Admin Added');
     }
+    public function login(Request $request){
+    
+        $email=$request->email;
+        $password=$request->password;
+        $data= Admin::where('email',$email)->first();
+        
+        if(isset($data)){
+        
+        if(Hash::check($password,$data->password)==true){
+        
+            $request->session()->put('adminEmail',$data['email']);
+            return redirect('dashboard');
+        }else
+        {
+            return redirect('admin/login')->with('message' , 'Password Incorrect');
+        }
+
+       }else
+       {
+           return redirect('admin/login')->with('message' , 'Email Incorrect'); 
+       }
+    }
 }
+
