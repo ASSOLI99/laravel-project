@@ -42,7 +42,7 @@
                         <li class="main_nav_item">
                             <form action="">
                                 <input type="text" class="black form-control search-input">
-                                <button type="submit" class="btn btn-warning"><i class="fas fa-search"></i></button>
+                                <button type="submit" class="btn btn-warning" style="margin-bottom:5px;"><i class="fas fa-search"></i></button>
                             </form>
                         </li>
 					</ul>
@@ -69,11 +69,11 @@
 		<div class="hamburger_container ml-5">
 			<i class="fas fa-bars trans_200"></i>
 		</div>
-        
-        
+
+
 
 	</header>
-	
+
 	<!-- Menu -->
 	<div class="menu_container menu_mm">
 
@@ -95,8 +95,8 @@
 				</ul>
 
 				<!-- Menu Social -->
-				
-				
+
+
                     <div class="menu_social_container menu_mm">
 					<ul class="menu_social menu_mm">
 						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-pinterest"></i></a></li>
@@ -107,25 +107,36 @@
 					</ul>
 				</div>
 
-				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div> 
-                
+				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
+
 			</div>
 
 		</div>
 
 	</div>
-	
+
 	<!-- Home -->
 {{-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII --}}
 
+<<<<<<< HEAD
         @yield('content')
+
+=======
+
+
+
+    @yield('content')
+
+
+
         
+>>>>>>> 93489d5dafd884cc27670428d354fc7a5a603d0a
 {{-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII --}}
 	<!-- Footer -->
 
 	<footer class="footer">
 		<div class="container">
-			
+
 			<!-- Newsletter -->
 
 			<div class="newsletter">

@@ -73,18 +73,21 @@ class userController extends Controller
 
        }else
        {
-           return "Email Does not Exist"; 
+        return redirect('login')->with('email_incorrect' , 'Email Does not Exist');
+        
        }
     }
 
+    //reset password functions
+
     public function forget_password(Request $request)
     {
-        
         $user = User::where('email' , $request->forget_email)->first();
+        
         $token =  $request->input('_token');
         if(!isset($user))
         {
-            return redirect('forget')->with('miss_email' , 'Email Does not exist');
+            return redirect('forgetpassword')->with('miss_email' , 'Email Does not exist');
         }
         $forget_data = new Forget();
         $forget_data->email = $request->forget_email;
@@ -96,24 +99,25 @@ class userController extends Controller
 
         $tokenData = Forget::where('email' , $request->forget_email)->first();
 
-        if($this->sendRestEmail($request->forget_email ,$tokenData->token ))
+        if($this->sendRestEmail($user->email ,$tokenData->token ))
         {
-            return redirect('forget')->with('sent' , 'Email Sent');
+            return redirect('forgetpassword')->with('sent' , 'Email Sent');
         }else
         {
-            return redirect('forget')->with('connect' , 'Network issue');
+            return redirect('forgetpassword')->with('connect' , 'Network issue');
         }
     }
 
     public function sendRestEmail($email , $token)
     {
-        $user = User::where('email' , $email)->first();
+        // $user = User::where('email' , $email)->first();
 
-        $link = asset('/reset_password?token='.$token);
+        $link = asset('/reset_password?token='.$token.'&email='.$email);
         
         try {
             //Here send the link with CURL with an external email API 
-            Mail::to($email)->send(new ResetMail($link));
+            $data = ["link"=>$link , 'email'=>$email];
+            Mail::to($email)->send(new ResetMail($data));
             return true;
         }catch (\Exception $e) {
                 return false;
@@ -122,21 +126,31 @@ class userController extends Controller
 
     public function view_rest(Request $request)
     {
-        $token = $request->input('token');
-        return view('students/reset_password' , ['token'=>$token]);
+        $email = $request->input('email');
+        return view('log/reset_password' , ['email'=>$email]);
     }
 
     public function rested_password(Request $request)
     {
-        $password1 = $request->pass;
-        $password2 = $request->pass2;
+        
+        $password1 = $request->reset_password;
+        $password2 = $request->confirm_reset_password;
+        $email = $request->email_reset;
+        $request->validate([
+            'reset_password'=>'required|min:8|max:25',
+            'confirm_reset_password'=>'required|min:8|max:25',
 
+            
+        ]);
         if ($password1 === $password2) {
+            $password1 = Hash::make($password1);
+            User::where('email', $email)->update(array('password' => $password1));
+            return redirect('create-post');
             
         }else
         {
-
+            return redirect('resetpassword')->with('inn' , 'Password Not match');
         }
-        return $request->input();
+        // return $request->input();
     }
 }

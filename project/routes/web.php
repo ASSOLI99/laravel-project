@@ -67,7 +67,7 @@ Route::group([],function(){
 });
 // End Admin page route
 
-//create post 
+//create post
 Route::get('create-post', [CategoryController::class , 'show_category']);
 Route::post('create-post' , [CategoryController::class , 'add_post']);
 
@@ -90,22 +90,25 @@ Route::view('profile', 'user/user_profile');
 Route::view('contact', 'common/contact');
 Route::post('contact',[contactcontroller::class,'message']);
 Route::view('about', 'common/about');
-Route::view('post', 'common/post');
+Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
 
 
 // user
-Route::view('order', 'user/Order_history');
+
 Route::view('profile', 'user/user_profile');
+Route::view('order', 'user/Order_history');
 
 //shop
 // Route::view('shop', 'shop/shop');
 //oute::get('shop' , [BookController::class , 'show']);
 
-//route::get('shop/{cat_id}', [BookController::class , 'show']);
 
 Route::get('shop',[BookController::class,'show']);
 Route::post('shop',[BookController::class,'show']);
 
 
-Route::view('resetpassword','log/reset_pass');
+Route::get('reset_password',[userController::class, 'view_rest']);
+Route::view('forgetpassword','log/forget');
+Route::post('/forget' , [userController::class , 'forget_password']);
+Route::post('/rest' , [userController::class , 'rested_password']);
 
