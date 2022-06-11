@@ -522,7 +522,10 @@ class ComposerStaticInitf52015f22b9a837418c4a39a3ee6c7a1
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
+<<<<<<< HEAD
         'App\\Http\\Controllers\\userController' => __DIR__ . '/../..' . '/app/Http/Controllers/userController.php',
+=======
+>>>>>>> 0dcf4e8b3209002672fe80c6130f3fc3526982e9
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -534,8 +537,15 @@ class ComposerStaticInitf52015f22b9a837418c4a39a3ee6c7a1
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Book' => __DIR__ . '/../..' . '/app/Models/Book.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
+<<<<<<< HEAD
         'App\\Models\\Forget' => __DIR__ . '/../..' . '/app/Models/Forget.php',
         'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
+=======
+<<<<<<< HEAD
+=======
+        'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
+>>>>>>> f093855c9cc49ae3fb578d839058160f6fa7554b
+>>>>>>> 0dcf4e8b3209002672fe80c6130f3fc3526982e9
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

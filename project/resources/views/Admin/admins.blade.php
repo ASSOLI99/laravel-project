@@ -35,7 +35,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Edit Users</h4>
-                    <h4 class="card-title"><a href="create_user" class="btn btn-success mt-3">Create User</a></h4>
+                    <h4 class="card-title"><a href="/admins/create" class="btn btn-success mt-3">Create Admin</a></h4>
 
                 </div>
                 <div class="card-content">
