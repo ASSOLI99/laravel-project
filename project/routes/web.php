@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -34,11 +35,13 @@ Route::group([],function(){
         return view('Admin.user');
     });
     //admins
-    Route::get('/admins', function () {
-        return view('Admin.admins');
+    Route::get('/admins',[AdminController::class, 'index']);
+    Route::get('/admins/create', function () {
+        return view('/Admin/admins/create');
     });
     //posts
     Route::get('/posts',[PostController::class, 'index']);
+    Route::get('/posts/create',[PostController::class, 'create']);
     //messages
     Route::get('/messages', function () {
         return view('Admin.messages');
