@@ -42,5 +42,11 @@ class CategoryController extends Controller
 
         return redirect('create-post')->with('succe' , 'Your book will publish after admin approvement');
     }
+    public function show()
+    {
+        $catig = Category::all();
+        return view('Home_page.index', ['catig'=>$catig]);
+
+    }
 }
 

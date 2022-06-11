@@ -73,7 +73,6 @@ Route::post('/login',[userController::class,'login']);
 
 //home page
 
-Route::view('/home', '/Home_page/index');
 
 //about
 
@@ -83,14 +82,11 @@ Route::view('profile', 'user/user_profile');
 
 Route::view('contact', 'common/contact');
 Route::post('contact',[contactcontroller::class,'message']);
+Route::get('/',[CategoryController::class,'show']);
 Route::view('about', 'common/about');
 Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
 
 
-// user
-
-Route::view('profile', 'user/user_profile');
-Route::view('order', 'user/Order_history');
 
 //shop
 // Route::view('shop', 'shop/shop');
