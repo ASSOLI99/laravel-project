@@ -12,10 +12,10 @@ return array(
     'App\\Http\\Controllers\\CategoryController' => $baseDir . '/app/Http/Controllers/CategoryController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\PostController' => $baseDir . '/app/Http/Controllers/PostController.php',
-<<<<<<< HEAD
+
     'App\\Http\\Controllers\\userController' => $baseDir . '/app/Http/Controllers/userController.php',
-=======
->>>>>>> 0dcf4e8b3209002672fe80c6130f3fc3526982e9
+
+
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
@@ -27,15 +27,14 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Models\\Book' => $baseDir . '/app/Models/Book.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
-<<<<<<< HEAD
+
     'App\\Models\\Forget' => $baseDir . '/app/Models/Forget.php',
     'App\\Models\\Post' => $baseDir . '/app/Models/Post.php',
-=======
-<<<<<<< HEAD
-=======
+
+
+
     'App\\Models\\Post' => $baseDir . '/app/Models/Post.php',
->>>>>>> f093855c9cc49ae3fb578d839058160f6fa7554b
->>>>>>> 0dcf4e8b3209002672fe80c6130f3fc3526982e9
+
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
