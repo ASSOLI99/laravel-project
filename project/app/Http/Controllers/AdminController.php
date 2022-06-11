@@ -18,12 +18,14 @@ class AdminController extends Controller
         $formFields=$request->validate([
             'name'=>['required','min:5'],
             'email'=>['required','email',Rule::unique('admin','email')],
-            'password'=>'required|confirmed|min:8'
+            'password'=>'required|confirmed|min:8',
+            'phone'=>'required|min:10',
+            'address'=>'required'
         ]);
 
         //hash password
         $formFields['password']=bcrypt($formFields['password']);
         $admin = Admin::create($formFields);
-        return redirect('/')->with('message','Admin Added');
+        return redirect('/admins')->with('message','Admin Added');
     }
 }
