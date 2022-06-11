@@ -16,15 +16,29 @@
       @csrf
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" name="email" class="form-control" id="exampleInputEmail1">
           @error('email')
           <div class="form-text text-danger">{{$message}}</div>
           @enderror
         </div>
         <div class="mb-3">
-          <label for="exampleInputName1" class="form-label">Full Name</label>
-          <input type="name" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <label for="exampleInputName1" class="form-label">Name</label>
+          <input type="text" name="name" class="form-control" id="exampleInputEmail1">
           @error('name')
+          <div class="form-text text-danger">{{$message}}</div>
+          @enderror
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPhone1" class="form-label">Phone</label>
+          <input type="text" name="phone" class="form-control" id="exampleInputPhone1">
+          @error('phone')
+          <div class="form-text text-danger">{{$message}}</div>
+          @enderror
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputAddress1" class="form-label">Address</label>
+          <input type="text" name="address" class="form-control" id="exampleInputAddress1">
+          @error('phone')
           <div class="form-text text-danger">{{$message}}</div>
           @enderror
         </div>
@@ -37,7 +51,7 @@
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-          <input type="password" name="password_confirmation" class="form-control" id="exampleInputPassword1">
+          <input type="password" name="password_confirmation" class="form-control">
           @error('password_confirmation')
           <div class="form-text text-danger">{{$message}}</div>
           @enderror
