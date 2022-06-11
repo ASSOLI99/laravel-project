@@ -40,6 +40,12 @@ Route::group([],function(){
     Route::get('/user', function () {
         return view('Admin.user');
     });
+
+    //login
+    Route::get('/admin/login', function () {
+        return view('Admin/admins/login');
+    });
+    Route::post('admin/login',[AdminController::class,'login']);
     //admins
     Route::get('/admins',[AdminController::class, 'index']);
     Route::post('/admins',[AdminController::class, 'store']);
