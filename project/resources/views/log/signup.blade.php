@@ -13,6 +13,7 @@
 
 	</head>
 	<body class="img js-fullheight" style="background-image: url(log/images/back10.jpg);">
+		 
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -25,20 +26,29 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
+						<div class="card-body">
+							@if ($message = Session::get('success'))
+							<div class="alert alert-success">
+							<p>{{ $message }}</p>
+							</div>
+							@endif
 		      
-		      	<form action="" class="signin-form" method="post">
+		      	<form action="signup" class="signin-form" method="post">
+					@csrf
 		      		<div class="form-group ">
 		      	  <input type="text" class="form-control" placeholder="Firstname" name="fname" required style="margin-bottom: 10px"> 
 				  <input type="text" class="form-control" placeholder="Lastname" name="lname" required style="margin-bottom: 10px">
 				  <input type="email" name="email" id="" class="form-control" placeholder="Email" required style="margin-bottom: 10px">
 	              <input id="password-field" type="password" name="pass" class="form-control" placeholder="Set Password" required style="margin-bottom: 10px">
-                  <input id="password-field" type="password" name="pass2" class="form-control" placeholder="Confirm Password" required style="margin-bottom: 10px">
+				  <input id="password-field" type="password" name="pass2" class="form-control " placeholder="Confirm Password" required style="margin-bottom: 10px">  
+
+				 
 				  <input type="text" name="phone" id="" class="form-control" placeholder="Phone number" required style="margin-bottom: 10px">
 
 	            </div>
-                <select class="form-control mb-3">
+                <select class="form-control mb-3" name="address">
                     <option disabled selected hidden > Select region</option>
-					<option value="amman"> Amman</option>
+					<option value="amman" > Amman</option>
 					<option value="irbid"> Irbid</option>
 					<option value="zarqa"> Zarqa</option>
 					<option value="ajloun"> Ajloun</option>
@@ -56,13 +66,13 @@
 	            </div>
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
-		            	<label class="checkbox-wrap checkbox-primary">Remember Me
+		            	{{-- <label class="checkbox-wrap checkbox-primary">Remember Me
 									  <input type="checkbox" checked>
 									  <span class="checkmark"></span>
-									</label>
+									</label> --}}
 								</div>
 								<div class="w-50 text-md-right">
-									<a href="#" style="color: #fff">Have an account?</a>
+									<a href="http://localhost:8000/login" style="color: #fff">Have an account?</a>
 								</div>
 	            </div>
 	          </form>

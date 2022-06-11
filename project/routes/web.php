@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
@@ -58,8 +60,10 @@ Route::get('create-post', [CategoryController::class , 'show_category']);
 Route::post('create-post' , [CategoryController::class , 'add_post']);
 
 // login
-Route::view('login', 'log/login');
-Route::view('signup', 'log/signup');
+Route::view('/login', 'log/login');
+Route::view('/signup', 'log/signup');
+Route::post('/signup',[userController::class,'data']);
+Route::post('/login',[userController::class,'login']);
 
 //home page
 
@@ -79,6 +83,14 @@ Route::view('post', 'common/post');
 // user
 Route::view('order', 'user/Order_history');
 Route::view('profile', 'user/user_profile');
+
+//shop
+// Route::view('shop', 'shop/shop');
+//oute::get('shop' , [BookController::class , 'show']);
+
+//route::get('shop/{cat_id}', [BookController::class , 'show']);
+
+Route::resource('shop', BookController::class);
 
 
 
