@@ -38,6 +38,9 @@ Route::group([],function(){
     Route::get('/messages', function () {
         return view('Admin.messages');
     });
+    Route::get('/category', function () {
+        return view('Admin.category');
+    });
 });
 // End Admin page route
 

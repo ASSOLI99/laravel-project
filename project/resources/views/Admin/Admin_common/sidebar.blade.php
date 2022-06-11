@@ -45,6 +45,12 @@
                 </a>
             </li>
             <li style="list-style-type:none;">
+                <a href="{{url('category')}}" class='sidebar-link'>
+                    <i class="bi bi-inboxes"></i>
+                    <span>Categorys</span>
+                </a>
+            </li>
+            <li style="list-style-type:none;">
                 <a href="{{url('messages')}}" class='sidebar-link'>
                     <i class="bi bi-envelope-paper"></i>
                     <span>Messages</span>
