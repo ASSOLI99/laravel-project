@@ -27,7 +27,7 @@
             </header>
 
 <div class="page-heading">
-    <h3><a href="/dashboard">Dashboard</a><span> / Users</span></h3>
+    <h3><a href="/dashboard">Dashboard</a><span> / Category</span></h3>
 </div>
 <section class="section">
     <div class="row" id="table-head">
@@ -78,7 +78,6 @@
         </div>
     </div>
 </section>
-
         @include('Admin.Admin_common.footer')
         </div>
     </div>

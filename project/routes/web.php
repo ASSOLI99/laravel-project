@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/Home_page/index');
 });
 
 
@@ -29,11 +29,17 @@ Route::group([],function(){
     Route::get('/user', function () {
         return view('Admin.user');
     });
-    Route::get('/products', function () {
-        return view('Admin.products');
+    Route::get('/admins', function () {
+        return view('Admin.admins');
     });
     Route::get('/posts', function () {
         return view('Admin.posts');
+    });
+    Route::get('/messages', function () {
+        return view('Admin.messages');
+    });
+    Route::get('/category', function () {
+        return view('Admin.category');
     });
 });
 // End Admin page route
