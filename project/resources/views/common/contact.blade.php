@@ -52,7 +52,7 @@
 		</div>
 
 	</header>
-	
+
 	<!-- Menu -->
 	<div class="menu_container menu_mm">
 
@@ -74,7 +74,7 @@
 				</ul>
 
 				<!-- Menu Social -->
-				
+
 				<div class="menu_social_container menu_mm">
 					<ul class="menu_social menu_mm">
 						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-pinterest"></i></a></li>
@@ -91,7 +91,7 @@
 		</div>
 
 	</div>
-	
+
 	<!-- Home -->
 
 	<div class="home">
@@ -109,7 +109,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
-					
+
 					<!-- Contact Form -->
 					<div class="contact_form">
 						<div class="contact_title">Get in touch</div>
@@ -123,7 +123,7 @@
 							</form>
 						</div>
 					</div>
-						
+
 				</div>
 
 				<div class="col-lg-4">
@@ -158,18 +158,7 @@
 
 			</div>
 
-			<!-- Google Map -->
-
-			<div class="row">
-				<div class="col">
-					<div id="google_map">
-						<div class="map_container">
-							<div id="map"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-
+		
 		</div>
 	</div>
 
@@ -177,7 +166,7 @@
 
 	<footer class="footer">
 		<div class="container">
-			
+
 			<!-- Newsletter -->
 
 			<div class="newsletter">

@@ -21,7 +21,8 @@ class CreateBookTable extends Migration
             $table->string('address');
             $table->string('publisher');
             $table->string('author');
-            $table->time('publishing year');
+            $table->string('book_image');
+            $table->string('publishing_year');
             $table->timestamps();
 
              $table->foreign('catigory_id')->references('id')->on('catigory')->onDelete('cascade');
