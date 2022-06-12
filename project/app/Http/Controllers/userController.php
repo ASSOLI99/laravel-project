@@ -176,4 +176,39 @@ class userController extends Controller
         $id->delete();
         return redirect('/admin/users')->with('message','User deleted successfully');
     }
+
+    public function view(Request $req)
+    {
+        if (isset($req->user_img)) {
+
+            if($req->hasfile('user_img')){
+
+                $img = $req->file('user_img');
+                $imgname = $img->getClientOriginalName();
+                $img->move('user_img/', $imgname);
+                $user = User::find(1);
+                $user->user_img =  $imgname;
+                $user->update();
+
+            }
+        }
+        if(isset($req->update))
+        {
+            
+            $user = User::find(1);
+            $user->Fname = $req->input('Fname');
+            $user->Lname = $req->input('Lname');
+            $user->address = $req->input('address');
+            $user->email = $req->input('email');
+            $user->phone = $req->input('phone');
+            $user->password = $req->input('password');
+            $user->user_img = $req->input('user_img');
+            $user->update();
+        }
+
+        // $id = session('id');
+        $user = User::find(1);
+
+        return view('user/user_profile', ['user' => $user]);
+    }
 }

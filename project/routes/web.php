@@ -9,6 +9,7 @@ use App\Http\Controllers\contactcontroller;
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ordercontroller;
 
 
 
@@ -104,6 +105,15 @@ Route::get('/',[CategoryController::class,'show']);
 Route::view('about', 'common/about');
 Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
 
+
+
+// user
+
+Route::get('profile',[userController::class,'view']);
+Route::post('profile',[userController::class,'view']);
+
+Route::get('order',[ordercontroller::class,'view']);
+Route::post('order',[ordercontroller::class,'view']);
 
 
 //shop
