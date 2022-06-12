@@ -151,15 +151,17 @@
 
 	<!-- Home -->
 
-    @yield('content')
 
 
 
 
+<<<<<<< HEAD
        
 
 
 
+=======
+>>>>>>> 499fd9d01471b5d0d1ad7924b010cb6b7928d992
 	{{-- @yield('content') --}}
 
 
