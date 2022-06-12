@@ -11,7 +11,9 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index(){
-        return view('Admin.posts');
+        return view('Admin.posts',[
+            'posts'=>Post::all()
+        ]);
     }
     public function singlePage($id,$userid){
         $data = Book::find($id);
@@ -29,4 +31,5 @@ class PostController extends Controller
 
     //return view('user/Order_history' , ['order'=>$order,'user'=>$user]); 
  }
+ 
 }
