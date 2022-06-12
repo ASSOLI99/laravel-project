@@ -31,7 +31,7 @@
             </li>
 
             <li style="list-style-type:none;">
-                <a href="{{url('user')}}" class='sidebar-link'>
+                <a href="{{url('admin/users')}}" class='sidebar-link'>
                     <i class="bi bi-stack"></i>
                     <span>Users</span>
                 </a>

@@ -153,4 +153,16 @@ class userController extends Controller
         }
         // return $request->input();
     }
+
+    //show the details in (admin) board
+    public function index(){
+        return view('/admin/user',[
+            'users'=>User::all()
+        ]);
+    }
+    //Delete the users in (admin) board
+    public function destroy(User $id){
+        $id->delete();
+        return redirect('/admin/users')->with('message','User deleted successfully');
+    }
 }

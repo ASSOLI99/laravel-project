@@ -37,10 +37,8 @@ Route::group([],function(){
         return view('Admin.index');
     });
     //users
-    Route::get('/user', function () {
-        return view('Admin.user');
-    });
-
+    Route::get('/admin/users' ,[userController::class,'index']);
+    Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
     //login
     Route::get('/admin/login', function () {
         return view('Admin/admins/login');
