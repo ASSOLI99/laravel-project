@@ -10,6 +10,7 @@ use App\Http\Controllers\contactcontroller;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ordercontroller;
+use App\Http\Controllers\MessageConttoller;
 
 
 
@@ -55,9 +56,9 @@ Route::group([],function(){
     Route::get('/admin/posts',[PostController::class, 'index']);
     Route::get('/admin/posts/update',[PostController::class, 'update']);
     //messages
-    Route::get('/admin/messages', function () {
-        return view('Admin.messages');
-    });
+    Route::get('/admin/messages',[MessageConttoller::class,'index']);
+    Route::delete('/admin/message/delete/{id}',[MessageConttoller::class,'destroy']);
+
     //categories
     Route::get('/admin/category',[CategoryController::class, 'index']);
     Route::get('/admin/category/create',[CategoryController::class, 'create']);

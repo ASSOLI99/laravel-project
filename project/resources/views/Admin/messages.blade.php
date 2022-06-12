@@ -46,30 +46,28 @@
                                 <tr>
                                     <th>NAME</th>
                                     <th>Email</th>
-                                    <th>state</th>
-                                    <th>LOCATION</th>
+                                    <th>phone</th>
+                                    <th>Message</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($data as $row)
                                 <tr>
-                                    <td class="text-bold-500">Michael Right</td>
-                                    <td>Email@email.com</td>
-                                    <td class="text-bold-500">False</td>
-                                    <td>Austin,Taxes</td>
-                                    <td><a href="#"><i
-                                                class="badge-circle badge-circle-light-secondary font-medium-1"
-                                                data-feather="mail"></i></a></td>
+                                    <td class="text-bold-500">{{$row->Fname}} {{$row->Lname}}</td>
+                                    <td>{{$row->email}}</td>
+                                    <td class="text-bold-500">{{$row->phone}}</td>
+                                    <td>{{$row->message_text}}</td>
+                                    <td>
+                                        <form method="POST" action="/admin/message/delete/{{$row->id}}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Delete</button>
+                                            </form>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td class="text-bold-500">Morgan Vanblum</td>
-                                    <td>Assoli@fmail.com</td>
-                                    <td class="text-bold-500">True</td>
-                                    <td>Jordan,Ajloun</td>
-                                    <td><a href="#"><i
-                                                class="badge-circle badge-circle-light-secondary font-medium-1"
-                                                data-feather="mail"></i></a></td>
-                                </tr>
+                                @endforeach
+                                
                             </tbody>
                         </table>
                     </div>
