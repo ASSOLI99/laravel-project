@@ -27,6 +27,12 @@
             </header>
 
 <div class="page-heading">
+    @if(session()->has('message'))
+    <div class="alert alert-primary" role="alert">
+        {{session('message')}}
+      </div>
+
+@endif
     <h3><a href="/dashboard">Dashboard</a><span> /Admins </span></h3>
 </div>
 <section class="section">
@@ -34,8 +40,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
+                   
                     <h4 class="card-title">Edit Users</h4>
-                    <h4 class="card-title"><a href="/admins/create" class="btn btn-success mt-3">Create Admin</a></h4>
+                    <h4 class="card-title"><a href="/admins/create" class="btn btn-primary mt-3">Create Admin</a></h4>
 
                 </div>
                 <div class="card-content">
@@ -46,30 +53,34 @@
                                 <tr>
                                     <th>NAME</th>
                                     <th>Email</th>
-                                    <th>state</th>
+                                    <th>Phone</th>
                                     <th>LOCATION</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($admins as $admin)
                                 <tr>
-                                    <td class="text-bold-500">Michael Right</td>
-                                    <td>Email@email.com</td>
-                                    <td class="text-bold-500">False</td>
-                                    <td>Austin,Taxes</td>
-                                    <td><a href="#"><i
-                                                class="badge-circle badge-circle-light-secondary font-medium-1"
-                                                data-feather="mail"></i></a></td>
+                                <td class="text-bold-500">{{$admin['name']}}</td>
+                                <td>{{$admin['email']}}</td>
+                                <td class="text-bold-500">{{$admin['phone']}}</td>
+                                <td>{{$admin['address']}}</td>
+                                @if(count($admins)>1)
+                                    <td>
+                                        <form method="POST" action="/admin/{{$admin->id}}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Delete</button>
+                                            </form>
+                                    </td>
+                                
+                                
+                                @else
+                                    <td><a href="/admins/create"> you are the last admin</a></td>
+                                
+                                        @endif
                                 </tr>
-                                <tr>
-                                    <td class="text-bold-500">Morgan Vanblum</td>
-                                    <td>Assoli@fmail.com</td>
-                                    <td class="text-bold-500">True</td>
-                                    <td>Jordan,Ajloun</td>
-                                    <td><a href="#"><i
-                                                class="badge-circle badge-circle-light-secondary font-medium-1"
-                                                data-feather="mail"></i></a></td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

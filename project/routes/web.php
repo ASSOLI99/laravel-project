@@ -52,7 +52,7 @@ Route::group([],function(){
     Route::get('/admins/create', function () {
         return view('/Admin/admins/create');
     });
-
+    Route::delete('/admin/{id}',[AdminController::class, 'destroy']);
     //posts
     Route::get('/posts',[PostController::class, 'index']);
     Route::get('/posts/create',[PostController::class, 'create']);
