@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/main_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/responsive.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/changable.css')}}">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
@@ -55,7 +56,7 @@
 		<div class="header_side d-flex flex-row justify-content-center align-items-center">
 			<ul>
                 <div class="dropdown">
-                    <a class="dropbtn"><img src="{{asset('layout/images/testimonials_user.jpg')}}" class="user-image" alt=""></a>
+                    <a class="dropbtn"><i class="material-icons" style="font-size:50px;color:black;margin-top:5px;">&#xe853;</i></a>
                     <div class="dropdown-content">
 						@if(session()->has('name'))
 							
@@ -72,11 +73,18 @@
 		</div>
 
 		<!-- Hamburger -->
-        <div class="hamburger_container text-center mr-5">
-            <a class=""><img src="{{asset('layout/images/testimonials_user.jpg')}}" class="user-image-small" alt=""></a>
-		</div>
+        {{-- <div class="hamburger_container text-center mr-5">
+            <a class=""><i class="material-icons" style="font-size:50px;color:#3a3a3a;margin-top:5px;">&#xe853;</i></a>
+			<ul>
+                <div class="dropdown">
+                    <a class="dropbtn"><i class="material-icons" style="font-size:50px;color:black;margin-top:5px;">&#xe853;</i></a>
+                    
+                  </div>
+            </ul>
+		</div> --}}
 		<div class="hamburger_container ml-5">
 			<i class="fas fa-bars trans_200"></i>
+			
 		</div>
 
 
@@ -101,6 +109,17 @@
 					<li class="menu_item menu_mm"><a href="elements.html">Elements</a></li>
 					<li class="menu_item menu_mm"><a href="news.html">News</a></li>
 					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
+				
+						@if(session()->has('name'))
+							
+					<li class="menu_item menu_mm">	<a href="#">Login</a></li>
+					<li class="menu_item menu_mm"><a href="#">Signup</a></li>
+					@else
+					<li class="menu_item menu_mm"><a href="#">Account</a></li>
+					<li class="menu_item menu_mm">   <a href="#">Logout</a></li>
+						                  
+	                   @endif
+                   
 				</ul>
 
 				<!-- Menu Social -->
