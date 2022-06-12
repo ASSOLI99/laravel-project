@@ -402,11 +402,11 @@ section
 }
 .header_side span
 {
-	display: block;
+	display: inline-block;
 	position: relative;
-	font-size: 18px;
-	font-weight: 500;
-	color: #FFFFFF;
+	font-size: 20px;
+	font-weight: 700;
+	color: #f9f6f6;
 	padding-left: 12px;
 }
 

@@ -52,7 +52,7 @@
 		</div>
 		<div class="header_side d-flex flex-row justify-content-center align-items-center">
 			@if(session()->has('name'))
-			<p class="main_nav_item" style="color: black"> Welcome {{session('name')}}</p>
+			<p  style="color: black ; margin-right: 20px; margin-top:15px ; font-size:20px ; font-weight:500"> <span>Welcome</span>  {{session('name')}}</p>
 			@endif
 			<ul>
                 <div class="dropdown">
@@ -64,8 +64,8 @@
 						<a href="/logout">Logout</a>
 						@else
 
-                      <a href="#">Login</a>
-                      <a href="#">Signup</a>
+                      <a href="/login">Login</a>
+                      <a href="/signup">Signup</a>
 						@endif
                     </div>
                   </div>
