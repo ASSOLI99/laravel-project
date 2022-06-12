@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/responsive.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/changable.css')}}">
 
-@livewireStyles
+
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -117,7 +117,7 @@
 					<li class="menu_item menu_mm"><a href="news.html">About us</a></li>
 					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
 
-						@if(session()->has('name'))
+					@if(session()->has('name'))
 
 					<li class="menu_item menu_mm">	<a href="#">Login</a></li>
 					<li class="menu_item menu_mm"><a href="#">Signup</a></li>
@@ -152,7 +152,6 @@
 
 	<!-- Home -->
 
-    @yield('content')
 
 
 
@@ -161,7 +160,7 @@
 
 
 
-	{{-- @yield('content') --}}
+	@yield('content')
 
 
 
@@ -326,6 +325,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{{asset('layout/plugins/scrollTo/jquery.scrollTo.min.js')}}"></script>
 <script src="{{asset('layout/plugins/easing/easing.js')}}"></script>
 <script src="{{asset('layout/js/custom.js')}}"></script>
-@livewireScripts
+
 </body>
 </html>
