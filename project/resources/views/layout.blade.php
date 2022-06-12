@@ -152,12 +152,7 @@
 
 	<!-- Home -->
 
-    @yield('content')
 
-
-
-
-        @yield('content')
 
 
 
