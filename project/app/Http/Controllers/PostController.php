@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    // public function index(){
-    //     return view('Admin.posts');
-    // }
+    public function index(){
+        return view('Admin.posts');
+    }
     public function singlePage($id,$userid){
         $data = Book::find($id);
         $userdata = User::where('id',$data->id)->first();

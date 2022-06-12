@@ -23,10 +23,8 @@ class Admin extends Model
         'phone',
         'address'
     ];
+    
     protected $table="admin";
-    // protected $hidden = [
-    //     'password',
-    //     'remember_token',
-    // ];
+
 
 }

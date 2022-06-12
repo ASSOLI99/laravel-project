@@ -37,10 +37,8 @@ Route::group([],function(){
         return view('Admin.index');
     });
     //users
-    Route::get('/user', function () {
-        return view('Admin.user');
-    });
-
+    Route::get('/admin/users' ,[userController::class,'index']);
+    Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
     //login
     Route::get('/admin/login', function () {
         return view('Admin/admins/login');
@@ -52,10 +50,10 @@ Route::group([],function(){
     Route::get('/admins/create', function () {
         return view('/Admin/admins/create');
     });
-
+    Route::delete('/admin/{id}',[AdminController::class, 'destroy']);
     //posts
-    Route::get('/posts',[PostController::class, 'index']);
-    Route::get('/posts/create',[PostController::class, 'create']);
+    Route::get('/admin/posts',[PostController::class, 'index']);
+    Route::get('/admin/posts/update',[PostController::class, 'update']);
     //messages
     Route::get('/messages', function () {
         return view('Admin.messages');
