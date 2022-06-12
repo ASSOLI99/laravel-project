@@ -157,7 +157,7 @@
 
 
 
-        @yield('content')
+     
 
 
 
@@ -167,7 +167,7 @@
 
 
 
-    @yield('content')
+
 
 
 
