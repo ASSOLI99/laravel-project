@@ -55,7 +55,7 @@ Route::group([],function(){
     Route::get('/admin/posts',[PostController::class, 'index']);
     Route::get('/admin/posts/update',[PostController::class, 'update']);
     //messages
-    Route::get('/messages', function () {
+    Route::get('/admin/messages', function () {
         return view('Admin.messages');
     });
     //categories

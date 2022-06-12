@@ -51,7 +51,7 @@
                 </a>
             </li>
             <li style="list-style-type:none;">
-                <a href="{{url('messages')}}" class='sidebar-link'>
+                <a href="{{url('admin/messages')}}" class='sidebar-link'>
                     <i class="bi bi-envelope-paper"></i>
                     <span>Messages</span>
                 </a>
