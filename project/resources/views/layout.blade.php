@@ -35,11 +35,8 @@
 			<nav class="main_nav_container">
 				<div class="main_nav">
 					<ul class="main_nav_list">
-						<li class="main_nav_item"><a href="#">home</a></li>
+						<li class="main_nav_item"><a href="/">home</a></li>
 						<li class="main_nav_item"><a href="#">Shop</a></li>
-						{{-- @if (isset(session('name')))
-							
-						@endif --}}
 						<li class="main_nav_item"><a href="courses.html">about us</a></li>
 						<li class="main_nav_item"><a href="contact.html">contact</a></li>
                         <li class="main_nav_item">
@@ -53,18 +50,21 @@
 			</nav>
 		</div>
 		<div class="header_side d-flex flex-row justify-content-center align-items-center">
+			@if(session()->has('name'))
+			<p class="main_nav_item" style="color: black"> Welcome {{session('name')}}</p>
+			@endif
 			<ul>
                 <div class="dropdown">
                     <a class="dropbtn"><img src="{{asset('layout/images/testimonials_user.jpg')}}" class="user-image" alt=""></a>
                     <div class="dropdown-content">
 						@if(session()->has('name'))
 							
-						<a href="#">Login</a>
-						<a href="#">Signup</a>
+						<a href="/profile">Account</a>
+						<a href="/logout">Logout</a>
 						@else
 
-                      <a href="#">Account</a>
-                      <a href="#">Logout</a>
+                      <a href="#">Login</a>
+                      <a href="#">Signup</a>
 						@endif
                     </div>
                   </div>

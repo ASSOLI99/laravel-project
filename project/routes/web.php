@@ -41,6 +41,7 @@ Route::group([],function(){
     Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
     //login
     Route::get('/admin/login', function () {
+
         return view('Admin/admins/login');
     });
     Route::post('admin/login',[AdminController::class,'login']);
@@ -71,10 +72,22 @@ Route::get('create-post', [CategoryController::class , 'show_category']);
 Route::post('create-post' , [CategoryController::class , 'add_post']);
 
 // login
-Route::view('/login', 'log/login');
-Route::view('/signup', 'log/signup');
+Route::get('/login', function(){
+    if(session()->has('name')){
+        return redirect('/');
+    }
+    return view('log/login');
+});
+Route::get('/signup',  function(){
+    if(session()->has('name')){
+        return redirect('/');
+    }
+    return view('log/signup');
+});
 Route::post('/signup',[userController::class,'data']);
 Route::post('/login',[userController::class,'login']);
+
+Route::get('/logout' ,[userController::class , 'logout']);
 
 //home page
 
