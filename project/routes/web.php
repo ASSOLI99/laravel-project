@@ -113,8 +113,13 @@ Route::get('profile',[userController::class,'view']);
 Route::post('profile',[userController::class,'view']);
 
 Route::get('order/{id}',[BookController::class,'view']);
-Route::post('order',[BookController::class,'view']);
+Route::post('order/{id}',[BookController::class,'view']);
 
+Route::get('delete/{id}',[BookController::class,'delete']);
+Route::post('delete/{id}',[BookController::class,'delete']);
+
+Route::get('update/{id}',[BookController::class,'update']);
+Route::post('update/{id}',[BookController::class,'update']);
 
 //shop
 // Route::view('shop', 'shop/shop');

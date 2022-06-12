@@ -50,25 +50,38 @@
                                 </div>
                             </div>
                         </div>
-            
-            
-                        @foreach ($book as $item)
-                            
 
+{{-- 
+                        ///////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
+
+
+                        @foreach ($book as $item)
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-md-1"><img src="https://bootdey.com/img/Content/user_3.jpg"
+                                <div class="col-md-1"><img src="{{asset('user_img/'.$item->book_image)}}"
                                         class="media-object img-thumbnail" /></div>
                                 <div class="col-md-11">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="pull-right"><label class="label label-info">pending</label></div>
-                                            <span><strong>Order name</strong></span> <span class="label label-info">group
-                                                name</span><br /><br>{{$item->created_at}} <br />
-                                            <a data-placement="top" class="btn btn-success btn-xs glyphicon glyphicon-ok" href="#"
-                                                title="View"></a>
-                                            <a data-placement="top" class="btn btn-danger btn-xs glyphicon glyphicon-trash" href="#"
-                                                title="Danger"></a>
+                                            <span><strong>Book name : {{$item->name}}</strong></span> 	&nbsp;	&nbsp; 	&nbsp;<span class="label label-info">	&nbsp; Region :
+                                                {{$item->address}}</span><br /><span style=" font-weight: bold;color : black">Description :</span>{{$item->description}} <br><span style=" font-weight: bold;color : black">Publisher :</span>  {{$item->publisher}} <br>
+                                                <span style=" font-weight: bold;color : black">Author :</span>  {{$item->author}} <br />
+                                                
+
+                                                <form action="{{url('update/'.session('id'))}}" method="POST">
+                                                    @csrf
+                                                     <input type="hidden" value="{{$item->id}}">
+                                                     <input class="btn btn-info btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Disable ">
+                                                </form>
+                                                
+                                                <form action="{{url('delete/'.session('id'))}}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" value="{{$item->id}}">
+                                                    <input class="btn btn-danger btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Delete " >
+                                                </form>
+                                           
+                                           
                                         </div>
                                         <div class="col-md-12">order made on: 05/31/2014 by <a href="#">Jane Doe </a></div>
                                     </div>
