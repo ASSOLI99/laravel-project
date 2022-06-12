@@ -99,8 +99,8 @@ Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
 Route::get('profile',[userController::class,'view']);
 Route::post('profile',[userController::class,'view']);
 
-Route::get('order',[ordercontroller::class,'view']);
-Route::post('order',[ordercontroller::class,'view']);
+Route::get('order/{id}',[BookController::class,'view']);
+Route::post('order',[BookController::class,'view']);
 
 
 //shop

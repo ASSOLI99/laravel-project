@@ -175,6 +175,7 @@
 						<ul class="product-list grid-products equal-container " >
 
 							@foreach ($book as $item)
+							@if($item->state == '1')
 							<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 " id="card">
 								<div class="product product-style-3 equal-elem ">
 									<div class="product-thumnail">
@@ -190,6 +191,7 @@
 									</div>
 								</div>
 							</li>
+							@endif
 							@endforeach
 
 
@@ -212,7 +214,7 @@
 				</div>
 				<!--end main products area-->
 
-<<<<<<< HEAD
+
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
 					<div class="widget mercado-widget categories-widget">
 						<h2 class="widget-title">All Categories</h2>
@@ -223,11 +225,12 @@
 								@foreach ($category as $item)
 
 
-								<form method="POST" action="{{ route('shop.index' , $item->id) }}" accept-charset="UTF-8" style="display:inline">
+								<form method="POST" action="shop" accept-charset="UTF-8" style="display:inline">
 									{{ csrf_field() }}
 									<li class="category-item has-child-cate">
 										<a href="#" class="cate-link">{{$item->name}}</a>
 									</li>
+									<input type="hidden" value="{{$item->id}}" name="cat_id">
 
 								</form>
 
@@ -244,12 +247,11 @@
 
 
 				</div>
-=======
 
 
 
 				
->>>>>>> 93489d5dafd884cc27670428d354fc7a5a603d0a
+
 				<!--end sitebar-->
 
 			</div>

@@ -26,7 +26,7 @@
             <div class="module-inner">
                 <div class="side-bar">
                     <div class="user-info">
-                        <img class="img-profile img-circle img-responsive center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="">
+                        <img class=" center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="" style="width: 100px ; height:auto ; border-radius:50%">
                     </div>
             		<nav class="side-menu">
         				<ul class="nav">
@@ -52,6 +52,9 @@
                         </div>
             
             
+                        @foreach ($book as $item)
+                            
+
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-1"><img src="https://bootdey.com/img/Content/user_3.jpg"
@@ -61,7 +64,7 @@
                                         <div class="col-md-12">
                                             <div class="pull-right"><label class="label label-info">pending</label></div>
                                             <span><strong>Order name</strong></span> <span class="label label-info">group
-                                                name</span><br /><br>Quantity : 2, cost: $323.13 <br />
+                                                name</span><br /><br>{{$item->created_at}} <br />
                                             <a data-placement="top" class="btn btn-success btn-xs glyphicon glyphicon-ok" href="#"
                                                 title="View"></a>
                                             <a data-placement="top" class="btn btn-danger btn-xs glyphicon glyphicon-trash" href="#"
@@ -70,10 +73,9 @@
                                         <div class="col-md-12">order made on: 05/31/2014 by <a href="#">Jane Doe </a></div>
                                     </div>
                                 </div>
-                            </div>
-            
-                           
+                            </div> 
                         </div>
+                        @endforeach
                         {{-- <div class="panel-footer">Put here some note for example: bootdey si a gallery of free bootstrap snippets
                             bootdeys</div>
                     </div> --}}

@@ -15,6 +15,7 @@ class CreateBookTable extends Migration
     {
         Schema::create('book', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('catigory_id');
             $table->string('name');
             $table->string('description');
@@ -22,9 +23,12 @@ class CreateBookTable extends Migration
             $table->string('publisher');
             $table->string('author');
             $table->string('book_image');
-            $table->string('publishing_year');
+            $table->date('publishing_year');
+            $table->string('state')->default('0');
             $table->timestamps();
 
+            
+            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
              $table->foreign('catigory_id')->references('id')->on('catigory')->onDelete('cascade');
         });
     }
