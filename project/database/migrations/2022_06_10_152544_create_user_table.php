@@ -21,7 +21,9 @@ class CreateUserTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('password');
+            $table->string('user_img');
             $table->timestamps();
+
         });
     }
 

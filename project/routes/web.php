@@ -9,6 +9,7 @@ use App\Http\Controllers\contactcontroller;
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ordercontroller;
 
 
 
@@ -41,6 +42,7 @@ Route::group([],function(){
     Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
     //login
     Route::get('/admin/login', function () {
+
         return view('Admin/admins/login');
     });
     Route::post('admin/login',[AdminController::class,'login']);
@@ -59,9 +61,10 @@ Route::group([],function(){
         return view('Admin.messages');
     });
     //categories
-    Route::get('/category', function () {
-        return view('Admin.category');
-    });
+    Route::get('/admin/category',[CategoryController::class, 'index']);
+    Route::get('/admin/category/create',[CategoryController::class, 'create']);
+    Route::post('/admin/category/create',[CategoryController::class, 'store']);
+
 });
 // End Admin page route
 
@@ -70,10 +73,22 @@ Route::get('create-post', [CategoryController::class , 'show_category']);
 Route::post('create-post' , [CategoryController::class , 'add_post']);
 
 // login
-Route::view('/login', 'log/login');
-Route::view('/signup', 'log/signup');
+Route::get('/login', function(){
+    if(session()->has('name')){
+        return redirect('/');
+    }
+    return view('log/login');
+});
+Route::get('/signup',  function(){
+    if(session()->has('name')){
+        return redirect('/');
+    }
+    return view('log/signup');
+});
 Route::post('/signup',[userController::class,'data']);
 Route::post('/login',[userController::class,'login']);
+
+Route::get('/logout' ,[userController::class , 'logout']);
 
 //home page
 
@@ -86,10 +101,19 @@ Route::view('profile', 'user/user_profile');
 
 Route::view('contact', 'common/contact');
 Route::post('contact',[contactcontroller::class,'message']);
-Route::get('/',[CategoryController::class,'show']);
+Route::get('/home',[CategoryController::class,'show']);
 Route::view('about', 'common/about');
 Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
 
+
+
+// user
+
+Route::get('profile',[userController::class,'view']);
+Route::post('profile',[userController::class,'view']);
+
+Route::get('order/{id}',[BookController::class,'view']);
+Route::post('order',[BookController::class,'view']);
 
 
 //shop

@@ -87,39 +87,35 @@
 
 	<!-- Popular -->
 
+
+
 	<div class="popular page_section">
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h1>Popular Courses</h1>
+						<h1>Books categories</h1>
 					</div>
 				</div>
 			</div>
 
 			<div class="row course_boxes">
 
-				<!-- Popular Course Item -->
-
-
-				<!-- Popular Course Item -->
-
-
-				<!-- Popular Course Item -->
+							<!-- Popular Course Item -->
                 @foreach($catig as $item)
 				<div class="col-lg-4 course_box">
 					<div class="card">
-						<img class="card-img-top" src="{{asset('layout/images/course_3.jpg')}}" alt="https://unsplash.com/@dsmacinnes">
+						<img class="card-img-top" src="/style/images/{{$item->book_image}}" alt="https://unsplash.com/@dsmacinnes">
 						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.html">Advanced Photoshop</a></div>
-							<div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+							<div class="card-title"><a href="courses.html">{{$item->book_genre}}</a></div>
+							<div class="card-text"></div>
 						</div>
 						<div class="price_box d-flex flex-row align-items-center">
 							<div class="course_author_image">
-								<img src="{{asset('layout/images/author.jpg')}}" alt="https://unsplash.com/@mehdizadeh">
+								<!-- <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh"> -->
 							</div>
-							<div class="course_author_name">{{$item->name}} <span>Author</span></div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$29</span></div>
+							<div class="course_author_name"><button type="button" class="btn btn-outline-warning">show</button></div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"> </div>
 						</div>
 					</div>
 				</div>
@@ -127,6 +123,10 @@
 			</div>
 		</div>
 	</div>
+
+
+
+
 
         <!-- Register -->
 

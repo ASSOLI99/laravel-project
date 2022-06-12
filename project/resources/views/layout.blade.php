@@ -14,7 +14,11 @@
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/main_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/responsive.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/changable.css')}}">
+<<<<<<< HEAD
 @livewireStyles
+=======
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+>>>>>>> 533bfdd7e3e4ebebb10dae5e31a39a5ccd4cf558
 </head>
 <body>
 
@@ -36,7 +40,7 @@
 			<nav class="main_nav_container">
 				<div class="main_nav">
 					<ul class="main_nav_list">
-						<li class="main_nav_item"><a href="#">home</a></li>
+						<li class="main_nav_item"><a href="/">home</a></li>
 						<li class="main_nav_item"><a href="#">Shop</a></li>
 						<li class="main_nav_item"><a href="courses.html">about us</a></li>
 						<li class="main_nav_item"><a href="contact.html">contact</a></li>
@@ -51,24 +55,40 @@
 			</nav>
 		</div>
 		<div class="header_side d-flex flex-row justify-content-center align-items-center">
+			@if(session()->has('name'))
+			<p class="main_nav_item" style="color: black"> Welcome {{session('name')}}</p>
+			@endif
 			<ul>
                 <div class="dropdown">
-                    <a class="dropbtn"><img src="{{asset('layout/images/testimonials_user.jpg')}}" class="user-image" alt=""></a>
+                    <a class="dropbtn"><i class="material-icons" style="font-size:50px;color:black;margin-top:5px;">&#xe853;</i></a>
                     <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
+						@if(session()->has('name'))
+
+						<a href="/profile">Account</a>
+						<a href="/logout">Logout</a>
+						@else
+
+                      <a href="#">Login</a>
+                      <a href="#">Signup</a>
+						@endif
                     </div>
                   </div>
             </ul>
 		</div>
 
 		<!-- Hamburger -->
-        <div class="hamburger_container text-center mr-5">
-            <a class=""><img src="{{asset('layout/images/testimonials_user.jpg')}}" class="user-image-small" alt=""></a>
-		</div>
+        {{-- <div class="hamburger_container text-center mr-5">
+            <a class=""><i class="material-icons" style="font-size:50px;color:#3a3a3a;margin-top:5px;">&#xe853;</i></a>
+			<ul>
+                <div class="dropdown">
+                    <a class="dropbtn"><i class="material-icons" style="font-size:50px;color:black;margin-top:5px;">&#xe853;</i></a>
+
+                  </div>
+            </ul>
+		</div> --}}
 		<div class="hamburger_container ml-5">
 			<i class="fas fa-bars trans_200"></i>
+
 		</div>
 
 
@@ -93,6 +113,17 @@
 					<li class="menu_item menu_mm"><a href="elements.html">Elements</a></li>
 					<li class="menu_item menu_mm"><a href="news.html">News</a></li>
 					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
+
+						@if(session()->has('name'))
+
+					<li class="menu_item menu_mm">	<a href="#">Login</a></li>
+					<li class="menu_item menu_mm"><a href="#">Signup</a></li>
+					@else
+					<li class="menu_item menu_mm"><a href="#">Account</a></li>
+					<li class="menu_item menu_mm">   <a href="#">Logout</a></li>
+
+	                   @endif
+
 				</ul>
 
 				<!-- Menu Social -->
@@ -117,8 +148,34 @@
 	</div>
 
 	<!-- Home -->
+<<<<<<< HEAD
     @yield('content')
 
+=======
+
+
+        @yield('content')
+
+
+
+	{{-- @yield('content') --}}
+
+
+
+
+
+    @yield('content')
+
+
+
+
+
+{{-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII --}}
+
+
+
+
+>>>>>>> 533bfdd7e3e4ebebb10dae5e31a39a5ccd4cf558
 	<!-- Footer -->
 
 	<footer class="footer">

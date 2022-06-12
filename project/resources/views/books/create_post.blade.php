@@ -1,20 +1,8 @@
-@extends('master.bootstrap')
+@extends('layout')
 
 @section('content')
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-	<link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-	<link rel="stylesheet" type="text/css" href="style/main_styles.css">
-	<link rel="stylesheet" type="text/css" href="style/responsive.css">
-</head>
-	<!-- Register -->
 
-	<div class="register mt-5">
+	<div class="register">
 
 		<div class="container">
 			
@@ -81,6 +69,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</html>
+		<div class="mb-5"></div>
+
 @endsection
