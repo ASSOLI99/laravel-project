@@ -15,7 +15,6 @@
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/responsive.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/changable.css')}}">
 
-@livewireStyles
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -157,7 +156,7 @@
 
 
 
-        @yield('content')
+       
 
 
 
@@ -167,7 +166,7 @@
 
 
 
-    @yield('content')
+   
 
 
 

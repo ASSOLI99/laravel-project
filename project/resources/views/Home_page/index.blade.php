@@ -76,10 +76,10 @@
 			<div class="row course_boxes">
 
 							<!-- Popular Course Item -->
-                @foreach($catig as $item)
+                
 				<div class="col-lg-4 course_box">
 					<div class="card">
-
+						@foreach($catig as $item)
 						<img class="card-img-top" src="{{asset('layout/images/'.$item->image)}}" alt="https://unsplash.com/@dsmacinnes">
 						<div class="card-body text-center">
 							<div class="card-title"><a href="courses.html">Book shelf</a></div>
