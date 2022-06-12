@@ -15,6 +15,8 @@
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/responsive.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/changable.css')}}">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
@@ -104,10 +106,10 @@
 			<div class="menu menu_mm">
 				<ul class="menu_list menu_mm">
 					<li class="menu_item menu_mm"><a href="#">Home</a></li>
-					<li class="menu_item menu_mm"><a href="#">About us</a></li>
-					<li class="menu_item menu_mm"><a href="courses.html">Courses</a></li>
-					<li class="menu_item menu_mm"><a href="elements.html">Elements</a></li>
-					<li class="menu_item menu_mm"><a href="news.html">News</a></li>
+					{{-- <li class="menu_item menu_mm"><a href="#">About us</a></li> --}}
+					<li class="menu_item menu_mm"><a href="courses.html">Categories</a></li>
+					<li class="menu_item menu_mm"><a href="elements.html">Books</a></li>
+					<li class="menu_item menu_mm"><a href="news.html">About us</a></li>
 					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
 				
 						@if(session()->has('name'))
@@ -135,7 +137,7 @@
 					</ul>
 				</div>
 
-				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
+				<div class="menu_copyright menu_mm">books team</div>
 
 			</div>
 
@@ -203,11 +205,11 @@
 						<div class="logo_container">
 							<div class="logo">
 								<img src="{{asset('layout/images/logo.png')}}" alt="">
-								<span>course</span>
+								<span>Books</span>
 							</div>
 						</div>
 
-						<p class="footer_about_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum, tempor lacus.</p>
+						<p class="footer_about_text">The general vision of the site is determined in raising the local, Arab and international cultural and scientific level, where a group of writers, intellectuals and academics are based on this site, who are interested in providing sound.</p>
 
 					</div>
 
@@ -219,8 +221,8 @@
 							<ul>
 								<li class="footer_list_item"><a href="#">Home</a></li>
 								<li class="footer_list_item"><a href="#">About Us</a></li>
-								<li class="footer_list_item"><a href="courses.html">Courses</a></li>
-								<li class="footer_list_item"><a href="news.html">News</a></li>
+								<li class="footer_list_item"><a href="courses.html">Categories</a></li>
+								<li class="footer_list_item"><a href="news.html">Books</a></li>
 								<li class="footer_list_item"><a href="contact.html">Contact</a></li>
 							</ul>
 						</div>
@@ -235,8 +237,8 @@
 								<li class="footer_list_item"><a href="#">Testimonials</a></li>
 								<li class="footer_list_item"><a href="#">FAQ</a></li>
 								<li class="footer_list_item"><a href="#">Community</a></li>
-								<li class="footer_list_item"><a href="#">Campus Pictures</a></li>
-								<li class="footer_list_item"><a href="#">Tuitions</a></li>
+								<li class="footer_list_item"><a href="#">Pictures</a></li>
+								{{-- <li class="footer_list_item"><a href="#">Tuitions</a></li> --}}
 							</ul>
 						</div>
 					</div>
@@ -251,7 +253,7 @@
 									<div class="footer_contact_icon">
 										<img src="{{asset('layout/images/placeholder.svg')}}" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									Blvd Libertad, 34 m05200 Arévalo
+									Jordan
 								</li>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
@@ -262,7 +264,7 @@
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
 										<img src="{{asset('layout/images/envelope.svg')}}" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hello@company.com
+									</div>hellobooks@company.com
 								</li>
 							</ul>
 						</div>
@@ -276,7 +278,7 @@
 			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
 				<div class="footer_copyright">
 					<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Books team <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"></a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
 				</div>
 				<div class="footer_social ml-sm-auto">
