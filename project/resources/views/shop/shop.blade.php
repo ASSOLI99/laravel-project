@@ -1,7 +1,7 @@
 @extends('layout')
 
 
-	
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -99,7 +99,7 @@
 						<h2 class="widget-title">All Categories</h2>
 						<div class="widget-content">
 							<ul class="list-category">
-							
+
 
 								@foreach ($category as $item)
 
@@ -110,16 +110,16 @@
 										<input type="hidden" name="cat_id" value="{{$item->id}}">
 										<button class="cate-link" style="background: none ; border: none ; margin-bottom: 10px" >{{$item->name}}</button >
 									</li>
-									
+
 								</form>
-			
+
 								{{-- <li class="category-item has-child-cate">
 									<a href="{{route('shop.show_cat',$item->id)}}  {{ route('movies.show' , $item->id) }}" class="cate-link">{{$item->name}}</a>
 								</li> --}}
 
 								@endforeach
 
-								
+
 							</ul>
 						</div>
 					</div><!-- Categories widget-->
@@ -127,7 +127,7 @@
 
 				</div>
 
-				
+
 
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 main-content-area">
 
@@ -212,7 +212,6 @@
 				</div>
 				<!--end main products area-->
 
-<<<<<<< HEAD
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
 					<div class="widget mercado-widget categories-widget">
 						<h2 class="widget-title">All Categories</h2>
@@ -244,12 +243,10 @@
 
 
 				</div>
-=======
 
 
 
-				
->>>>>>> 93489d5dafd884cc27670428d354fc7a5a603d0a
+
 				<!--end sitebar-->
 
 			</div>
