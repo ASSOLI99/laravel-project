@@ -44,7 +44,7 @@
 				<div class="main_nav">
 					<ul class="main_nav_list">
 						<li class="main_nav_item"><a href="/">home</a></li>
-						<li class="main_nav_item"><a href="#">Shop</a></li>
+						<li class="main_nav_item"><a href="{{url('shop')}}">Shop</a></li>
 						<li class="main_nav_item"><a href="courses.html">about us</a></li>
 						<li class="main_nav_item"><a href="contact.html">contact</a></li>
                         <li class="main_nav_item">

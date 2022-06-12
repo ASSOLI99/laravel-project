@@ -104,7 +104,7 @@
 								@foreach ($category as $item)
 
 
-								<form method="POST" action="shop" accept-charset="UTF-8" style="display:inline">
+								<form method="POST" action="shop/.$item->id" accept-charset="UTF-8" style="display:inline">
 									{{ csrf_field() }}
 									<li class="category-item has-child-cate">
 										<input type="hidden" name="cat_id" value="{{$item->id}}">
