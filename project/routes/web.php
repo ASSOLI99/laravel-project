@@ -108,3 +108,8 @@ Route::view('forgetpassword','log/forget');
 Route::post('/forget' , [userController::class , 'forget_password']);
 Route::post('/rest' , [userController::class , 'rested_password']);
 
+
+// chat route //
+Route::get('/chat',function(){
+    return view('chat/livechat');
+});

@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/main_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/responsive.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/changable.css')}}">
+@livewireStyles
 </head>
 <body>
 
@@ -116,22 +117,8 @@
 	</div>
 
 	<!-- Home -->
-{{-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII --}}
-
-<<<<<<< HEAD
-        @yield('content')
-
-=======
-
-
-
     @yield('content')
 
-
-
-        
->>>>>>> 93489d5dafd884cc27670428d354fc7a5a603d0a
-{{-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII --}}
 	<!-- Footer -->
 
 	<footer class="footer">
@@ -279,6 +266,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{{asset('layout/plugins/scrollTo/jquery.scrollTo.min.js')}}"></script>
 <script src="{{asset('layout/plugins/easing/easing.js')}}"></script>
 <script src="{{asset('layout/js/custom.js')}}"></script>
-
+@livewireScripts
 </body>
 </html>
