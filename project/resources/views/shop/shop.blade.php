@@ -214,7 +214,6 @@
 				</div>
 				<!--end main products area-->
 
-
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
 					<div class="widget mercado-widget categories-widget">
 						<h2 class="widget-title">All Categories</h2>

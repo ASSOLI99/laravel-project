@@ -46,12 +46,18 @@
 				<div class="main_nav">
 					<ul class="main_nav_list">
 						<li class="main_nav_item"><a href="/">home</a></li>
+
+						<li class="main_nav_item"><a href="{{url('shop')}}">Shop</a></li>
+						<li class="main_nav_item"><a href="courses.html">about us</a></li>
+						<li class="main_nav_item"><a href="contact.html">contact</a></li>
+
 						<li class="main_nav_item"><a href="/shop">Shop</a></li>
 						@if(session()->has('name'))
 						<li class="main_nav_item"><a href="/create-post">post</a></li>
 						@endif
 						<li class="main_nav_item"><a href="/about">about us</a></li>
 						<li class="main_nav_item"><a href="/contact">contact</a></li>
+
                         <li class="main_nav_item">
                             <form action="">
                                 <input type="text" class="black form-control search-input">
