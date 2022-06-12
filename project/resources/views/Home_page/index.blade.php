@@ -15,7 +15,7 @@
 							
 							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">“A reader lives a thousand lives before he dies . . . The man who never reads lives only one.” - George R.R. Martin</h1>
 							<br>
-							<a href="" style="text-decoration: none;" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><button type="button" class="btn btn-outline-light" style="font-size:22px;">View Books </button></a>
+							<a href="http://localhost:8000/shop" style="text-decoration: none;" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><button type="button" class="btn btn-outline-light" style="font-size:22px;">View Books </button></a>
 						</div>
 					</div>
 				</div>
@@ -27,8 +27,12 @@
 						<div class="hero_slide_content text-center">
 							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Don't put your books on shelves and desks. Give them wings, airline tickets, and happy memories.</h1>
 							<br>
+
 							<a href="" style="text-decoration: none;"data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">
 								<button type="button" class="btn btn-outline-light" style="font-size:22px;">View Books </button></a>
+
+							<a href="http://localhost:8000/shop" style="text-decoration: none;"data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><button type="button" class="btn btn-outline-light" style="font-size:22px;">View Books </button></a>
+
 
 						</div>
 					</div>
@@ -41,7 +45,7 @@
 						<div class="hero_slide_content text-center">
 							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">"There is no delight in owning anything unshared.”</h1>
 							<br>
-							<a href="" style="text-decoration: none;" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><button type="button" class="btn btn-outline-light" style="font-size:22px;">View Books </button></a>
+							<a href="http://localhost:8000/shop" style="text-decoration: none;" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><button type="button" class="btn btn-outline-light" style="font-size:22px;">View Books </button></a>
 
 						</div>
 					</div>
@@ -86,8 +90,13 @@
 							<div class="course_author_image">
 								<img src="layout/images/home3.jpg"  alt="https://unsplash.com/@mehdizadeh" width="100%" height="100%">
 							</div>
+
 							<div class="course_author_name"><a href="" style="text-decoration:none;color:#524431; float:right !important; " >view here</a> </div>
 							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span><a href="{{url('shop/'.$category->id)}}"><span><i class="material-icons" style="font-size:35px; color:white;margin-top:10px;">&#xe315;</i></span></a></span></div>
+
+							<div class="course_author_name"><a href="http://localhost:8000/shop" style="text-decoration:none;color:#524431; float:right !important; " >view here</a> </div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span><a href="http://localhost:8000/shop"><span><i class="material-icons" style="font-size:35px; color:white;margin-top:10px;">&#xe315;</i></span></a></span></div>
+
 						</div>
 					</div>
 				</div>
