@@ -52,8 +52,8 @@ Route::group([],function(){
     });
     Route::delete('/admin/{id}',[AdminController::class, 'destroy']);
     //posts
-    Route::get('/posts',[PostController::class, 'index']);
-    Route::get('/posts/create',[PostController::class, 'create']);
+    Route::get('/admin/posts',[PostController::class, 'index']);
+    Route::get('/admin/posts/update',[PostController::class, 'update']);
     //messages
     Route::get('/messages', function () {
         return view('Admin.messages');
