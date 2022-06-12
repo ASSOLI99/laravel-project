@@ -27,7 +27,6 @@ class BookController extends Controller
 
     public function view(Request $req)
     {
-        $req->session()->put('id', 1);
 
         $user = User::find(1);
         $book = Book::where('user_id', $req->id)->get();
@@ -45,7 +44,7 @@ class BookController extends Controller
         $post->state = 3;
         $post->update();
 
-        return  redirect('/order/'.$id)->with('flash_message', 'data Updated!');  
+        return  redirect('/order/'.session('id'))->with('flash_message', 'data Updated!');  
     }
 
     public function delete($id)
@@ -53,7 +52,7 @@ class BookController extends Controller
         $post = Book::find($id);
         $post->delete();
 
-        return  redirect('/order/'.$id)->with('flash_message', 'data Deleted!');  
+        return  redirect('/order/'.session('id'))->with('flash_message', 'data Deleted!');  
     }
 
 

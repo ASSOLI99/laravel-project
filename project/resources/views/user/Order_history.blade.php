@@ -69,13 +69,13 @@
                                                 <span style=" font-weight: bold;color : black">Author :</span>  {{$item->author}} <br />
                                                 
 
-                                                <form action="{{url('update/'.session('id'))}}" method="POST">
+                                                <form action="{{url('update/'.$item->id)}}" method="POST">
                                                     @csrf
                                                      <input type="hidden" value="{{$item->id}}">
                                                      <input class="btn btn-info btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Disable ">
                                                 </form>
                                                 
-                                                <form action="{{url('delete/'.session('id'))}}" method="POST">
+                                                <form action="{{url('delete/'.$item->id)}}" method="POST">
                                                     @csrf
                                                     <input type="hidden" value="{{$item->id}}">
                                                     <input class="btn btn-danger btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Delete " >
