@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Validator;
 class userController extends Controller
 {
     public function data(Request $request){
-        
-      
+
+
         $validated = $request->validate([
-            'fname' => 'required|max:255|regex:/(^([a-zA-Z]+)(\d+)?$)/u', 
+            'fname' => 'required|max:255|regex:/(^([a-zA-Z]+)(\d+)?$)/u',
             'lname' => 'required|max:255|regex:/(^([a-zA-Z]+)(\d+)?$)/u',
             'email' => 'required|unique:user|email',
             'phone' => 'required|regex:/^([0]{1}[7-9]{1})([0-9]{8})$/|digits:10|unique:user,phone',
@@ -28,9 +28,9 @@ class userController extends Controller
             'address' => 'required',
 
         ]);
-     
-    
-        
+
+
+
 
         if($request->pass !== $request->pass2){
              var_dump($request->all());
@@ -47,23 +47,23 @@ class userController extends Controller
         $user->address=$request->address;
         $user->save();
            return redirect('/login');
-        } 
         }
-       
-        
-      
-    
+        }
+
+
+
+
 
        public function login(Request $request){
-    
+
         $email=$request->email;
         $password=$request->pass;
         $data= User::where('email',$email)->first();
-        
+
         if(isset($data)){
-        
+
         if(Hash::check($password,$data->password)==true){
-        
+
             $request->session()->put('email',$data['email']);
             return redirect('create-post');
         }else
@@ -74,7 +74,7 @@ class userController extends Controller
        }else
        {
         return redirect('login')->with('email_incorrect' , 'Email Does not Exist');
-        
+
        }
     }
 
@@ -83,7 +83,7 @@ class userController extends Controller
     public function forget_password(Request $request)
     {
         $user = User::where('email' , $request->forget_email)->first();
-        
+
         $token =  $request->input('_token');
         if(!isset($user))
         {
@@ -95,7 +95,7 @@ class userController extends Controller
 
         $forget_data->save();
 
-        
+
 
         $tokenData = Forget::where('email' , $request->forget_email)->first();
 
@@ -113,9 +113,9 @@ class userController extends Controller
         // $user = User::where('email' , $email)->first();
 
         $link = asset('/reset_password?token='.$token.'&email='.$email);
-        
+
         try {
-            //Here send the link with CURL with an external email API 
+            //Here send the link with CURL with an external email API
             $data = ["link"=>$link , 'email'=>$email];
             Mail::to($email)->send(new ResetMail($data));
             return true;
@@ -132,7 +132,7 @@ class userController extends Controller
 
     public function rested_password(Request $request)
     {
-        
+
         $password1 = $request->reset_password;
         $password2 = $request->confirm_reset_password;
         $email = $request->email_reset;
@@ -140,13 +140,13 @@ class userController extends Controller
             'reset_password'=>'required|min:8|max:25',
             'confirm_reset_password'=>'required|min:8|max:25',
 
-            
+
         ]);
         if ($password1 === $password2) {
             $password1 = Hash::make($password1);
             User::where('email', $email)->update(array('password' => $password1));
             return redirect('create-post');
-            
+
         }else
         {
             return redirect('resetpassword')->with('inn' , 'Password Not match');
