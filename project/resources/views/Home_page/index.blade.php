@@ -67,7 +67,7 @@
 					<div class="section_title text-center">
 						<h1>Books Categories</h1>
 
-						<h1>Books categories</h1>
+						
 
 					</div>
 				</div>
