@@ -10,7 +10,9 @@ use Illuminate\Validation\Rule;
 class AdminController extends Controller
 {
     public function index(){
-        return view('Admin.admins');
+        return view('Admin.admins',[
+            'admins'=>Admin::all()
+        ]);
     }
     public function create(){
         return view('Admin/admins/create');
@@ -27,7 +29,7 @@ class AdminController extends Controller
         //hash password
         $formFields['password']=bcrypt($formFields['password']);
         $admin = Admin::create($formFields);
-        return redirect('/admins')->with('message','Admin Added');
+        return redirect('/admins')->with('message','Admin Added Successfully');
     }
     public function login(Request $request){
     
@@ -50,6 +52,10 @@ class AdminController extends Controller
        {
            return redirect('admin/login')->with('message' , 'Email Incorrect'); 
        }
+    }
+    public function destroy(Admin $id){
+        $id->delete();
+        return redirect('/admins')->with('message','Admin deleted successfully');
     }
 }
 
