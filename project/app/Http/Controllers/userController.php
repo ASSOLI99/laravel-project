@@ -64,7 +64,8 @@ class userController extends Controller
         
         if(Hash::check($password,$data->password)==true){
         
-            $request->session()->put('email',$data['email']);
+            $request->session()->put('id',$data->id);
+            $request->session()->put('name',$data->Fname);
             return redirect('create-post');
         }else
         {

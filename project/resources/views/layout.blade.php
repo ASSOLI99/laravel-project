@@ -116,12 +116,12 @@
 	</div>
 
 	<!-- Home -->
-{{-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII --}}
 
-<<<<<<< HEAD
+
+
         @yield('content')
 
-=======
+
 
 
 
@@ -130,8 +130,8 @@
 
 
         
->>>>>>> 93489d5dafd884cc27670428d354fc7a5a603d0a
-{{-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII --}}
+
+
 	<!-- Footer -->
 
 	<footer class="footer">
