@@ -1,3 +1,8 @@
+@extends('layout')
+
+
+	
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +33,11 @@
 		}
 	</style>
 </head>
-
+@section('content')
+<br><br>
+<br><br>
+<br><br>
+<br><br>
 <body class="home-page home-01 ">
 
 	<!-- mobile menu -->
@@ -42,9 +51,9 @@
 	<!--header-->
 	<!-- <header id="header" class="header header-style-1">
 		<div class="container-fluid">
-			<div class="row">			
+			<div class="row">
 				<div class="nav-section header-sticky">
-					
+
 
 					<div class="primary-nav-section">
 						<div class="container">
@@ -63,7 +72,7 @@
 								</li>
 								<li class="menu-item">
 									<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
-								</li>								
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -85,7 +94,42 @@
 			</div>
 			<div class="row">
 
-				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
+				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
+					<div class="widget mercado-widget categories-widget">
+						<h2 class="widget-title">All Categories</h2>
+						<div class="widget-content">
+							<ul class="list-category">
+							
+
+								@foreach ($category as $item)
+
+
+								<form method="POST" action="shop" accept-charset="UTF-8" style="display:inline">
+									{{ csrf_field() }}
+									<li class="category-item has-child-cate">
+										<input type="hidden" name="cat_id" value="{{$item->id}}">
+										<button class="cate-link" style="background: none ; border: none ; margin-bottom: 10px" >{{$item->name}}</button >
+									</li>
+									
+								</form>
+			
+								{{-- <li class="category-item has-child-cate">
+									<a href="{{route('shop.show_cat',$item->id)}}  {{ route('movies.show' , $item->id) }}" class="cate-link">{{$item->name}}</a>
+								</li> --}}
+
+								@endforeach
+
+								
+							</ul>
+						</div>
+					</div><!-- Categories widget-->
+
+
+				</div>
+
+				
+
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 main-content-area">
 
 					<div class="wrap-shop-control">
 
@@ -142,7 +186,7 @@
 									<div class="product-info">
 										<div class="wrap-price"><span class="product-price">{{$item->name}}</span></div>
 										<a href="#" class="product-name"><span>{{$item->description}}</span></a>
-										<a href="#" class="btn add-to-cart">view details</a>
+										<a href="single/{{$item->id}}" class="btn add-to-cart">view details</a>
 									</div>
 								</div>
 							</li>
@@ -168,38 +212,44 @@
 				</div>
 				<!--end main products area-->
 
+<<<<<<< HEAD
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
 					<div class="widget mercado-widget categories-widget">
 						<h2 class="widget-title">All Categories</h2>
 						<div class="widget-content">
 							<ul class="list-category">
-							
+
 
 								@foreach ($category as $item)
 
 
-								<form method="POST" action="shop" accept-charset="UTF-8" style="display:inline">
+								<form method="POST" action="{{ route('shop.index' , $item->id) }}" accept-charset="UTF-8" style="display:inline">
 									{{ csrf_field() }}
 									<li class="category-item has-child-cate">
-										<input type="hidden" name="cat_id" value="{{$item->id}}">
-										<button class="cate-link" style="background: none ; border: none ; margin-bottom: 10px" >{{$item->name}}</button >
+										<a href="#" class="cate-link">{{$item->name}}</a>
 									</li>
-									
+
 								</form>
-			
+
 								{{-- <li class="category-item has-child-cate">
 									<a href="{{route('shop.show_cat',$item->id)}}  {{ route('movies.show' , $item->id) }}" class="cate-link">{{$item->name}}</a>
 								</li> --}}
 
 								@endforeach
 
-								
+
 							</ul>
 						</div>
 					</div><!-- Categories widget-->
 
 
 				</div>
+=======
+
+
+
+				
+>>>>>>> 93489d5dafd884cc27670428d354fc7a5a603d0a
 				<!--end sitebar-->
 
 			</div>
@@ -213,6 +263,7 @@
 
 
 
+
 	<script src="shop_assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4"></script>
 	<script src="shop_assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4"></script>
 	<script src="shop_assets/js/bootstrap.min.js"></script>
@@ -222,5 +273,7 @@
 	<script src="shop_assets/js/jquery.sticky.js"></script>
 	<script src="shop_assets/js/functions.js"></script>
 </body>
+@endsection
+
 
 </html>

@@ -40,6 +40,12 @@ Route::group([],function(){
     Route::get('/user', function () {
         return view('Admin.user');
     });
+
+    //login
+    Route::get('/admin/login', function () {
+        return view('Admin/admins/login');
+    });
+    Route::post('admin/login',[AdminController::class,'login']);
     //admins
     Route::get('/admins',[AdminController::class, 'index']);
     Route::post('/admins',[AdminController::class, 'store']);
@@ -74,7 +80,6 @@ Route::post('/login',[userController::class,'login']);
 //home page
 
 
-
 //about
 
 Route::view('order', 'user/Order_history');
@@ -85,22 +90,21 @@ Route::view('contact', 'common/contact');
 Route::post('contact',[contactcontroller::class,'message']);
 Route::get('/home',[CategoryController::class,'show']);
 Route::view('about', 'common/about');
-Route::view('post', 'common/post');
+Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
 
 
-// user
-Route::view('order', 'user/Order_history');
-Route::view('profile', 'user/user_profile');
 
 //shop
 // Route::view('shop', 'shop/shop');
 //oute::get('shop' , [BookController::class , 'show']);
 
-//route::get('shop/{cat_id}', [BookController::class , 'show']);
 
 Route::get('shop',[BookController::class,'show']);
 Route::post('shop',[BookController::class,'show']);
 
 
-Route::view('resetpassword','log/reset_pass');
+Route::get('reset_password',[userController::class, 'view_rest']);
+Route::view('forgetpassword','log/forget');
+Route::post('/forget' , [userController::class , 'forget_password']);
+Route::post('/rest' , [userController::class , 'rested_password']);
 

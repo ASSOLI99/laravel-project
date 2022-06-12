@@ -28,25 +28,35 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      
-		      	<form action="/forget" class="signin-form" method="post">
+                        @php
+                            $email = $_GET['email'];
+                        @endphp
+		      	<form action="/rest" class="signin-form" method="post">
 					@csrf
 		      		<div class="form-group mb-3">
-		      			<input type="text" class="form-control" name="forget_email" placeholder="Email address" required>
+		      			<input type="text" class="form-control" name="reset_password" placeholder="New Password" required>
+		      		</div>
+		      		<div class="form-group mb-3">
+		      			<input type="text" class="form-control" name="confirm_reset_password" placeholder="Confirm New Password" required>
 		      		</div>
 
-                      @if ( $message = Session::get('sent'))
+                      <div class="form-group mb-3">
+                        <input type="hidden" class="form-control" name="email_reset" placeholder="Confirm New Password" value="{{$email}}">
+                    </div>
+
+                      @if ( $message = Session::get('inn'))
                         <div style="color: red ; text-algin:center">{{$message}}</div>
                       @endif
 
-                      @if ( $message = Session::get('miss_email'))
+                      @if ( $message = Session::get('reset_password'))
                         <div style="color: red">{{$message}}</div>
                       @endif
-                      @if ( $message = Session::get('connect'))
+                      @if ( $message = Session::get('reset_password'))
                         <div style="color: red">{{$message}}</div>
                       @endif
                       
 	            <div class="form-group">
-	            	<button type="submit" class="form-control btn btn-primary submit px-3" >Send Email</button>
+	            	<button type="submit" class="form-control btn btn-primary submit px-3" >Confirm</button>
 	            </div>
                 
 	          </form>

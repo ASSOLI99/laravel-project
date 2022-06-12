@@ -128,7 +128,7 @@
 		</div>
 	</div>
 
-	<!-- Register -->
+        <!-- Register -->
 
 	<div class="register">
 

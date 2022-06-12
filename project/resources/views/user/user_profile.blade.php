@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+
+
+@extends('layout')
+
+    
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
-    <!--  All snippets are MIT license http://bootdey.com/license -->
     <title>Update user profile - Bootdey.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -11,6 +14,11 @@
 	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+    @section('content')
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
     <div class="view-account">
@@ -23,7 +31,7 @@
             		<nav class="side-menu">
         				<ul class="nav">
         					<li class="active"><a href="#"><span class="fa fa-user"></span> Profile</a></li>
-        					<li><a href="#"><span class="fa fa-credit-card"></span> Order history</a></li>
+        					<li><a href="{{url('order')}}"><span class="fa fa-credit-card"></span> Order history</a></li>
         				</ul>
         			</nav>
                 </div>
@@ -38,7 +46,7 @@
                                 </figure>
                                 <div class="form-inline col-md-10 col-sm-9 col-xs-12">
                                     <input type="file" class="file-uploader pull-left">
-                                    <button type="submit" class="btn btn-sm btn-default-alt pull-left">Update Image</button>
+                                    <button type="submit" class="btn btn-sm btn-info pull-left" style="font-size: 17px">Update Image</button>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -82,7 +90,7 @@
                         <hr>
                         <div class="form-group">
                             <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-                                <input class="btn btn-primary" type="submit" value="Update Profile">
+                                <input class="btn btn-success" type="submit" value="Update Profile" style="font-size: 17px">
                             </div>
                         </div>
                     </form>
@@ -607,7 +615,7 @@ color: #a2a6af
 
 @media (min-width:992px) {
 .view-account .content-panel {
-    min-height: 800px;
+    min-height: 600px;
     border-left: 1px solid #f3f3f7;
     margin-left: 200px
 }
@@ -681,5 +689,8 @@ color: #a2a6af
 <script type="text/javascript">
 
 </script>
+<br><br>
+@endsection
+
 </body>
 </html>
