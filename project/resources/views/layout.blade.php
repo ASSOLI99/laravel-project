@@ -15,6 +15,10 @@
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/responsive.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/changable.css')}}">
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8e175ef05f0f60b87aa476b864208a5d77398cec
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -116,7 +120,7 @@
 					<li class="menu_item menu_mm"><a href="news.html">About us</a></li>
 					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
 
-						@if(session()->has('name'))
+					@if(session()->has('name'))
 
 					<li class="menu_item menu_mm">	<a href="#">Login</a></li>
 					<li class="menu_item menu_mm"><a href="#">Signup</a></li>
@@ -156,6 +160,7 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        
 
 
@@ -163,12 +168,23 @@
 =======
 >>>>>>> 499fd9d01471b5d0d1ad7924b010cb6b7928d992
 	{{-- @yield('content') --}}
+=======
+     
+
+
+
+	@yield('content')
+
+>>>>>>> 8e175ef05f0f60b87aa476b864208a5d77398cec
 
 
 
 
 
+<<<<<<< HEAD
    
+=======
+>>>>>>> 8e175ef05f0f60b87aa476b864208a5d77398cec
 
 
 
@@ -327,6 +343,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{{asset('layout/plugins/scrollTo/jquery.scrollTo.min.js')}}"></script>
 <script src="{{asset('layout/plugins/easing/easing.js')}}"></script>
 <script src="{{asset('layout/js/custom.js')}}"></script>
-@livewireScripts
+
 </body>
 </html>
