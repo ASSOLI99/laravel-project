@@ -13,8 +13,8 @@
         <a class="btn btn-secondary" href="/admin/category">Back</a>
         <h2>Edit Category</h2>
         <img
-        class=""
-        src="{{$category->image ? storage_path('app\\' . $category->image) :asset('/image/no-image.jpg')}}"
+        class="" width="250px"
+        src="{{$category->image ? asset('storage/' . $category->image) :asset('/image/no-image.jpg')}}"
         alt=""
     />
     <form action="/admin/category/edit/{{$category->id}} method="POST" enctype="multipart/form-data">
