@@ -63,11 +63,28 @@ class CategoryController extends Controller
         ]);
 
         if($request->hasFile('image')){
-            $formFields['image']=$request->file('image')->store('images', 'public');
+            $formFields['image']=$request->file('image')->store('image', 'public');
         }
 
         Category::create($formFields);
         return redirect('/admin/category')->with('message','Category Added Successfully');
+    }
+    //update data
+    public function update(Request $request, Category $id){
+        $formFields=$request->validate([
+            'name'=>'required',
+            'image'
+        ]);
+
+        if($request->hasFile('image')){
+            $formFields['image']=$request->file('image')->store('image', 'public');
+        }
+
+        $id->update($formFields);
+        return redirect('/admin/category')->with('message','Listing Updated successfully');
+    }
+    public function edit(Category $id){
+        return view('Admin.category.edit',['category'=>$id]);
     }
 }
 
