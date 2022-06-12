@@ -373,15 +373,13 @@ class ComposerStaticInitf52015f22b9a837418c4a39a3ee6c7a1
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-<<<<<<< HEAD
+
         'Livewire\\' => 
         array (
             0 => __DIR__ . '/..' . '/livewire/livewire/src',
         ),
-        'League\\MimeTypeDetection\\' => 
-=======
+       
         'League\\MimeTypeDetection\\' =>
->>>>>>> 533bfdd7e3e4ebebb10dae5e31a39a5ccd4cf558
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
         ),
@@ -413,15 +411,13 @@ class ComposerStaticInitf52015f22b9a837418c4a39a3ee6c7a1
         array (
             0 => __DIR__ . '/..' . '/laravel/sail/src',
         ),
-<<<<<<< HEAD
+
         'Laravel\\Breeze\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/breeze/src',
         ),
         'Illuminate\\Support\\' => 
-=======
-        'Illuminate\\Support\\' =>
->>>>>>> 533bfdd7e3e4ebebb10dae5e31a39a5ccd4cf558
+
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
             1 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections',
@@ -558,11 +554,10 @@ class ComposerStaticInitf52015f22b9a837418c4a39a3ee6c7a1
         'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\Models\\Book' => __DIR__ . '/../..' . '/app/Models/Book.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
-<<<<<<< HEAD
         'App\\Models\\Forget' => __DIR__ . '/../..' . '/app/Models/Forget.php',
         'App\\Models\\Message' => __DIR__ . '/../..' . '/app/Models/Message.php',
         'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
-=======
+
 
 
 
@@ -573,7 +568,7 @@ class ComposerStaticInitf52015f22b9a837418c4a39a3ee6c7a1
         'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
         'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
 
->>>>>>> 533bfdd7e3e4ebebb10dae5e31a39a5ccd4cf558
+
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\contact' => __DIR__ . '/../..' . '/app/Models/contact.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
