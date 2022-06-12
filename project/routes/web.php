@@ -101,7 +101,7 @@ Route::view('profile', 'user/user_profile');
 
 Route::view('contact', 'common/contact');
 Route::post('contact',[contactcontroller::class,'message']);
-Route::get('/',[CategoryController::class,'show']);
+Route::get('/home',[CategoryController::class,'show']);
 Route::view('about', 'common/about');
 Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
 
@@ -112,8 +112,8 @@ Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
 Route::get('profile',[userController::class,'view']);
 Route::post('profile',[userController::class,'view']);
 
-Route::get('order',[ordercontroller::class,'view']);
-Route::post('order',[ordercontroller::class,'view']);
+Route::get('order/{id}',[BookController::class,'view']);
+Route::post('order',[BookController::class,'view']);
 
 
 //shop
@@ -130,3 +130,8 @@ Route::view('forgetpassword','log/forget');
 Route::post('/forget' , [userController::class , 'forget_password']);
 Route::post('/rest' , [userController::class , 'rested_password']);
 
+
+// chat route //
+Route::get('/chat',function(){
+    return view('chat/livechat');
+});

@@ -1,7 +1,7 @@
 @extends('layout')
 
 
-	
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -99,7 +99,7 @@
 						<h2 class="widget-title">All Categories</h2>
 						<div class="widget-content">
 							<ul class="list-category">
-							
+
 
 								@foreach ($category as $item)
 
@@ -110,16 +110,16 @@
 										<input type="hidden" name="cat_id" value="{{$item->id}}">
 										<button class="cate-link" style="background: none ; border: none ; margin-bottom: 10px" >{{$item->name}}</button >
 									</li>
-									
+
 								</form>
-			
+
 								{{-- <li class="category-item has-child-cate">
 									<a href="{{route('shop.show_cat',$item->id)}}  {{ route('movies.show' , $item->id) }}" class="cate-link">{{$item->name}}</a>
 								</li> --}}
 
 								@endforeach
 
-								
+
 							</ul>
 						</div>
 					</div><!-- Categories widget-->
@@ -127,7 +127,7 @@
 
 				</div>
 
-				
+
 
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 main-content-area">
 
@@ -175,6 +175,7 @@
 						<ul class="product-list grid-products equal-container " >
 
 							@foreach ($book as $item)
+							@if($item->state == '1')
 							<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 " id="card">
 								<div class="product product-style-3 equal-elem ">
 									<div class="product-thumnail">
@@ -190,6 +191,7 @@
 									</div>
 								</div>
 							</li>
+							@endif
 							@endforeach
 
 
@@ -213,6 +215,9 @@
 				<!--end main products area-->
 
 <<<<<<< HEAD
+
+=======
+>>>>>>> 533bfdd7e3e4ebebb10dae5e31a39a5ccd4cf558
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
 					<div class="widget mercado-widget categories-widget">
 						<h2 class="widget-title">All Categories</h2>
@@ -223,11 +228,12 @@
 								@foreach ($category as $item)
 
 
-								<form method="POST" action="{{ route('shop.index' , $item->id) }}" accept-charset="UTF-8" style="display:inline">
+								<form method="POST" action="shop" accept-charset="UTF-8" style="display:inline">
 									{{ csrf_field() }}
 									<li class="category-item has-child-cate">
 										<a href="#" class="cate-link">{{$item->name}}</a>
 									</li>
+									<input type="hidden" value="{{$item->id}}" name="cat_id">
 
 								</form>
 
@@ -244,12 +250,10 @@
 
 
 				</div>
+<<<<<<< HEAD
 =======
 
-
-
-				
->>>>>>> 93489d5dafd884cc27670428d354fc7a5a603d0a
+>>>>>>> 533bfdd7e3e4ebebb10dae5e31a39a5ccd4cf558
 				<!--end sitebar-->
 
 			</div>

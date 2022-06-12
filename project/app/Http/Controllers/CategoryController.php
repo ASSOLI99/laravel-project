@@ -70,4 +70,3 @@ class CategoryController extends Controller
         return redirect('/admin/category')->with('message','Category Added Successfully');
     }
 }
-

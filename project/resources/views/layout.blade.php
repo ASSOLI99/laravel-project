@@ -14,7 +14,11 @@
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/main_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/responsive.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/changable.css')}}">
+<<<<<<< HEAD
+@livewireStyles
+=======
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+>>>>>>> 533bfdd7e3e4ebebb10dae5e31a39a5ccd4cf558
 </head>
 <body>
 
@@ -59,7 +63,7 @@
                     <a class="dropbtn"><i class="material-icons" style="font-size:50px;color:black;margin-top:5px;">&#xe853;</i></a>
                     <div class="dropdown-content">
 						@if(session()->has('name'))
-							
+
 						<a href="/profile">Account</a>
 						<a href="/logout">Logout</a>
 						@else
@@ -78,13 +82,13 @@
 			<ul>
                 <div class="dropdown">
                     <a class="dropbtn"><i class="material-icons" style="font-size:50px;color:black;margin-top:5px;">&#xe853;</i></a>
-                    
+
                   </div>
             </ul>
 		</div> --}}
 		<div class="hamburger_container ml-5">
 			<i class="fas fa-bars trans_200"></i>
-			
+
 		</div>
 
 
@@ -109,17 +113,17 @@
 					<li class="menu_item menu_mm"><a href="elements.html">Elements</a></li>
 					<li class="menu_item menu_mm"><a href="news.html">News</a></li>
 					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
-				
+
 						@if(session()->has('name'))
-							
+
 					<li class="menu_item menu_mm">	<a href="#">Login</a></li>
 					<li class="menu_item menu_mm"><a href="#">Signup</a></li>
 					@else
 					<li class="menu_item menu_mm"><a href="#">Account</a></li>
 					<li class="menu_item menu_mm">   <a href="#">Logout</a></li>
-						                  
+
 	                   @endif
-                   
+
 				</ul>
 
 				<!-- Menu Social -->
@@ -144,6 +148,13 @@
 	</div>
 
 	<!-- Home -->
+<<<<<<< HEAD
+    @yield('content')
+
+=======
+
+
+        @yield('content')
 
 
 
@@ -157,9 +168,14 @@
 
 
 
-        
 
 
+{{-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII --}}
+
+
+
+
+>>>>>>> 533bfdd7e3e4ebebb10dae5e31a39a5ccd4cf558
 	<!-- Footer -->
 
 	<footer class="footer">
@@ -307,6 +323,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{{asset('layout/plugins/scrollTo/jquery.scrollTo.min.js')}}"></script>
 <script src="{{asset('layout/plugins/easing/easing.js')}}"></script>
 <script src="{{asset('layout/js/custom.js')}}"></script>
-
+@livewireScripts
 </body>
 </html>
