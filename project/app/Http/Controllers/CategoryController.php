@@ -87,4 +87,3 @@ class CategoryController extends Controller
         return view('Admin.category.edit',['category'=>$id]);
     }
 }
-

@@ -1003,12 +1003,15 @@ section
 
 .register
 {
+	margin-top: 15%;
+	/* margin-bottom: 200px; */
+	
 	width: 100%;
 }
 .register_section
 {
 	width: 100%;
-	background: #ffb606;
+	/* background: #ffb606; */
 	padding-top: 156px;
 	padding-bottom: 161px;
 }
