@@ -78,6 +78,16 @@ class userController extends Controller
         }
     }
 
+    public function logout()
+    {
+        if(session()->has('name'))
+        {
+            session()->pull('name');
+            session()->pull('id');
+            return redirect('/');
+        }
+    }
+
     //reset password functions
 
     public function forget_password(Request $request)
