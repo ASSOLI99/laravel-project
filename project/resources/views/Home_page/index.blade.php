@@ -74,7 +74,7 @@
 
                             <!-- Popular Course Item -->
                 @foreach($catig as $item)
-                <div class="col-lg-4 course_box">
+                <div class="col-lg-4 course_box row">
                     <div class="card">
                         <img class="card-img-top" src="style/images/{{$item->image}}" alt="https://unsplash.com/@dsmacinnes%22%3E
                         <div class="card-body text-center">
