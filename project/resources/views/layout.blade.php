@@ -37,6 +37,9 @@
 					<ul class="main_nav_list">
 						<li class="main_nav_item"><a href="#">home</a></li>
 						<li class="main_nav_item"><a href="#">Shop</a></li>
+						{{-- @if (isset(session('name')))
+							
+						@endif --}}
 						<li class="main_nav_item"><a href="courses.html">about us</a></li>
 						<li class="main_nav_item"><a href="contact.html">contact</a></li>
                         <li class="main_nav_item">
@@ -54,9 +57,15 @@
                 <div class="dropdown">
                     <a class="dropbtn"><img src="{{asset('layout/images/testimonials_user.jpg')}}" class="user-image" alt=""></a>
                     <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
+						@if(session()->has('name'))
+							
+						<a href="#">Login</a>
+						<a href="#">Signup</a>
+						@else
+
+                      <a href="#">Account</a>
+                      <a href="#">Logout</a>
+						@endif
                     </div>
                   </div>
             </ul>
@@ -119,7 +128,7 @@
 
 
 
-        @yield('content')
+	{{-- @yield('content') --}}
 
 
 

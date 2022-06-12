@@ -66,7 +66,7 @@ class userController extends Controller
         
             $request->session()->put('id',$data->id);
             $request->session()->put('name',$data->Fname);
-            return redirect('create-post');
+            return redirect('/');
         }else
         {
             return redirect('login')->with('incorrect_password' , 'Password Incorrect');
