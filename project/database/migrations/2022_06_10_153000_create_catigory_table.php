@@ -16,14 +16,14 @@ class CreateCatigoryTable extends Migration
         Schema::create('catigory', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-<<<<<<< HEAD
+
             $table->text('book_description');
             $table->string('book_auther');
             $table->string('book_genre');
             $table->string('book_image',2040);
-=======
+
             $table->string('image')->nullable();
->>>>>>> 479fb08f6b09c1582b27bf3deb218354dfa3e23f
+
             $table->timestamps();
         });
     }

@@ -25,9 +25,7 @@ use App\Http\Controllers\ordercontroller;
 */
 
 
-Route::get('/', function () {
-    return view('/Home_page/index');
-});
+Route::get('/', [CategoryController::class,'show']);
 
 
 
