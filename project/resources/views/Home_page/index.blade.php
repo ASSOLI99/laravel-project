@@ -58,28 +58,28 @@
 
 	<!-- Popular -->
 
+
+
 	<div class="popular page_section">
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
 						<h1>Books Categories</h1>
+
+						<h1>Books categories</h1>
+
 					</div>
 				</div>
 			</div>
 
 			<div class="row course_boxes">
 
-				<!-- Popular Course Item -->
-
-
-				<!-- Popular Course Item -->
-
-
-				<!-- Popular Course Item -->
+							<!-- Popular Course Item -->
                 @foreach($catig as $item)
 				<div class="col-lg-4 course_box">
 					<div class="card">
+
 						<img class="card-img-top" src="{{asset('layout/images/'.$item->image)}}" alt="https://unsplash.com/@dsmacinnes">
 						<div class="card-body text-center">
 							<div class="card-title"><a href="courses.html">Book shelf</a></div>
@@ -91,6 +91,19 @@
 							</div>
 							<div class="course_author_name" ><span><a href="" style="text-decoration:none;color:#524431; float:right !important; " >view here</a> </span></div>
 							<div class="course_price d-flex flex-column align-items-center justify-content-center"><a href=""><span><i class="material-icons" style="font-size:35px; color:white;margin-top:10px;">&#xe315;</i></span></a></div>
+
+						<img class="card-img-top" src="/style/images/{{$item->book_image}}" alt="https://unsplash.com/@dsmacinnes">
+						<div class="card-body text-center">
+							<div class="card-title"><a href="courses.html">{{$item->book_genre}}</a></div>
+							<div class="card-text"></div>
+						</div>
+						<div class="price_box d-flex flex-row align-items-center">
+							<div class="course_author_image">
+								<!-- <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh"> -->
+							</div>
+							<div class="course_author_name"><button type="button" class="btn btn-outline-warning">show</button></div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"> </div>
+
 						</div>
 					</div>
 				</div>
@@ -98,6 +111,10 @@
 			</div>
 		</div>
 	</div>
+
+
+
+
 
         <!-- Register -->
 

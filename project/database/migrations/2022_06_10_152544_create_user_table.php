@@ -23,6 +23,7 @@ class CreateUserTable extends Migration
             $table->string('password');
             $table->string('user_img');
             $table->timestamps();
+
         });
     }
 

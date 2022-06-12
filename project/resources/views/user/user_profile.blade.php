@@ -27,12 +27,12 @@
             <div class="module-inner">
                 <div class="side-bar">
                     <div class="user-info">
-                        <img class="img-profile img-circle img-responsive center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="">
+                        <img class="  center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="" style="width: 100px ; height:auto ; border-radius:50%">
                     </div>
             		<nav class="side-menu">
         				<ul class="nav">
         					<li class="active"><a href="#"><span class="fa fa-user"></span> Profile</a></li>
-        					<li><a href="{{url('order')}}"><span class="fa fa-credit-card"></span> Order history</a></li>
+        					<li><a href="{{url('order/'.session('id'))}}"><span class="fa fa-credit-card"></span> Order history</a></li>
         				</ul>
         			</nav>
                 </div>
@@ -44,11 +44,12 @@
                             <h3 class="fieldset-title">Personal Info</h3>
                             <div class="form-group avatar">
                                 <figure class="figure col-md-2 col-sm-3 col-xs-12">
-                                    <img class="img-rounded img-responsive" src="{{asset('user_img/'.$user->user_img)}}" alt="">
+                                    <img class="img-rounded img-responsive" src="{{asset('user_img/'.session('user_img'))}}" alt=""  name="user_image">
+                                    <input type="hidden" value="{{session('user_img')}}" name="user_image">
                                 </figure>
                                 <div class="form-inline col-md-10 col-sm-9 col-xs-12">  
                                     <input type="file" class="file-uploader pull-left" name="user_img">
-                                    <button type="submit" class="btn btn-sm btn-info pull-left" style="font-size: 17px">Update Image</button>
+                                    <button type="submit" class="btn btn-sm btn-info pull-left" style="font-size: 17px">Test Image</button>
                                 </div>
                             </div>
                             <div class="form-group">

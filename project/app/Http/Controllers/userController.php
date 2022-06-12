@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use App\Mail\ResetMail;
@@ -14,11 +15,14 @@ use Illuminate\Support\Facades\Validator;
 
 class userController extends Controller
 {
-    public function data(Request $request){
-        
-      
+
+    // public function data(Request $request){
+
+    public function data(Request $request)
+    {
+
         $validated = $request->validate([
-            'fname' => 'required|max:255|regex:/(^([a-zA-Z]+)(\d+)?$)/u', 
+            'fname' => 'required|max:255|regex:/(^([a-zA-Z]+)(\d+)?$)/u',
             'lname' => 'required|max:255|regex:/(^([a-zA-Z]+)(\d+)?$)/u',
             'email' => 'required|unique:user|email',
             'phone' => 'required|regex:/^([0]{1}[7-9]{1})([0-9]{8})$/|digits:10|unique:user,phone',
@@ -28,55 +32,61 @@ class userController extends Controller
             'address' => 'required',
 
         ]);
-     
-    
-        
 
-        if($request->pass !== $request->pass2){
-             var_dump($request->all());
-            return redirect('signup')->with('message','password does not match');
-        }else{
-            $user=new User;
-        $user->Fname=$request->fname;
-        $user->Lname=$request->lname;
-        $user->email=$request->email;
-        $password = $request->pass;
-        $hashed = Hash::make($password);
-        $user->password =$hashed;
-        $user->phone=$request->phone;
-        $user->address=$request->address;
-        $user->save();
-           return redirect('/login');
-        } 
+
+        if ($request->pass !== $request->pass2) {
+            var_dump($request->all());
+            return redirect('signup')->with('message', 'password does not match');
+        } else {
+            $user = new User;
+            $user->Fname = $request->fname;
+            $user->Lname = $request->lname;
+            $user->email = $request->email;
+            $password = $request->pass;
+            $hashed = Hash::make($password);
+            $user->password = $hashed;
+            $user->phone = $request->phone;
+            $user->address = $request->address;
+            $user->save();
+            return redirect('/login');
         }
-       
-        
-      
-    
+    }
 
-       public function login(Request $request){
-    
+       public function login(Request $request)
+       {
+
         $email=$request->email;
         $password=$request->pass;
         $data= User::where('email',$email)->first();
-        
-        if(isset($data)){
-        
-        if(Hash::check($password,$data->password)==true){
-        
-            $request->session()->put('id',$data->id);
-            $request->session()->put('name',$data->Fname);
+
+        if (isset($data)) {
+
+            if (Hash::check($password, $data->password) == true) {
+
+                $request->session()->put('id', $data->id);
+                $request->session()->put('name', $data->Fname);
+                return redirect('/');
+            } else {
+                return redirect('login')->with('incorrect_password', 'Password Incorrect');
+            }
+        } else {
+            return redirect('login')->with('email_incorrect', 'Email Does not Exist');
+        }
+    }
+
+    public function logout()
+    {
+        if(session()->has('name'))
+
+        {
+            session()->pull('name');
+            session()->pull('id');
             return redirect('/');
         }else
-        {
-            return redirect('login')->with('incorrect_password' , 'Password Incorrect');
-        }
-
-       }else
        {
         return redirect('login')->with('email_incorrect' , 'Email Does not Exist');
-        
        }
+
     }
 
     //reset password functions
@@ -84,11 +94,13 @@ class userController extends Controller
     public function forget_password(Request $request)
     {
         $user = User::where('email' , $request->forget_email)->first();
-        
+
+        $user = User::where('email', $request->forget_email)->first();
+
+
         $token =  $request->input('_token');
-        if(!isset($user))
-        {
-            return redirect('forgetpassword')->with('miss_email' , 'Email Does not exist');
+        if (!isset($user)) {
+            return redirect('forgetpassword')->with('miss_email', 'Email Does not exist');
         }
         $forget_data = new Forget();
         $forget_data->email = $request->forget_email;
@@ -96,95 +108,107 @@ class userController extends Controller
 
         $forget_data->save();
 
-        
 
-        $tokenData = Forget::where('email' , $request->forget_email)->first();
 
-        if($this->sendRestEmail($user->email ,$tokenData->token ))
-        {
-            return redirect('forgetpassword')->with('sent' , 'Email Sent');
-        }else
-        {
-            return redirect('forgetpassword')->with('connect' , 'Network issue');
+
+
+
+        $tokenData = Forget::where('email', $request->forget_email)->first();
+
+        if ($this->sendRestEmail($user->email, $tokenData->token)) {
+            return redirect('forgetpassword')->with('sent', 'Email Sent');
+        } else {
+            return redirect('forgetpassword')->with('connect', 'Network issue');
         }
     }
 
-    public function sendRestEmail($email , $token)
+    public function sendRestEmail($email, $token)
     {
         // $user = User::where('email' , $email)->first();
 
+
         $link = asset('/reset_password?token='.$token.'&email='.$email);
-        
+
         try {
             //Here send the link with CURL with an external email API 
-            $data = ["link"=>$link , 'email'=>$email];
+            $data = ["link" => $link, 'email' => $email];
+
             Mail::to($email)->send(new ResetMail($data));
             return true;
-        }catch (\Exception $e) {
-                return false;
+        } catch (\Exception $e) {
+            return false;
         }
     }
 
     public function view_rest(Request $request)
     {
         $email = $request->input('email');
-        return view('log/reset_password' , ['email'=>$email]);
+        return view('log/reset_password', ['email' => $email]);
     }
 
     public function rested_password(Request $request)
     {
-        
+
         $password1 = $request->reset_password;
         $password2 = $request->confirm_reset_password;
         $email = $request->email_reset;
         $request->validate([
-            'reset_password'=>'required|min:8|max:25',
-            'confirm_reset_password'=>'required|min:8|max:25',
-
-            
+            'reset_password' => 'required|min:8|max:25',
+            'confirm_reset_password' => 'required|min:8|max:25',
         ]);
         if ($password1 === $password2) {
             $password1 = Hash::make($password1);
             User::where('email', $email)->update(array('password' => $password1));
             return redirect('create-post');
-            
+
+
         }else
         {
             return redirect('resetpassword')->with('inn' , 'Password Not match');
-        }
+
+        } 
         // return $request->input();
     }
 
     //show the details in (admin) board
-    public function index(){
-        return view('/admin/user',[
-            'users'=>User::all()
+    public function index()
+    {
+        return view('/admin/user', [
+            'users' => User::all()
         ]);
     }
     //Delete the users in (admin) board
-    public function destroy(User $id){
+    public function destroy(User $id)
+    {
         $id->delete();
-        return redirect('/admin/users')->with('message','User deleted successfully');
+        return redirect('/admin/users')->with('message', 'User deleted successfully');
     }
 
     public function view(Request $req)
     {
+
+        if (isset($req->user_img)) {
+            $req->session()->put('user_img', 'avatar.png');
+        }
+
+
         if (isset($req->user_img)) {
 
-            if($req->hasfile('user_img')){
+            if ($req->hasfile('user_img')) {
 
                 $img = $req->file('user_img');
                 $imgname = $img->getClientOriginalName();
                 $img->move('user_img/', $imgname);
-                $user = User::find(1);
-                $user->user_img =  $imgname;
-                $user->update();
+
+                $req->session()->put('user_img', $imgname);
+                // $user = User::find(1);
+                // $user->user_img =  $imgname;
+                // $user->update();
 
             }
         }
-        if(isset($req->update))
-        {
-            
+        if (isset($req->update)) {
+
             $user = User::find(1);
             $user->Fname = $req->input('Fname');
             $user->Lname = $req->input('Lname');
@@ -192,7 +216,7 @@ class userController extends Controller
             $user->email = $req->input('email');
             $user->phone = $req->input('phone');
             $user->password = $req->input('password');
-            $user->user_img = $req->input('user_img');
+            $user->user_img = $req->input('user_image');
             $user->update();
         }
 
