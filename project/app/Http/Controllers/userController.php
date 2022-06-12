@@ -64,8 +64,9 @@ class userController extends Controller
         
         if(Hash::check($password,$data->password)==true){
         
-            $request->session()->put('email',$data['email']);
-            return redirect('create-post');
+            $request->session()->put('id',$data->id);
+            $request->session()->put('name',$data->Fname);
+            return redirect('/');
         }else
         {
             return redirect('login')->with('incorrect_password' , 'Password Incorrect');
@@ -76,6 +77,16 @@ class userController extends Controller
         return redirect('login')->with('email_incorrect' , 'Email Does not Exist');
         
        }
+    }
+
+    public function logout()
+    {
+        if(session()->has('name'))
+        {
+            session()->pull('name');
+            session()->pull('id');
+            return redirect('/');
+        }
     }
 
     //reset password functions
@@ -164,5 +175,40 @@ class userController extends Controller
     public function destroy(User $id){
         $id->delete();
         return redirect('/admin/users')->with('message','User deleted successfully');
+    }
+
+    public function view(Request $req)
+    {
+        if (isset($req->user_img)) {
+
+            if($req->hasfile('user_img')){
+
+                $img = $req->file('user_img');
+                $imgname = $img->getClientOriginalName();
+                $img->move('user_img/', $imgname);
+                $user = User::find(1);
+                $user->user_img =  $imgname;
+                $user->update();
+
+            }
+        }
+        if(isset($req->update))
+        {
+            
+            $user = User::find(1);
+            $user->Fname = $req->input('Fname');
+            $user->Lname = $req->input('Lname');
+            $user->address = $req->input('address');
+            $user->email = $req->input('email');
+            $user->phone = $req->input('phone');
+            $user->password = $req->input('password');
+            $user->user_img = $req->input('user_img');
+            $user->update();
+        }
+
+        // $id = session('id');
+        $user = User::find(1);
+
+        return view('user/user_profile', ['user' => $user]);
     }
 }

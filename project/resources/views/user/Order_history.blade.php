@@ -2,7 +2,7 @@
 
 @extends('layout')
 
-    @include('user.Order_history2')
+    @include('user.common.Order_history2')
 
 <html lang="en">
 <head>
@@ -19,7 +19,6 @@
     <br><br>
     <br><br>
     <br><br>
-    <br><br>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
     <div class="view-account">
@@ -27,7 +26,7 @@
             <div class="module-inner">
                 <div class="side-bar">
                     <div class="user-info">
-                        <img class="img-profile img-circle img-responsive center-block" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                        <img class="img-profile img-circle img-responsive center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="">
                     </div>
             		<nav class="side-menu">
         				<ul class="nav">
@@ -62,8 +61,7 @@
                                         <div class="col-md-12">
                                             <div class="pull-right"><label class="label label-info">pending</label></div>
                                             <span><strong>Order name</strong></span> <span class="label label-info">group
-                                                name</span><br /><br>
-                                            Quantity : 2, cost: $323.13 <br />
+                                                name</span><br /><br>Quantity : 2, cost: $323.13 <br />
                                             <a data-placement="top" class="btn btn-success btn-xs glyphicon glyphicon-ok" href="#"
                                                 title="View"></a>
                                             <a data-placement="top" class="btn btn-danger btn-xs glyphicon glyphicon-trash" href="#"
@@ -74,50 +72,11 @@
                                 </div>
                             </div>
             
-                            <div class="row">
-                                <div class="col-md-1 "><img src="https://bootdey.com/img/Content/user_1.jpg"
-                                        class="media-object img-thumbnail" /></div>
-                                <div class="col-md-11">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="pull-right"><label class="label label-info">pending</label></div>
-                                            <span><strong>Order name</strong></span> <span class="label label-info">group
-                                                name</span><br /><br>
-                                            Quantity : 12, cost: $12623.13<br />
-                                            <a data-placement="top" class="btn btn-success btn-xs glyphicon glyphicon-ok" href="#"
-                                                title="View"></a>
-                                            <a data-placement="top" class="btn btn-danger btn-xs glyphicon glyphicon-trash" href="#"
-                                                title="Danger"></a>
-                                        </div>
-                                        <div class="col-md-12">order made on: 06/12/2014 by <a href="#">Jane Doe </a></div>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="row">
-                                <div class="col-md-1"><img src="https://bootdey.com/img/Content/user_3.jpg"
-                                        class="media-object img-thumbnail" /></div>
-                                <div class="col-md-11">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="pull-right"><label class="label label-success">Approved</label></div>
-                                            <span><strong>Order name</strong></span> <span class="label label-info">group
-                                                name</span><br /><br>
-                                            Quantity : 4, cost: $523.13<br />
-                                            <a data-placement="top" class="btn btn-success btn-xs glyphicon glyphicon-ok" href="#"
-                                                title="View"></a>
-                                            <a data-placement="top" class="btn btn-danger btn-xs glyphicon glyphicon-trash" href="#"
-                                                title="Danger"></a>
-            
-                                        </div>
-                                        <div class="col-md-12">order made on: 06/20/2014 by <a href="#">Jane Doe</a></div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
-                        <div class="panel-footer">Put here some note for example: bootdey si a gallery of free bootstrap snippets
+                        {{-- <div class="panel-footer">Put here some note for example: bootdey si a gallery of free bootstrap snippets
                             bootdeys</div>
-                    </div>>
+                    </div> --}}
             </div>
         </section>
     </div>
