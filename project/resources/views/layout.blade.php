@@ -15,10 +15,9 @@
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/responsive.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/changable.css')}}">
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 8e175ef05f0f60b87aa476b864208a5d77398cec
+
+
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -46,10 +45,10 @@
 			<nav class="main_nav_container">
 				<div class="main_nav">
 					<ul class="main_nav_list">
-						<li class="main_nav_item"><a href="/">home</a></li>
-						<li class="main_nav_item"><a href="#">Shop</a></li>
-						<li class="main_nav_item"><a href="courses.html">about us</a></li>
-						<li class="main_nav_item"><a href="contact.html">contact</a></li>
+						<li class="main_nav_item"><a href="http://localhost:8000/">home</a></li>
+						<li class="main_nav_item"><a href="http://localhost:8000/shop">Shop</a></li>
+						<li class="main_nav_item"><a href="http://localhost:8000/about">about us</a></li>
+						<li class="main_nav_item"><a href="http://localhost:8000/contact">contact</a></li>
                         <li class="main_nav_item">
                             <form action="">
                                 <input type="text" class="black form-control search-input">
@@ -159,32 +158,23 @@
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
        
 
 
 
-=======
->>>>>>> 499fd9d01471b5d0d1ad7924b010cb6b7928d992
-	{{-- @yield('content') --}}
-=======
      
 
 
 
 	@yield('content')
 
->>>>>>> 8e175ef05f0f60b87aa476b864208a5d77398cec
 
 
 
 
 
-<<<<<<< HEAD
-   
-=======
->>>>>>> 8e175ef05f0f60b87aa476b864208a5d77398cec
+
 
 
 
