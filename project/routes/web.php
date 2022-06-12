@@ -9,6 +9,7 @@ use App\Http\Controllers\contactcontroller;
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ordercontroller;
 
 
 
@@ -89,8 +90,11 @@ Route::view('post', 'common/post');
 
 // user
 
-Route::view('profile', 'user/user_profile');
-Route::view('order', 'user/Order_history');
+Route::get('profile',[userController::class,'view']);
+Route::post('profile',[userController::class,'view']);
+
+Route::get('order',[ordercontroller::class,'view']);
+Route::post('order',[ordercontroller::class,'view']);
 
 //shop
 // Route::view('shop', 'shop/shop');

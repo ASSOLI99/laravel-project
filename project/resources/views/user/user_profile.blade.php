@@ -19,6 +19,7 @@
     <br><br>
     <br><br>
     <br><br>
+    <br>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
     <div class="view-account">
@@ -26,7 +27,7 @@
             <div class="module-inner">
                 <div class="side-bar">
                     <div class="user-info">
-                        <img class="img-profile img-circle img-responsive center-block" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                        <img class="img-profile img-circle img-responsive center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="">
                     </div>
             		<nav class="side-menu">
         				<ul class="nav">
@@ -37,50 +38,58 @@
                 </div>
                 <div class="content-panel">
                     <h2 class="title">Profile</h2>
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" method="POST" action="profile" enctype="multipart/form-data">
+                        {{ csrf_field() }}
                         <fieldset class="fieldset">
                             <h3 class="fieldset-title">Personal Info</h3>
                             <div class="form-group avatar">
                                 <figure class="figure col-md-2 col-sm-3 col-xs-12">
-                                    <img class="img-rounded img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                    <img class="img-rounded img-responsive" src="{{asset('user_img/'.$user->user_img)}}" alt="">
                                 </figure>
-                                <div class="form-inline col-md-10 col-sm-9 col-xs-12">
-                                    <input type="file" class="file-uploader pull-left">
+                                <div class="form-inline col-md-10 col-sm-9 col-xs-12">  
+                                    <input type="file" class="file-uploader pull-left" name="user_img">
                                     <button type="submit" class="btn btn-sm btn-info pull-left" style="font-size: 17px">Update Image</button>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">User Name</label>
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">First name</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="name">
+                                    <input type="text" class="form-control" value="{{$user->Fname}}" name="Fname">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Last name</label>
+                                <div class="col-md-10 col-sm-9 col-xs-12">
+                                    <input type="text" class="form-control" value="{{$user->Lname}}" name="Lname">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Email</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="abc@gmail.com">
+                                    <input type="text" class="form-control" value="{{$user->email}}" name="email">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Adress</label>
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Address</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="*****">
+                                    <input type="text" class="form-control" value="{{$user->address}}" name="address">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Phone number</label>
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Phone Number</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="0789456123">
+                                    <input type="text" class="form-control" value="{{$user->phone}}" name="phone">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">PassWord</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="**********">
+                                    <input type="text" class="form-control" value="{{$user->password}}" name="password"> 
                                 </div>
                             </div>
 
@@ -90,7 +99,7 @@
                         <hr>
                         <div class="form-group">
                             <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-                                <input class="btn btn-success" type="submit" value="Update Profile" style="font-size: 17px">
+                                <input class="btn btn-success" type="submit" value="Update Profile" style="font-size: 17px" name="update">
                             </div>
                         </div>
                     </form>
