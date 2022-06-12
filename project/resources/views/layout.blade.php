@@ -37,12 +37,15 @@
 					<ul class="main_nav_list">
 						<li class="main_nav_item"><a href="#">home</a></li>
 						<li class="main_nav_item"><a href="#">Shop</a></li>
+						{{-- @if (isset(session('name')))
+							
+						@endif --}}
 						<li class="main_nav_item"><a href="courses.html">about us</a></li>
 						<li class="main_nav_item"><a href="contact.html">contact</a></li>
                         <li class="main_nav_item">
                             <form action="">
                                 <input type="text" class="black form-control search-input">
-                                <button type="submit" class="btn btn-warning"><i class="fas fa-search"></i></button>
+                                <button type="submit" class="btn btn-warning" style="margin-bottom:5px;"><i class="fas fa-search"></i></button>
                             </form>
                         </li>
 					</ul>
@@ -54,9 +57,15 @@
                 <div class="dropdown">
                     <a class="dropbtn"><img src="{{asset('layout/images/testimonials_user.jpg')}}" class="user-image" alt=""></a>
                     <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
+						@if(session()->has('name'))
+							
+						<a href="#">Login</a>
+						<a href="#">Signup</a>
+						@else
+
+                      <a href="#">Account</a>
+                      <a href="#">Logout</a>
+						@endif
                     </div>
                   </div>
             </ul>
@@ -69,11 +78,11 @@
 		<div class="hamburger_container ml-5">
 			<i class="fas fa-bars trans_200"></i>
 		</div>
-        
-        
+
+
 
 	</header>
-	
+
 	<!-- Menu -->
 	<div class="menu_container menu_mm">
 
@@ -95,8 +104,8 @@
 				</ul>
 
 				<!-- Menu Social -->
-				
-				
+
+
                     <div class="menu_social_container menu_mm">
 					<ul class="menu_social menu_mm">
 						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-pinterest"></i></a></li>
@@ -107,16 +116,20 @@
 					</ul>
 				</div>
 
-				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div> 
-                
+				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
+
 			</div>
 
 		</div>
 
 	</div>
-	
+
 	<!-- Home -->
-{{-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII --}}
+
+
+
+	{{-- @yield('content') --}}
+
 
 
 
@@ -126,12 +139,13 @@
 
 
         
-{{-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII --}}
+
+
 	<!-- Footer -->
 
 	<footer class="footer">
 		<div class="container">
-			
+
 			<!-- Newsletter -->
 
 			<div class="newsletter">

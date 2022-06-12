@@ -42,5 +42,32 @@ class CategoryController extends Controller
 
         return redirect('create-post')->with('succe' , 'Your book will publish after admin approvement');
     }
+    public function show()
+    {
+        $catig = Category::all();
+        return view('Home_page.index', ['catig'=>$catig]);
+
+    }
+    public function index(){
+        return view('Admin.category',[
+            'categories'=>Category::all()
+        ]);
+    }
+    public function create(){
+        return view('Admin.category.create');
+    }
+    public function store(Request $request){
+        $formFields=$request->validate([
+            'name'=>'required',
+            'image'=>'required'
+        ]);
+
+        if($request->hasFile('image')){
+            $formFields['image']=$request->file('image')->store('images', 'public');
+        }
+
+        Category::create($formFields);
+        return redirect('/admin/category')->with('message','Category Added Successfully');
+    }
 }
 

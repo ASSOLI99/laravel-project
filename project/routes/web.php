@@ -38,31 +38,36 @@ Route::group([],function(){
         return view('Admin.index');
     });
     //users
-    Route::get('/user', function () {
-        return view('Admin.user');
+    Route::get('/admin/users' ,[userController::class,'index']);
+    Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
+    //login
+    Route::get('/admin/login', function () {
+        return view('Admin/admins/login');
     });
+    Route::post('admin/login',[AdminController::class,'login']);
     //admins
     Route::get('/admins',[AdminController::class, 'index']);
     Route::post('/admins',[AdminController::class, 'store']);
     Route::get('/admins/create', function () {
         return view('/Admin/admins/create');
     });
-
+    Route::delete('/admin/{id}',[AdminController::class, 'destroy']);
     //posts
-    Route::get('/posts',[PostController::class, 'index']);
-    Route::get('/posts/create',[PostController::class, 'create']);
+    Route::get('/admin/posts',[PostController::class, 'index']);
+    Route::get('/admin/posts/update',[PostController::class, 'update']);
     //messages
     Route::get('/messages', function () {
         return view('Admin.messages');
     });
     //categories
-    Route::get('/category', function () {
-        return view('Admin.category');
-    });
+    Route::get('/admin/category',[CategoryController::class, 'index']);
+    Route::get('/admin/category/create',[CategoryController::class, 'create']);
+    Route::post('/admin/category/create',[CategoryController::class, 'store']);
+
 });
 // End Admin page route
 
-//create post 
+//create post
 Route::get('create-post', [CategoryController::class , 'show_category']);
 Route::post('create-post' , [CategoryController::class , 'add_post']);
 
@@ -74,7 +79,6 @@ Route::post('/login',[userController::class,'login']);
 
 //home page
 
-Route::view('/home', '/Home_page/index');
 
 //about
 
@@ -84,8 +88,10 @@ Route::view('profile', 'user/user_profile');
 
 Route::view('contact', 'common/contact');
 Route::post('contact',[contactcontroller::class,'message']);
+Route::get('/',[CategoryController::class,'show']);
 Route::view('about', 'common/about');
-Route::view('post', 'common/post');
+Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
+
 
 
 // user
@@ -96,6 +102,7 @@ Route::post('profile',[userController::class,'view']);
 Route::get('order',[ordercontroller::class,'view']);
 Route::post('order',[ordercontroller::class,'view']);
 
+
 //shop
 // Route::view('shop', 'shop/shop');
 //oute::get('shop' , [BookController::class , 'show']);
@@ -105,5 +112,8 @@ Route::get('shop',[BookController::class,'show']);
 Route::post('shop',[BookController::class,'show']);
 
 
-Route::view('resetpassword','log/reset_pass');
+Route::get('reset_password',[userController::class, 'view_rest']);
+Route::view('forgetpassword','log/forget');
+Route::post('/forget' , [userController::class , 'forget_password']);
+Route::post('/rest' , [userController::class , 'rested_password']);
 

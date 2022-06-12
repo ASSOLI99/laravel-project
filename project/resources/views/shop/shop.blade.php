@@ -51,9 +51,9 @@
 	<!--header-->
 	<!-- <header id="header" class="header header-style-1">
 		<div class="container-fluid">
-			<div class="row">			
+			<div class="row">
 				<div class="nav-section header-sticky">
-					
+
 
 					<div class="primary-nav-section">
 						<div class="container">
@@ -72,7 +72,7 @@
 								</li>
 								<li class="menu-item">
 									<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
-								</li>								
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -186,7 +186,7 @@
 									<div class="product-info">
 										<div class="wrap-price"><span class="product-price">{{$item->name}}</span></div>
 										<a href="#" class="product-name"><span>{{$item->description}}</span></a>
-										<a href="#" class="btn add-to-cart">view details</a>
+										<a href="single/{{$item->id}}" class="btn add-to-cart">view details</a>
 									</div>
 								</div>
 							</li>
@@ -212,10 +212,44 @@
 				</div>
 				<!--end main products area-->
 
+<<<<<<< HEAD
+				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
+					<div class="widget mercado-widget categories-widget">
+						<h2 class="widget-title">All Categories</h2>
+						<div class="widget-content">
+							<ul class="list-category">
+
+
+								@foreach ($category as $item)
+
+
+								<form method="POST" action="{{ route('shop.index' , $item->id) }}" accept-charset="UTF-8" style="display:inline">
+									{{ csrf_field() }}
+									<li class="category-item has-child-cate">
+										<a href="#" class="cate-link">{{$item->name}}</a>
+									</li>
+
+								</form>
+
+								{{-- <li class="category-item has-child-cate">
+									<a href="{{route('shop.show_cat',$item->id)}}  {{ route('movies.show' , $item->id) }}" class="cate-link">{{$item->name}}</a>
+								</li> --}}
+
+								@endforeach
+
+
+							</ul>
+						</div>
+					</div><!-- Categories widget-->
+
+
+				</div>
+=======
 
 
 
 				
+>>>>>>> 93489d5dafd884cc27670428d354fc7a5a603d0a
 				<!--end sitebar-->
 
 			</div>

@@ -34,7 +34,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Edit Users</h4>
+                    <h4 class="card-title">Edit Post</h4>
                     <h4 class="card-title"><a href="posts/create" class="btn btn-success mt-3">Create Post</a></h4>
 
                 </div>

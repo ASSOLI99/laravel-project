@@ -27,6 +27,12 @@
             </header>
 
 <div class="page-heading">
+    @if(session()->has('message'))
+    <div class="alert alert-primary" role="alert">
+        {{session('message')}}
+      </div>
+
+@endif
     <h3><a href="/dashboard">Dashboard</a><span> / Users</span></h3>
 </div>
 <section class="section">
@@ -35,7 +41,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Edit Users</h4>
-                    <h4 class="card-title"><a href="create_user" class="btn btn-success mt-3">Create User</a></h4>
+                    <h4 class="card-title"><a href="{{url('signup')}}" class="btn btn-primary mt-3">Create User</a></h4>
 
                 </div>
                 <div class="card-content">
@@ -46,30 +52,29 @@
                                 <tr>
                                     <th>NAME</th>
                                     <th>Email</th>
-                                    <th>state</th>
+                                    <th>phone</th>
                                     <th>LOCATION</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($users as $user)
                                 <tr>
-                                    <td class="text-bold-500">Michael Right</td>
-                                    <td>Email@email.com</td>
-                                    <td class="text-bold-500">False</td>
-                                    <td>Austin,Taxes</td>
-                                    <td><a href="#"><i
-                                                class="badge-circle badge-circle-light-secondary font-medium-1"
-                                                data-feather="mail"></i></a></td>
+                                <td class="text-bold-500">{{$user['Fname']}} {{$user['Lname']}}</td>
+                                <td>{{$user['email']}}</td>
+                                <td class="text-bold-500">{{$user['phone']}}</td>
+                                <td>{{$user['address']}}</td>
+                                <td>
+                                    <form method="POST" action="/admin/user/{{$user->id}}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Delete</button>
+                                    </form>
+                                </td>
                                 </tr>
-                                <tr>
-                                    <td class="text-bold-500">Morgan Vanblum</td>
-                                    <td>Assoli@fmail.com</td>
-                                    <td class="text-bold-500">True</td>
-                                    <td>Jordan,Ajloun</td>
-                                    <td><a href="#"><i
-                                                class="badge-circle badge-circle-light-secondary font-medium-1"
-                                                data-feather="mail"></i></a></td>
-                                </tr>
+                                @endforeach
+                               
+                               
                             </tbody>
                         </table>
                     </div>
