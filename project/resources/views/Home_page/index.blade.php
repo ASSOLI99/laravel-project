@@ -12,7 +12,7 @@
 					<div class="hero_slide_background"  style="background-image:url({{asset('layout/images/splash9.jpg')}})"></div>
 					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
 						<div class="hero_slide_content text-center">
-							
+
 							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">“A reader lives a thousand lives before he dies . . . The man who never reads lives only one.” - George R.R. Martin</h1>
 							<br>
 							<a href="http://localhost:8000/shop" style="text-decoration: none;" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><button type="button" class="btn btn-outline-light" style="font-size:22px;">View Books </button></a>
@@ -27,10 +27,6 @@
 						<div class="hero_slide_content text-center">
 							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Don't put your books on shelves and desks. Give them wings, airline tickets, and happy memories.</h1>
 							<br>
-
-							<a href="" style="text-decoration: none;"data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">
-								<button type="button" class="btn btn-outline-light" style="font-size:22px;">View Books </button></a>
-
 							<a href="http://localhost:8000/shop" style="text-decoration: none;"data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><button type="button" class="btn btn-outline-light" style="font-size:22px;">View Books </button></a>
 
 
@@ -64,52 +60,46 @@
 	<!-- Popular -->
 	<div class="popular page_section">
 
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="section_title text-center">
-						<h1>Main Categories</h1>
-					</div>
-				</div>
-			</div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title text-center">
+                        <h1>Main Categories</h1>
+                    </div>
+                </div>
+            </div>
 
 
-			<div class="row course_boxes">
-				
-				<!-- Popular Course Item -->
-				@foreach ($catig as $category)
-				<div class="col-lg-4 course_box">
-						
-					<div class="card">
-						<img class="card-img-top" src="layout/images/{{$category->image}}" width="10%" height="100%" alt="https://unsplash.com/@kellybrito">
-						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.html">{{$category->name}}</a></div>
-							<div class="card-text">A complete guide Fantasy world</div>
-						</div>
-						<div class="price_box d-flex flex-row align-items-center">
-							<div class="course_author_image">
-								<img src="layout/images/home3.jpg"  alt="https://unsplash.com/@mehdizadeh" width="100%" height="100%">
-							</div>
+            <div class="row course_boxes">
 
-							<div class="course_author_name"><a href="" style="text-decoration:none;color:#524431; float:right !important; " >view here</a> </div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span><a href="{{url('shop/'.$category->id)}}"><span><i class="material-icons" style="font-size:35px; color:white;margin-top:10px;">&#xe315;</i></span></a></span></div>
+                <!-- Popular Course Item -->
+                @foreach ($catig as $category)
+                <div class="col-lg-4 course_box">
 
-							<div class="course_author_name"><a href="http://localhost:8000/shop" style="text-decoration:none;color:#524431; float:right !important; " >view here</a> </div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span><a href="http://localhost:8000/shop"><span><i class="material-icons" style="font-size:35px; color:white;margin-top:10px;">&#xe315;</i></span></a></span></div>
-
-						</div>
-					</div>
-				</div>
-					@endforeach
-			</div>
-		</div>
-
+                    <div class="card">
+                        <img class="card-img-top" src="layout/images/{{$category->image}}" width="10%" height="100%" alt="https://unsplash.com/@kellybrito%22%3E
+                        <div class="card-body text-center">
+                            <div class="card-title"><a href="courses.html">{{$category->name}}</a></div>
+                            <div class="card-text">A complete guide Fantasy world</div>
+                        </div>
+                        <div class="price_box d-flex flex-row align-items-center">
+                            <div class="course_author_image">
+                                <img src="layout/images/home3.jpg"  alt="https://unsplash.com/@mehdizadeh" width="100%" height="100%">
+                            </div>
+                            <div class="course_author_name"><a href="http://localhost:8000/shop" style="text-decoration:none;color:#524431; float:right !important; " >view here</a> </div>
+                            <div class="course_price d-flex flex-column align-items-center justify-content-center"><span><a href="http://localhost:8000/shop%22%3E<span><i class="material-icons" style="font-size:35px; color:white;margin-top:10px;">&#xe315;</i></span></a></span></div>
+                        </div>
+                    </div>
+                </div>
+                    @endforeach
+            </div>
+        </div>
 
 				<!-- Popular Course Item -->
-				
+
 	<!-- Register -->
 
-	
+
 
 	<!-- Services -->
 
@@ -150,7 +140,7 @@
 					<p>You will never feel bored with us  ,you will always find vairety of amazing books you would enjoy reading .</p>
 				</div>
 
-				
+
 
 			</div>
 		</div>
