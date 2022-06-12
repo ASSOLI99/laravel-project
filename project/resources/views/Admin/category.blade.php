@@ -65,7 +65,7 @@
                                     <td>{{$category['name']}}</td>
                                     <td>
                                         <div>
-                                            <a class="btn btn-primary" href="/admin/category/edit/{{$category['id']}}">
+                                            <a class="btn btn-primary" href="/admin/category/edit/{{$category['id']}}/edit">
                                                 <i class="bi bi-pencil-square"></i> Edit
                                             </a>
                                         </div>

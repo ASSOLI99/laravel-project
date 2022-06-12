@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Validator;
 
 class userController extends Controller
 {
+
+    // public function data(Request $request){
+
     public function data(Request $request)
     {
-
 
         $validated = $request->validate([
             'fname' => 'required|max:255|regex:/(^([a-zA-Z]+)(\d+)?$)/u',
@@ -30,8 +32,6 @@ class userController extends Controller
             'address' => 'required',
 
         ]);
-
-
 
 
         if ($request->pass !== $request->pass2) {
@@ -52,16 +52,12 @@ class userController extends Controller
         }
     }
 
+       public function login(Request $request)
+       {
 
-
-
-
-    public function login(Request $request)
-    {
-
-        $email = $request->email;
-        $password = $request->pass;
-        $data = User::where('email', $email)->first();
+        $email=$request->email;
+        $password=$request->pass;
+        $data= User::where('email',$email)->first();
 
         if (isset($data)) {
 
@@ -81,18 +77,26 @@ class userController extends Controller
     public function logout()
     {
         if(session()->has('name'))
+
         {
             session()->pull('name');
             session()->pull('id');
             return redirect('/');
-        }
+        }else
+       {
+        return redirect('login')->with('email_incorrect' , 'Email Does not Exist');
+       }
+
     }
 
     //reset password functions
 
     public function forget_password(Request $request)
     {
+        $user = User::where('email' , $request->forget_email)->first();
+
         $user = User::where('email', $request->forget_email)->first();
+
 
         $token =  $request->input('_token');
         if (!isset($user)) {
@@ -103,6 +107,9 @@ class userController extends Controller
         $forget_data->token = $token;
 
         $forget_data->save();
+
+
+
 
 
 
@@ -119,11 +126,13 @@ class userController extends Controller
     {
         // $user = User::where('email' , $email)->first();
 
-        $link = asset('/reset_password?token=' . $token . '&email=' . $email);
+
+        $link = asset('/reset_password?token='.$token.'&email='.$email);
 
         try {
             //Here send the link with CURL with an external email API 
             $data = ["link" => $link, 'email' => $email];
+
             Mail::to($email)->send(new ResetMail($data));
             return true;
         } catch (\Exception $e) {
@@ -146,16 +155,18 @@ class userController extends Controller
         $request->validate([
             'reset_password' => 'required|min:8|max:25',
             'confirm_reset_password' => 'required|min:8|max:25',
-
-
         ]);
         if ($password1 === $password2) {
             $password1 = Hash::make($password1);
             User::where('email', $email)->update(array('password' => $password1));
             return redirect('create-post');
-        } else {
-            return redirect('resetpassword')->with('inn', 'Password Not match');
-        }
+
+
+        }else
+        {
+            return redirect('resetpassword')->with('inn' , 'Password Not match');
+
+        } 
         // return $request->input();
     }
 
