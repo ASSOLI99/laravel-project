@@ -32,7 +32,7 @@ class CategoryController extends Controller
         $book-> publishing_year	 = $request->publish_year;
         $book-> catigory_id  = $request->category;
         $book-> address = $request->address;
-
+         $book->user_id=session('id');
         if($image){
 
             $book-> book_image= $request->book_image->getClientOriginalName();
