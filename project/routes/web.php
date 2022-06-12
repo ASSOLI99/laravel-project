@@ -59,9 +59,10 @@ Route::group([],function(){
         return view('Admin.messages');
     });
     //categories
-    Route::get('/category', function () {
-        return view('Admin.category');
-    });
+    Route::get('/admin/category',[CategoryController::class, 'index']);
+    Route::get('/admin/category/create',[CategoryController::class, 'create']);
+    Route::post('/admin/category/create',[CategoryController::class, 'store']);
+
 });
 // End Admin page route
 

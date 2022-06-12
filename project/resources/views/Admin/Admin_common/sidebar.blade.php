@@ -45,7 +45,7 @@
                 </a>
             </li>
             <li style="list-style-type:none;">
-                <a href="{{url('category')}}" class='sidebar-link'>
+                <a href="{{url('/admin/category')}}" class='sidebar-link'>
                     <i class="bi bi-inboxes"></i>
                     <span>Categorys</span>
                 </a>
