@@ -64,6 +64,7 @@ Route::group([],function(){
     Route::post('/admin/category/create',[CategoryController::class, 'store']);
     Route::get('/admin/category/edit/{id}/edit',[CategoryController::class, 'edit']);
     Route::get('/admin/category/edit/{id}',[CategoryController::class, 'update']);
+    Route::delete('/admin/category/delete/{id}',[CategoryController::class, 'destroy']);
 });
 // End Admin page route
 

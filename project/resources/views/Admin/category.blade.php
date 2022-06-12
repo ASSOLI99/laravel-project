@@ -61,7 +61,13 @@
                                     
                               
                                 <tr>
-                                    <td class="text-bold-500">{{$category['image']}}</td>
+                                    <td class="text-bold-500">
+                                        <img
+                                            class="" width="70px"
+                                            src="{{$category->image ? asset('storage/' . $category->image) :asset('/image/no-image.jpg')}}"
+                                            alt=""
+                                        />
+                                    </td>
                                     <td>{{$category['name']}}</td>
                                     <td>
                                         <div>

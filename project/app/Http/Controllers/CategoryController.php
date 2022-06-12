@@ -63,8 +63,10 @@ class CategoryController extends Controller
         ]);
 
         if($request->hasFile('image')){
-            $formFields['image']=$request->file('image')->store('image', 'public');
+            $formFields['image']=$request->file('image')->store('images', 'public');
+            $request->file('image')->move('storage/images/',$formFields['image']);
         }
+
 
         Category::create($formFields);
         return redirect('/admin/category')->with('message','Category Added Successfully');
@@ -77,13 +79,19 @@ class CategoryController extends Controller
         ]);
 
         if($request->hasFile('image')){
-            $formFields['image']=$request->file('image')->store('image', 'public');
+            $formFields['image']=$request->file('image')->store('images', 'public');
+            $request->file('image')->move('storage/images/',$formFields['image']);
         }
 
         $id->update($formFields);
-        return redirect('/admin/category')->with('message','Listing Updated successfully');
+        return redirect('/admin/category')->with('message','Category Updated successfully');
     }
     public function edit(Category $id){
         return view('Admin.category.edit',['category'=>$id]);
+    }
+    //delete data
+    public function destroy(Category $id){
+        $id->delete();
+        return redirect('/admin/category')->with('message','Category deleted successfully');
     }
 }
