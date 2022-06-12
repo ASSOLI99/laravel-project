@@ -16,6 +16,7 @@ class CreateCatigoryTable extends Migration
         Schema::create('catigory', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

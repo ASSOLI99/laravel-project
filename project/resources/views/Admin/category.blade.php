@@ -27,6 +27,12 @@
             </header>
 
 <div class="page-heading">
+    @if(session()->has('message'))
+    <div class="alert alert-primary" role="alert">
+        {{session('message')}}
+      </div>
+
+@endif
     <h3><a href="/dashboard">Dashboard</a><span> / Category</span></h3>
 </div>
 <section class="section">
@@ -34,8 +40,8 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Edit Users</h4>
-                    <h4 class="card-title"><a href="create_user" class="btn btn-success mt-3">Create User</a></h4>
+                    <h4 class="card-title">Edit Category</h4>
+                    <h4 class="card-title"><a href="/admin/category/create" class="btn btn-primary mt-3">Add Catregory</a></h4>
 
                 </div>
                 <div class="card-content">
@@ -44,32 +50,35 @@
                         <table class="table mb-0">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>NAME</th>
-                                    <th>Email</th>
-                                    <th>state</th>
-                                    <th>LOCATION</th>
-                                    <th>ACTION</th>
+                                    <th>Image</th>
+                                    <th>Title</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($categories as $category)
+                                    
+                              
                                 <tr>
-                                    <td class="text-bold-500">Michael Right</td>
-                                    <td>Email@email.com</td>
-                                    <td class="text-bold-500">False</td>
-                                    <td>Austin,Taxes</td>
-                                    <td><a href="#"><i
-                                                class="badge-circle badge-circle-light-secondary font-medium-1"
-                                                data-feather="mail"></i></a></td>
+                                    <td class="text-bold-500">{{$category['image']}}</td>
+                                    <td>{{$category['name']}}</td>
+                                    <td>
+                                        <div>
+                                            <a class="btn btn-primary" href="/admin/category/edit/{{$category['id']}}">
+                                                <i class="bi bi-pencil-square"></i> Edit
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <form method="POST" action="/admin/category/delete/{{$category['id']}}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Delete</button>
+                                            </form>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td class="text-bold-500">Morgan Vanblum</td>
-                                    <td>Assoli@fmail.com</td>
-                                    <td class="text-bold-500">True</td>
-                                    <td>Jordan,Ajloun</td>
-                                    <td><a href="#"><i
-                                                class="badge-circle badge-circle-light-secondary font-medium-1"
-                                                data-feather="mail"></i></a></td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
