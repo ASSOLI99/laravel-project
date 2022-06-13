@@ -14,12 +14,14 @@
     <body>
         <div class="d-flex align-items-center justify-content-center vh-100">
             <div class="text-center">
-                <h1 class="display-1 fw-bold">Admin </h1>
+                <h1 class="display-1 fw-bold">Admin <span class="text-danger">!</span></h1>
                 <p class="fs-3"> <span class="text-danger">Opps!</span> Page not found.</p>
                 <p class="lead">
                     The page you’re looking for Admin Reference
                   </p>
-                <a href="/admin/login" class="btn btn-primary">Please Login</a>
+                <a href="/admin/login" class="btn btn-warning">Please Login</a>
+                <a href="/home" class="text-warning fw-bold d-block mt-3">Or Back Home</a>
+
             </div>
         </div>
     </body>

@@ -29,7 +29,7 @@
                         <img src="{{asset('layout/images/author.jpg')}}" alt="https://unsplash.com/@mehdizadeh">
                     </div>
                     <div class="course_author_name">{{$userdata->Fname}} <span style="margin-right:10px;color:#ffb606">{{$userdata->Lname}}</span><span><i class="fas fa-circle" style="font-size:7px;color:black"></i></span><span style="padding-left:10px;color:black;font-size:15px">Get in touch with</span></div>
-                    <div class="course_price d-flex flex-column align-items-center justify-content-center"><span><i class="fas fa-comments" style="font-size:35px"></i></span></div>
+                    <div class="course_price d-flex flex-column align-items-center justify-content-center"><span><a href="/chat" style="color:white;"><i class="fas fa-comments" style="font-size:35px"></i></a></span></div>
                     <hr>
                     <div class="card" style="position:absolute;left:0%;top:100%;margin-top:0px;width:100%">
                         <div style="background-color:white;color:black;padding:10px 20px"><b>Book name</b> : {{$data->name}}</div>
@@ -41,11 +41,11 @@
                         <div style="background-color:white;color:black;padding:10px 20px"><b>Author</b>: {{$data->author}}</div>
                         <hr>
                         @if (session()->has('name'))
-                            
+
                         <div style="background-color:white;color:black;padding:10px 20px"><b>Volunteer number</b>: {{$userdata->phone}}</div>
                         <div style="background-color:#ffb606;color:black;padding:10px 20px"><b>Description :</b></div>
                         @else
-                        <div style="background-color:white;color:black;padding:10px 20px"><b>Volunteer number</b>: 07xxxxxx <a href="/login" class="text-danger">Please Login </a></div> 
+                        <div style="background-color:white;color:black;padding:10px 20px"><b>Volunteer number</b>: 07xxxxxx <a href="/login" class="text-danger">Please Login </a></div>
                         <div style="background-color:#ffb606;color:black;padding:10px 20px"><b>Description :</b></div>
                         @endif
                         <div style="padding:20px 40px;color:black;font-weight:500;letter-spacing:0.5px;">{{$data->description}}</div>

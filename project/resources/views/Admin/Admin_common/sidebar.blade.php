@@ -63,7 +63,7 @@
                 </a>
             </li>
             <li style="list-style-type:none;">
-                <a href="{{url('admins')}}" class='sidebar-link'>
+                <a href="{{url('admin/logout')}}" class='sidebar-link'>
                     <i class="bi bi-box-arrow-left"></i>
                     <span>Logout</span>
                 </a>

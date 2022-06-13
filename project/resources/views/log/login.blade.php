@@ -34,20 +34,20 @@
 		      			<input type="text" class="form-control" name="email" placeholder="Email address" required>
 		      		</div>
 					  @error('email')
-						 <div style="color: red">{{$message}} </div>
+						 <div style="color: #de9c2e">{{$message}} </div>
 					  @enderror
 					  @if ($message = Session::get('email_incorrect'))
-					  <div style="color: red">{{$message}} </div>
+					  <div style="color: #de9c2e">{{$message}} </div>
 					  @endif
 					  <div class="form-group">
 						  <input id="password-field" type="password" class="form-control" placeholder="Password" name="pass" required>
 						  <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 						</div>
 						@error('pass')
-						<div style="color: red">{{$message}} </div>
+						<div style="color: #de9c2e">{{$message}} </div>
 						@enderror
 						@if ($message = Session::get('incorrect_password'))
-						<div style="color: red">{{$message}} </div>
+						<div style="color: #de9c2e">{{$message}} </div>
 						@endif
 	            <div class="form-group">
 	            	<button type="submit" class="form-control btn btn-primary submit px-3" >Sign In</button>

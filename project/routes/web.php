@@ -4,7 +4,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\Chat;
 use App\Http\Controllers\contactcontroller;
 
 use App\Http\Controllers\PostController;
@@ -48,8 +48,8 @@ Route::group(['middleware'=>['admin']],function(){
     //users
     Route::get('/admin/users' ,[userController::class,'index']);
     Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
-    
-    
+
+
     //admins
     Route::get('/admins',[AdminController::class, 'index']);
     Route::post('/admins',[AdminController::class, 'store']);
@@ -74,6 +74,9 @@ Route::group(['middleware'=>['admin']],function(){
     Route::get('/admin/category/edit/{id}/edit',[CategoryController::class, 'edit']);
     Route::put('/admin/category/edit/{id}',[CategoryController::class, 'update']);
     Route::delete('/admin/category/delete/{id}',[CategoryController::class, 'destroy']);
+    
+    //logout
+    Route::get('/admin/logout',[AdminController::class,'logout']);
 });
 // End Admin page route
 
@@ -151,3 +154,4 @@ Route::post('/rest' , [userController::class , 'rested_password']);
 Route::get('/chat',function(){
     return view('chat/livechat');
 });
+Route::post('/chat',[Chat::class,'send']);
