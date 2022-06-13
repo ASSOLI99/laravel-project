@@ -1505,3 +1505,7 @@ input:last-of-type
 {
 	margin-right: 0px;
 }
+#shopim{
+	height: 300px !important;
+	max-width: 130%;
+}

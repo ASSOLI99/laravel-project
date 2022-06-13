@@ -87,10 +87,14 @@
 		<div class="container">
 
 			<div class="wrap-breadcrumb">
+		
 				<ul>
 					<li class="item-link"><a href="/" class="link">home</a></li>
-					<li class="item-link"><span>Books & novels</span></li>
+
+					<li class="item-link"><span>categories</span></li>
+
 				</ul>
+			
 			</div>
 			<div class="row">
 
@@ -181,7 +185,8 @@
 									<div class="product-thumnail">
 										<a href="/post" title="book">
 											<figure><img src="{{asset('storage/'.$item->book_image)}}"
-													alt="book"></figure>
+													alt="book" id="shopim"     height="200px"
+													width="300px"></figure>
 										</a>
 									</div>
 									<div class="product-info">
@@ -193,7 +198,7 @@
 										{{-- <a href="#" class="product-name"><span>{{$item->description}}</span></a> --}}
 										<a href="post/{{$item->id}}" class="btn add-to-cart">view details</a>
 
-									</div>
+							 		</div>
 								</div>
 							</li>
 							@endif
@@ -218,8 +223,7 @@
 					</div>
 				</div>
 				<!--end main products area-->
-
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
+ {{-- <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
 					<div class="widget mercado-widget categories-widget">
 						<h2 class="widget-title">All Categories</h2>
 						<div class="widget-content">
@@ -236,18 +240,19 @@
 									</li>
 									<input type="hidden" value="{{$item->id}}" name="cat_id">
 
-								</form>
+								</form> --}}
 
 								{{-- <li class="category-item has-child-cate">
 									<a href="{{route('shop.show_cat',$item->id)}}  {{ route('movies.show' , $item->id) }}" class="cate-link">{{$item->name}}</a>
 								</li> --}}
 
-								@endforeach
+								{{-- @endforeach
 
 
 							</ul>
 						</div>
-					</div><!-- Categories widget-->
+					</div> --}}
+					<!-- Categories widget--> 
 
 
 				</div>

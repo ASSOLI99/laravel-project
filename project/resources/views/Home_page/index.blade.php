@@ -74,18 +74,18 @@
 
             <!-- Popular Course Item -->
             @foreach ($catig as $category)
-            <div class="col-lg-4 course_box">
+            <div class="col-lg-4 course_box mt-4">
                 <div class="card">
-                    <img class="card-img-top" src="layout/images/{{$category->image}}" alt="https://unsplash.com/@kellybrito">
+                    <img class="card-img-top" src="{{asset('storage/'.$category->image)}}" height="400px" width="130%" alt="https://unsplash.com/@kellybrito">
                     <div class="card-body text-center">
                         <div class="card-title"><a href="courses.html">{{$category->name}}</a></div>
-                        <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+                        <div class="card-text">Best guide for fantasy world</div>
                     </div>
                     <div class="price_box d-flex flex-row align-items-center">
                         <div class="course_author_image">
-                            <img src="layout/images/home3.jpg" alt="https://unsplash.com/@mehdizadeh">
+                            <img src="layout/images/home3.jpg" id="cat" alt="https://unsplash.com/@mehdizadeh">
                         </div>
-                        <div class="course_author_name">Michael Smith, <span>Author</span></div>
+                        <div class="course_author_name">Michael Smith, <span>publisher</span></div>
                         <div class="course_price d-flex flex-column align-items-center justify-content-center"><span><a href="{{url('/shop')}}"><span><i class="material-icons" style="font-size:35px; color:white;margin-top:10px;">&#xe315;</i></span></a></span></div>
                     </div>
                 </div>
