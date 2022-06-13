@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mazer Admin Dashboard</title>
+    <title>Category</title>
 
     <link rel="stylesheet" href="{{asset('assets/css/main/app.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main/app-dark.css')}}">
@@ -33,7 +33,7 @@
       </div>
 
 @endif
-    <h3><a href="/dashboard">Dashboard</a><span> / Category</span></h3>
+    <h3><a href="/dashboard" class="text-warning">Dashboard</a><span> / Category</span></h3>
 </div>
 <section class="section">
     <div class="row" id="table-head">
@@ -41,7 +41,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Edit Category</h4>
-                    <h4 class="card-title"><a href="/admin/category/create" class="btn btn-primary mt-3">Add Catregory</a></h4>
+                    <h4 class="card-title"><a href="/admin/category/create" class="btn btn-warning mt-3 fw-bold">Add Catregory</a></h4>
 
                 </div>
                 <div class="card-content">
@@ -71,7 +71,7 @@
                                     <td>{{$category['name']}}</td>
                                     <td>
                                         <div>
-                                            <a class="btn btn-primary" href="/admin/category/edit/{{$category['id']}}/edit">
+                                            <a class="btn btn-warning" href="/admin/category/edit/{{$category['id']}}/edit">
                                                 <i class="bi bi-pencil-square"></i> Edit
                                             </a>
                                         </div>

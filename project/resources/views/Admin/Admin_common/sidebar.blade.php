@@ -40,8 +40,8 @@
            
             <li style="list-style-type:none;">
                 <a href="{{url('admin/books')}}" class='sidebar-link'>
-                    <i class="bi bi-grid-1x2-fill"></i>
-                    <span>Posts</span>
+                    <i class="bi bi-book-half"></i>
+                    <span>Books</span>
                 </a>
             </li>
             <li style="list-style-type:none;">
