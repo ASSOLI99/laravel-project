@@ -18,4 +18,15 @@ class contactcontroller extends Controller
     return redirect('contact')->with('success','we have successfully recieved your message , we will respond shortly');
 
    }
+   public function index(){
+      return view('Admin.messages',[
+          'contacts'=>Contact::all()
+      ]);
+  }
+
+  //delete
+  public function destroy(Contact $id){
+   $id->delete();
+   return redirect('/admin/contacts')->with('message','Message deleted successfully');
+}
 }

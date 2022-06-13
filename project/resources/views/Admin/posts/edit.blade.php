@@ -5,36 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Category Edit</title>
+    <title>State Edit</title>
 </head>
 <body>
     <div class="container mt-5">
 
         <a class="btn btn-secondary" href="/admin/category">Back</a>
-        <h2>Edit Category</h2>
-        <img
-        class="" width="250px"
-        src="{{$category->image ? asset('storage/' . $category->image) :asset('/image/no-image.jpg')}}"
-        alt=""
-    />
-    <form action="/admin/category/edit/{{$category->id}}" method="POST" enctype="multipart/form-data">
+        <h2 class="mt-4">Edit Book State</h2>
+        <ul>
+            <li>0: will <span class="text-danger">desabled</span> from shop page but the publisher <b>can change</b> this option</li>
+            <li>1: will <span class="text-danger">appear </span> in shop page and the publisher<b> can change</b> this option</li>
+            <li>2: will <span class="text-danger">desabled </span> from shop page and the publisher <b>can't change</b> this option</li>
+        </ul>
+    <form action="/admin/book/edit/{{$book->id}}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Your Image</label>
-          <input type="file" name="image" value="{{$category->image}}" class="form-control" id="exampleInputfile1">
-          @error('image')
-          <div class="form-text text-danger">{{$message}}</div>
-          @enderror
+          <label class="form-label">Book State</label>
+          <select class="form-select" name="state" aria-label="state of the book">
+            <option selected value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
         </div>
-        <div class="mb-3">
-          <label for="exampleInputName1" class="form-label">Category Name</label>
-          <input type="text" value="{{$category->name}}" name="name" placeholder="Text" class="form-control" id="exampleInputEmail1">
-          @error('name')
-          <div class="form-text text-danger">{{$message}}</div>
-          @enderror
-        </div>
-        <button type="submit" class="btn btn-primary">Edit Category</button>
+        <button type="submit" class="btn btn-primary">Edit State</button>
       </form>
     </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

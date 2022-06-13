@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Posts</title>
+    <title>Dashboard Books</title>
 
     <link rel="stylesheet" href="{{asset('assets/css/main/app.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main/app-dark.css')}}">
@@ -27,14 +27,14 @@
             </header>
 
 <div class="page-heading">
-    <h3><a href="/dashboard">Dashboard</a><span> / Posts</span></h3>
+    <h3><a href="/dashboard">Dashboard</a><span> / Books</span></h3>
 </div>
 <section class="section">
     <div class="row" id="table-head">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Edit Posts</h4>
+                    <h4 class="card-title">Edit Books</h4>
                 </div>
                 <div class="card-content">
                     <!-- table head dark -->
@@ -51,17 +51,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($posts as $post)
+                                @foreach ($books as $book)
                                 <tr>
-                                    <td class="text-bold-500">Michael Right</td>
-                                    <td>Email@email.com</td>
-                                    <td class="text-bold-500">False</td>
-                                    <td>Austin,Taxes</td>
+                                    <td class="text-bold-500">{{$book['book_image']}}</td>
+                                    <td>{{$book['name']}}</td>
+                                    <td class="text-bold-500">{{$book['publisher']}}</td>
+                                    <td>{{$book['state']}}</td>
                                     <td>
-
+                                        <div>
+                                            <a class="btn btn-primary" href="/admin/book/edit/{{$book['id']}}/edit">
+                                                <i class="bi bi-pencil-square"></i> Edit
+                                            </a>
+                                        </div>
                                     </td>
                                     <td>
-                                        
+                                        <form method="POST" action="/admin/Books/delete/{{$book['id']}}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    //show data in admin
+    public function index(){
+        return view('Admin.posts',[
+            'books'=>Book::all()
+        ]);
+    }
+
     public function show(Request $req)
     {
         if (isset($req->cat_id)) {
@@ -54,7 +61,23 @@ class BookController extends Controller
 
         return  redirect('/order/'.session('id'))->with('flash_message', 'data Deleted!');
     }
+    //delete from admin
+    public function destroy(Book $id){
+        $id->delete();
+        return redirect('/admin/books')->with('message','Book deleted successfully');
+    }
+    //edit from admin
+    public function edit(Book $id){
+        return view('Admin.posts.edit',['book'=>$id]);
+    }
+    public function editState(Request $request, Book $id){
+        $formFields=$request->validate([
+            'state'=>'required'
+        ]);
 
+        $id->update($formFields);
+        return redirect('/admin/books')->with('message','Book Updated successfully');
+    }
 
 
 }
