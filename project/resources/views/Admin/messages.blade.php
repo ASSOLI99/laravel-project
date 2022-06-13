@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mazer Admin Dashboard</title>
+    <title>Contacts</title>
 
     <link rel="stylesheet" href="{{asset('assets/css/main/app.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main/app-dark.css')}}">
@@ -28,7 +28,7 @@
             </header>
 
 <div class="page-heading">
-    <h3><a href="/dashboard">Dashboard</a><span> / Messages</span></h3>
+    <h3><a href="/dashboard" class="text-warning">Dashboard</a><span> / Contacts</span></h3>
 </div>
 <section class="section">
     <div class="row" id="table-head">

@@ -57,5 +57,9 @@ class AdminController extends Controller
         $id->delete();
         return redirect('/admins')->with('message','Admin deleted successfully');
     }
+    public function logout(Request $request){
+        $request->session()->forget('adminEmail');
+        return redirect('/admin/login');
+    }
 }
 

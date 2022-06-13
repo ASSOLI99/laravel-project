@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Course</title>
+<title>books</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Course Project">
@@ -39,8 +39,8 @@
 			<!-- Logo -->
 			<div class="logo_container">
 				<div class="logo">
-					<img src="{{asset('layout/images/logo.png')}}" alt="">
-					<span>Books</span>
+					<a href="/"><img src="{{asset('layout/images/logo.png')}}" alt="">
+					<span>Books</span></a>
 				</div>
 			</div>
 

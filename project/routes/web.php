@@ -74,6 +74,9 @@ Route::group(['middleware'=>['admin']],function(){
     Route::get('/admin/category/edit/{id}/edit',[CategoryController::class, 'edit']);
     Route::put('/admin/category/edit/{id}',[CategoryController::class, 'update']);
     Route::delete('/admin/category/delete/{id}',[CategoryController::class, 'destroy']);
+    
+    //logout
+    Route::get('/admin/logout',[AdminController::class,'logout']);
 });
 // End Admin page route
 

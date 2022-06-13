@@ -27,7 +27,7 @@
             </header>
 
 <div class="page-heading">
-    <h3><a href="/dashboard">Dashboard</a><span> / Books</span></h3>
+    <h3><a href="/dashboard" class="text-warning">Dashboard</a><span> / Books</span></h3>
 </div>
 <section class="section">
     <div class="row" id="table-head">
@@ -53,13 +53,13 @@
                             <tbody>
                                 @foreach ($books as $book)
                                 <tr>
-                                    <td class="text-bold-500">{{$book['book_image']}}</td>
+                                    <td class="text-bold-500"><img src="{{asset('storage/'.$book->book_image)}}" width="80px" alt=""></td>
                                     <td>{{$book['name']}}</td>
                                     <td class="text-bold-500">{{$book['publisher']}}</td>
                                     <td>{{$book['state']}}</td>
                                     <td>
                                         <div>
-                                            <a class="btn btn-primary" href="/admin/book/edit/{{$book['id']}}/edit">
+                                            <a class="btn btn-warning" href="/admin/book/edit/{{$book['id']}}/edit">
                                                 <i class="bi bi-pencil-square"></i> Edit
                                             </a>
                                         </div>
