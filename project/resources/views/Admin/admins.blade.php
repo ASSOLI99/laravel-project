@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mazer Admin Dashboard</title>
+    <title>Admins</title>
 
     <link rel="stylesheet" href="{{asset('assets/css/main/app.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main/app-dark.css')}}">
@@ -33,7 +33,7 @@
       </div>
 
 @endif
-    <h3><a href="/dashboard">Dashboard</a><span> /Admins </span></h3>
+    <h3><a href="/dashboard" class="text-warning">Dashboard</a><span> /Admins </span></h3>
 </div>
 <section class="section">
     <div class="row" id="table-head">
@@ -42,7 +42,7 @@
                 <div class="card-header">
                    
                     <h4 class="card-title">Edit Users</h4>
-                    <h4 class="card-title"><a href="/admins/create" class="btn btn-primary mt-3">Create Admin</a></h4>
+                    <h4 class="card-title"><a href="/admins/create" class="btn btn-warning fw-bold mt-3">Create Admin</a></h4>
 
                 </div>
                 <div class="card-content">
@@ -76,7 +76,7 @@
                                 
                                 
                                 @else
-                                    <td><a href="/admins/create"> you are the last admin</a></td>
+                                    <td><a href="/admins/create" class="text-warning"> you are the last admin</a></td>
                                 
                                         @endif
                                 </tr>

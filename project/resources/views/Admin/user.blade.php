@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mazer Admin Dashboard</title>
+    <title>Users</title>
 
     <link rel="stylesheet" href="{{asset('assets/css/main/app.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main/app-dark.css')}}">
@@ -28,12 +28,12 @@
 
 <div class="page-heading">
     @if(session()->has('message'))
-    <div class="alert alert-primary" role="alert">
+    <div class="alert alert-warning" role="alert">
         {{session('message')}}
       </div>
 
 @endif
-    <h3><a href="/dashboard">Dashboard</a><span> / Users</span></h3>
+    <h3><a href="/dashboard" class="text-warning">Dashboard</a><span> / Users</span></h3>
 </div>
 <section class="section">
     <div class="row" id="table-head">
@@ -41,7 +41,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Edit Users</h4>
-                    <h4 class="card-title"><a href="{{url('signup')}}" class="btn btn-primary mt-3">Create User</a></h4>
+                    <h4 class="card-title"><a href="{{url('signup')}}" class="btn btn-warning mt-3 fw-bold">Create User</a></h4>
 
                 </div>
                 <div class="card-content">
