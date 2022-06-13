@@ -10,10 +10,10 @@ class AppServiceProvider extends ServiceProvider
      * Register any application services.
      *
      * @return void
-     */
+     */ public const HOME = '/home';
     public function register()
     {
-        //
+       
     }
 
     /**
