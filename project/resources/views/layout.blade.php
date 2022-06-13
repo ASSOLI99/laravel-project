@@ -39,8 +39,8 @@
 			<!-- Logo -->
 			<div class="logo_container">
 				<div class="logo">
-					<a href="/"><img src="{{asset('layout/images/logo.png')}}" alt="">
-					<span>Books</span></a>
+					<a href="/"><img src="{{asset('layout/images/logo.png')}}" height="60px" width="60px" alt="">
+					<span>Shine </span></a>
 				</div>
 			</div>
 
@@ -55,6 +55,11 @@
 						@endif
 						<li class="main_nav_item"><a href="/about">about us</a></li>
 						<li class="main_nav_item"><a href="/contact">contact</a></li>
+						@if(!session()->has('name'))
+						{{-- <li class="main_nav_item"><a href="/logout">logout</a></li>
+						@else --}}
+						<li class="main_nav_item"><a href="/login">login</a></li>
+                       @endif
                         <li class="main_nav_item">
                             <form action="">
                                 <input type="text" class="black form-control search-input">
