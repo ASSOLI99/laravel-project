@@ -53,7 +53,7 @@
                             <tbody>
                                 @foreach ($books as $book)
                                 <tr>
-                                    <td class="text-bold-500">{{$book['book_image']}}</td>
+                                    <td class="text-bold-500"><img src="{{asset('storage/'.$book->book_image)}}" width="80px" alt=""></td>
                                     <td>{{$book['name']}}</td>
                                     <td class="text-bold-500">{{$book['publisher']}}</td>
                                     <td>{{$book['state']}}</td>
