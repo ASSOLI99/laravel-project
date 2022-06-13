@@ -180,7 +180,7 @@
 								<div class="product product-style-3 equal-elem ">
 									<div class="product-thumnail">
 										<a href="/post" title="book">
-											<figure><img src="{{asset('shop_assets/images/products/'.$item->book_image)}}"
+											<figure><img src="{{asset('storage/'.$item->book_image)}}"
 													alt="book"></figure>
 										</a>
 									</div>

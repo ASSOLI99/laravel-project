@@ -31,14 +31,14 @@
             		<nav class="side-menu">
         				<ul class="nav">
         					<li ><a href="{{url('profile')}}"><span class="fa fa-user"></span> Profile</a></li>
-        					<li class="active"><a href="#"><span class="fa fa-credit-card"></span> Order history</a></li>
+        					<li class="active"><a href="#"><span class="fa fa-credit-card"></span> Post history</a></li>
         				</ul>
         			</nav>
                 </div>
                 <div class="content-panel">
                     <div class="panel panel-default panel-order">
                         <div class="panel-heading">
-                            <strong>Order history</strong>
+                            <strong>Post history</strong>
                             <div class="btn-group pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default btn-xs dropdown-toggle"
@@ -58,24 +58,30 @@
                         @foreach ($book as $item)
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-md-1"><img src="{{asset('user_img/'.$item->book_image)}}"
+                                <div class="col-md-1"><img src="{{asset('storage/'.$item->book_image)}}"
                                         class="media-object img-thumbnail" /></div>
                                 <div class="col-md-11">
                                     <div class="row">
                                         <div class="col-md-12">
+                                            @if ($item->state == 2)
                                             <div class="pull-right"><label class="label label-info">pending</label></div>
+                                            @elseif($item->state == 1)
+                                            <div class="pull-right"><label class="label label-info">Posted</label></div> 
+                                            @else
+                                            <div class="pull-right"><label class="label label-info">Hidden</label></div> 
+                                            @endif
                                             <span><strong>Book name : {{$item->name}}</strong></span> 	&nbsp;	&nbsp; 	&nbsp;<span class="label label-info">	&nbsp; Region :
                                                 {{$item->address}}</span><br /><span style=" font-weight: bold;color : black">Description :</span>{{$item->description}} <br><span style=" font-weight: bold;color : black">Publisher :</span>  {{$item->publisher}} <br>
                                                 <span style=" font-weight: bold;color : black">Author :</span>  {{$item->author}} <br />
                                                 
 
-                                                <form action="{{url('update/'.$item->id)}}" method="POST">
+                                                <form class="d-inline" action="{{url('update/'.$item->id)}}" method="POST">
                                                     @csrf
                                                      <input type="hidden" value="{{$item->id}}">
                                                      <input class="btn btn-info btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Disable ">
                                                 </form>
                                                 
-                                                <form action="{{url('delete/'.$item->id)}}" method="POST">
+                                                <form class="d-inline" action="{{url('delete/'.$item->id)}}" method="POST">
                                                     @csrf
                                                     <input type="hidden" value="{{$item->id}}">
                                                     <input class="btn btn-danger btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Delete " >

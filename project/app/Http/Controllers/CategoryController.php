@@ -22,7 +22,7 @@ class CategoryController extends Controller
 
     public function add_post(Request $request)
     {
-        $image = $request->file('book_image')->storeAs('public/book_images' , $request->book_image->getClientOriginalName());
+        // $image = $request->file('book_image')->storeAs('public/book_images' , $request->book_image->getClientOriginalName());
 
         $book = new Book();
         $book-> name = $request->book_name;
@@ -32,12 +32,17 @@ class CategoryController extends Controller
         $book-> publishing_year	 = $request->publish_year;
         $book-> catigory_id  = $request->category;
         $book-> address = $request->address;
-         $book->user_id=session('id');
-        if($image){
-
-            $book-> book_image= $request->book_image->getClientOriginalName();
+        $book->user_id=session('id');
+        $formFields=$request->validate([
+            'book_image'=>'required'
+        ]);
+         if($request->hasFile('book_image')){
+            $formFields['book_image']=$request->file('book_image')->store('book_image', 'public');
+            $request->file('book_image')->move('storage/book_image/',$formFields['book_image']);
         }
 
+        $book->book_image = $formFields['book_image'];
+        // Book::create($formFields);
         $book->save();
 
         return redirect('create-post')->with('succe' , 'Your book will publish after admin approvement');

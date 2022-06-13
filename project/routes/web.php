@@ -31,7 +31,14 @@ Route::get('/', [CategoryController::class,'show']);
 
 
 // Admin page route
-Route::group([],function(){
+
+Route::get('/admin/login', function () {
+
+    return view('Admin/admins/login');
+});
+Route::view('restrict' , 'admin/adminRestrict');
+
+Route::group(['middleware'=>['admin']],function(){
     //dashboard
     Route::get('/dashboard', function () {
         return view('Admin.index');
@@ -40,10 +47,6 @@ Route::group([],function(){
     Route::get('/admin/users' ,[userController::class,'index']);
     Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
     //login
-    Route::get('/admin/login', function () {
-
-        return view('Admin/admins/login');
-    });
     Route::post('admin/login',[AdminController::class,'login']);
     //admins
     Route::get('/admins',[AdminController::class, 'index']);
