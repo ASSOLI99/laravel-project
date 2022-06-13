@@ -21,6 +21,6 @@ class ordercontroller extends Controller
     $book = Book::find($order->Book_id);
 
 
-    return view('user/Order_history' , ['order'=>$order,'user'=>$user]); 
+    return view('user/Order_history' , ['order'=>$order,'user'=>$user]);
  }
 }

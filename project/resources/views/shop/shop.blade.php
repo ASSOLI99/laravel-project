@@ -186,8 +186,13 @@
 									</div>
 									<div class="product-info">
 										<div class="wrap-price"><span class="product-price">{{$item->name}}</span></div>
+
 										<a href="/post" class="product-name"><span>{{$item->description}}</span></a>
 										<a href="single/{{$item->id}}" class="btn add-to-cart">view book</a>
+
+										<a href="#" class="product-name"><span>{{$item->description}}</span></a>
+										<a href="post/{{$item->id}}" class="btn add-to-cart">view details</a>
+
 									</div>
 								</div>
 							</li>
@@ -213,7 +218,6 @@
 					</div>
 				</div>
 				<!--end main products area-->
-
 
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
 					<div class="widget mercado-widget categories-widget">
