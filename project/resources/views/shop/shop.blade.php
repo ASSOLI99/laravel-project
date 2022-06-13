@@ -187,7 +187,7 @@
 									<div class="product-info">
 										<div class="wrap-price"><span class="product-price">{{$item->name}}</span></div>
 										<a href="#" class="product-name"><span>{{$item->description}}</span></a>
-										<a href="single/{{$item->id}}" class="btn add-to-cart">view details</a>
+										<a href="post/{{$item->id}}" class="btn add-to-cart">view details</a>
 									</div>
 								</div>
 							</li>
@@ -214,10 +214,6 @@
 				</div>
 				<!--end main products area-->
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 533bfdd7e3e4ebebb10dae5e31a39a5ccd4cf558
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
 					<div class="widget mercado-widget categories-widget">
 						<h2 class="widget-title">All Categories</h2>
@@ -250,10 +246,7 @@
 
 
 				</div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 533bfdd7e3e4ebebb10dae5e31a39a5ccd4cf558
 				<!--end sitebar-->
 
 			</div>

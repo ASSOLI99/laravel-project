@@ -10,6 +10,7 @@ use App\Http\Controllers\contactcontroller;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ordercontroller;
+use App\Http\Controllers\MessageConttoller;
 
 
 
@@ -55,9 +56,9 @@ Route::group([],function(){
     Route::get('/admin/posts',[PostController::class, 'index']);
     Route::get('/admin/posts/update',[PostController::class, 'update']);
     //messages
-    Route::get('/messages', function () {
-        return view('Admin.messages');
-    });
+    Route::get('/admin/messages',[MessageConttoller::class,'index']);
+    Route::delete('/admin/message/delete/{id}',[MessageConttoller::class,'destroy']);
+
     //categories
     Route::get('/admin/category',[CategoryController::class, 'index']);
     Route::get('/admin/category/create',[CategoryController::class, 'create']);
@@ -103,7 +104,7 @@ Route::view('contact', 'common/contact');
 Route::post('contact',[contactcontroller::class,'message']);
 Route::get('/home',[CategoryController::class,'show']);
 Route::view('about', 'common/about');
-Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
+Route::get('post/{id}', [PostController::class,'singlePage']);
 
 
 
@@ -130,8 +131,10 @@ Route::get('shop',[BookController::class,'show']);
 Route::post('shop',[BookController::class,'show']);
 
 
+
+
 Route::get('reset_password',[userController::class, 'view_rest']);
-Route::view('forgetpassword','log/forget');
+Route::view('/forget','log/forget');
 Route::post('/forget' , [userController::class , 'forget_password']);
 Route::post('/rest' , [userController::class , 'rested_password']);
 

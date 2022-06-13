@@ -95,12 +95,12 @@ class userController extends Controller
     {
         $user = User::where('email' , $request->forget_email)->first();
 
-        $user = User::where('email', $request->forget_email)->first();
+       
 
 
         $token =  $request->input('_token');
         if (!isset($user)) {
-            return redirect('forgetpassword')->with('miss_email', 'Email Does not exist');
+            return redirect('forget')->with('miss_email', 'Email Does not exist');
         }
         $forget_data = new Forget();
         $forget_data->email = $request->forget_email;
@@ -114,11 +114,11 @@ class userController extends Controller
 
 
         $tokenData = Forget::where('email', $request->forget_email)->first();
-
+   
         if ($this->sendRestEmail($user->email, $tokenData->token)) {
-            return redirect('forgetpassword')->with('sent', 'Email Sent');
+            return redirect('forget')->with('sent', 'Email Sent');
         } else {
-            return redirect('forgetpassword')->with('connect', 'Network issue');
+            return redirect('forget')->with('connect', 'Network issue');
         }
     }
 

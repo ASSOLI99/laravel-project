@@ -52,17 +52,18 @@
 	            <div class="form-group">
 	            	<button type="submit" class="form-control btn btn-primary submit px-3" >Sign In</button>
 	            </div>
-	            <div class="form-group d-md-flex">
-	            	<div class="w-50">
-		            	{{-- <label class="checkbox-wrap checkbox-primary">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label> --}}
-								</div>
-								<div class="w-50 text-md-right">
-									<a href="#" style="color: #fff">Forgot Password</a>
-								</div>
+				<div class="row">
+					<div class="form-group col-6" >
+							<div class="w-30 text-md-left">
+								<a href="/signup" style="color: #fff">Signup</a>
+							</div>
+					</div>
+				<div class="form-group col-6">
+						<div class="w-30 text-md-left">
+							<a href="/forget" style="color: #fff">Forgot Password</a>
+						</div>
 	            </div>
+			</div>
 	          </form>
 	          <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
 	          <div class="social d-flex text-center">

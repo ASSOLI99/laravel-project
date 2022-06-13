@@ -44,7 +44,7 @@ class BookController extends Controller
         $post->state = 3;
         $post->update();
 
-        return  redirect('/order/'.session('id'))->with('flash_message', 'data Updated!');  
+        return  redirect('/order/'.session('id'))->with('flash_message', 'data Updated!');
     }
 
     public function delete($id)
@@ -52,7 +52,7 @@ class BookController extends Controller
         $post = Book::find($id);
         $post->delete();
 
-        return  redirect('/order/'.session('id'))->with('flash_message', 'data Deleted!');  
+        return  redirect('/order/'.session('id'))->with('flash_message', 'data Deleted!');
     }
 
 

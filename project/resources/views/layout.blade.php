@@ -17,6 +17,8 @@
 
 
 
+
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -44,9 +46,12 @@
 				<div class="main_nav">
 					<ul class="main_nav_list">
 						<li class="main_nav_item"><a href="/">home</a></li>
-						<li class="main_nav_item"><a href="#">Shop</a></li>
-						<li class="main_nav_item"><a href="courses.html">about us</a></li>
-						<li class="main_nav_item"><a href="contact.html">contact</a></li>
+						<li class="main_nav_item"><a href="/shop">Shop</a></li>
+						@if(session()->has('name'))
+						<li class="main_nav_item"><a href="/create-post">post</a></li>
+						@endif
+						<li class="main_nav_item"><a href="/about">about us</a></li>
+						<li class="main_nav_item"><a href="/contact">contact</a></li>
                         <li class="main_nav_item">
                             <form action="">
                                 <input type="text" class="black form-control search-input">
@@ -110,20 +115,22 @@
 		<div class="menu_inner menu_mm">
 			<div class="menu menu_mm">
 				<ul class="menu_list menu_mm">
-					<li class="menu_item menu_mm"><a href="#">Home</a></li>
-					{{-- <li class="menu_item menu_mm"><a href="#">About us</a></li> --}}
-					<li class="menu_item menu_mm"><a href="courses.html">Categories</a></li>
-					<li class="menu_item menu_mm"><a href="elements.html">Books</a></li>
-					<li class="menu_item menu_mm"><a href="news.html">About us</a></li>
-					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
+					<li class="menu_item menu_mm"><a href="/">Home</a></li>
+					@if(session()->has('name'))
+					<li class="menu_item menu_mm"><a href="/create-post">post</a></li>
+					@endif
+					<li class="menu_item menu_mm"><a href="/shop">Categories</a></li>
+					<li class="menu_item menu_mm"><a href="/shop">Books</a></li>
+					<li class="menu_item menu_mm"><a href="/book">About us</a></li>
+					<li class="menu_item menu_mm"><a href="/contact">Contact</a></li>
 
 					@if(session()->has('name'))
 
-					<li class="menu_item menu_mm">	<a href="#">Login</a></li>
-					<li class="menu_item menu_mm"><a href="#">Signup</a></li>
+					<li class="menu_item menu_mm">	<a href="/Login">Login</a></li>
+					<li class="menu_item menu_mm"><a href="/signup">Signup</a></li>
 					@else
-					<li class="menu_item menu_mm"><a href="#">Account</a></li>
-					<li class="menu_item menu_mm">   <a href="#">Logout</a></li>
+					<li class="menu_item menu_mm"><a href="/profile">Account</a></li>
+					<li class="menu_item menu_mm">   <a href="/logout">Logout</a></li>
 
 	                   @endif
 
@@ -134,11 +141,11 @@
 
                     <div class="menu_social_container menu_mm">
 					<ul class="menu_social menu_mm">
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-instagram"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
 					</ul>
 				</div>
 
@@ -156,11 +163,17 @@
 
 
 
-     
+
+
+
+
+
+
 
 
 
 	@yield('content')
+
 
 
 
@@ -235,11 +248,11 @@
 						<div class="footer_column_title">Menu</div>
 						<div class="footer_column_content">
 							<ul>
-								<li class="footer_list_item"><a href="#">Home</a></li>
-								<li class="footer_list_item"><a href="#">About Us</a></li>
-								<li class="footer_list_item"><a href="courses.html">Categories</a></li>
-								<li class="footer_list_item"><a href="news.html">Books</a></li>
-								<li class="footer_list_item"><a href="contact.html">Contact</a></li>
+								<li class="footer_list_item"><a href="/">Home</a></li>
+								<li class="footer_list_item"><a href="/about">About Us</a></li>
+								<li class="footer_list_item"><a href="/shop">Categories</a></li>
+								<li class="footer_list_item"><a href="/shop">Books</a></li>
+								<li class="footer_list_item"><a href="/contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -299,11 +312,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				</div>
 				<div class="footer_social ml-sm-auto">
 					<ul class="menu_social">
-						<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li class="menu_social_item"><a href="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a></li>
+						<li class="menu_social_item"><a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
+						<li class="menu_social_item"><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+						<li class="menu_social_item"><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+						<li class="menu_social_item"><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
 					</ul>
 				</div>
 			</div>

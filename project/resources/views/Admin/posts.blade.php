@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mazer Admin Dashboard</title>
+    <title>Dashboard Posts</title>
 
     <link rel="stylesheet" href="{{asset('assets/css/main/app.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main/app-dark.css')}}">
@@ -34,9 +34,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Edit Post</h4>
-                    <h4 class="card-title"><a href="posts/create" class="btn btn-success mt-3">Create Post</a></h4>
-
+                    <h4 class="card-title">Edit Posts</h4>
                 </div>
                 <div class="card-content">
                     <!-- table head dark -->
@@ -44,32 +42,30 @@
                         <table class="table mb-0">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>NAME</th>
-                                    <th>Email</th>
-                                    <th>state</th>
-                                    <th>LOCATION</th>
-                                    <th>ACTION</th>
+                                    <th>Image</th>
+                                    <th>title</th>
+                                    <th>Publisher</th>
+                                    <th>State</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($posts as $post)
                                 <tr>
                                     <td class="text-bold-500">Michael Right</td>
                                     <td>Email@email.com</td>
                                     <td class="text-bold-500">False</td>
                                     <td>Austin,Taxes</td>
-                                    <td><a href="#"><i
-                                                class="badge-circle badge-circle-light-secondary font-medium-1"
-                                                data-feather="mail"></i></a></td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td class="text-bold-500">Morgan Vanblum</td>
-                                    <td>Assoli@fmail.com</td>
-                                    <td class="text-bold-500">True</td>
-                                    <td>Jordan,Ajloun</td>
-                                    <td><a href="#"><i
-                                                class="badge-circle badge-circle-light-secondary font-medium-1"
-                                                data-feather="mail"></i></a></td>
-                                </tr>
+                                @endforeach
+                                
                             </tbody>
                         </table>
                     </div>
