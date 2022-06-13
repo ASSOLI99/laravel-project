@@ -15,6 +15,9 @@
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/responsive.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('layout/styles/changable.css')}}">
 
+<link rel="stylesheet" type="text/css" href="{{asset('layout/styles/contact_styles.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('layout/styles/contact_responsive.css')}}">
+
 
 
 
