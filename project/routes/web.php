@@ -104,7 +104,7 @@ Route::view('contact', 'common/contact');
 Route::post('contact',[contactcontroller::class,'message']);
 Route::get('/home',[CategoryController::class,'show']);
 Route::view('about', 'common/about');
-Route::get('post/{id}/{user_id}', [PostController::class,'singlePage']);
+Route::get('post/{id}', [PostController::class,'singlePage']);
 
 
 

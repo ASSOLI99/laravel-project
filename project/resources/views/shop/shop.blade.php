@@ -187,7 +187,7 @@
 									<div class="product-info">
 										<div class="wrap-price"><span class="product-price">{{$item->name}}</span></div>
 										<a href="#" class="product-name"><span>{{$item->description}}</span></a>
-										<a href="single/{{$item->id}}" class="btn add-to-cart">view details</a>
+										<a href="post/{{$item->id}}" class="btn add-to-cart">view details</a>
 									</div>
 								</div>
 							</li>

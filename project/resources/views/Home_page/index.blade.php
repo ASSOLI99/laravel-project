@@ -87,7 +87,8 @@
                                 <img src="layout/images/home3.jpg"  alt="https://unsplash.com/@mehdizadeh" width="100%" height="100%">
                             </div>
                             <div class="course_author_name"><a href="http://localhost:8000/shop" style="text-decoration:none;color:#524431; float:right !important; " >view here</a> </div>
-                            <div class="course_price d-flex flex-column align-items-center justify-content-center"><span><a href="http://localhost:8000/shop%22%3E<span><i class="material-icons" style="font-size:35px; color:white;margin-top:10px;">&#xe315;</i></span></a></span></div>
+                            <div class="course_price d-flex flex-column align-items-center justify-content-center"><span><a href="{{url('/shop')}}"><span><i class="material-icons" style="font-size:35px; color:white;margin-top:10px;">&#xe315;</i></span></a></span></div>
+
                         </div>
                     </div>
                 </div>

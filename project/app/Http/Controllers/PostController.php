@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Book;
 use App\Models\User;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -15,9 +16,9 @@ class PostController extends Controller
             'posts'=>Post::all()
         ]);
     }
-    public function singlePage($id,$userid){
+    public function singlePage($id){
         $data = Book::find($id);
-        $userdata = User::where('id',$data->id)->first();
+        $userdata = User::where('id',$data->user_id)->first();
         return view('common/post',['data'=>$data,'userdata'=>$userdata]);
     }
 
@@ -29,7 +30,7 @@ class PostController extends Controller
 
 
 
-    //return view('user/Order_history' , ['order'=>$order,'user'=>$user]); 
+    //return view('user/Order_history' , ['order'=>$order,'user'=>$user]);
  }
- 
+
 }
