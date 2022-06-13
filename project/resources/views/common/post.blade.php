@@ -22,7 +22,7 @@
             </style>
             <div class="col-lg-12 course_box d-flex align-items-top" style="padding-bottom:100px;margin-top:0px">
                 <div class="card d-flex col-7" style="margin-right:20px">
-                    <img class="card-img-top" src="{{$data->book_image}}" alt="https://unsplash.com/@kellybrito" height="600px">
+                    <img class="card-img-top" src="{{asset('storage/'.$data->book_image)}}" alt="https://unsplash.com/@kellybrito" height="600px">
                 </div>
                 <div class="price_box d-flex flex-row align-items-center">
                     <div class="course_author_image">
@@ -40,8 +40,14 @@
                         <hr>
                         <div style="background-color:white;color:black;padding:10px 20px"><b>Author</b>: {{$data->author}}</div>
                         <hr>
+                        @if (session()->has('name'))
+                            
                         <div style="background-color:white;color:black;padding:10px 20px"><b>Volunteer number</b>: {{$userdata->phone}}</div>
                         <div style="background-color:#ffb606;color:black;padding:10px 20px"><b>Description :</b></div>
+                        @else
+                        <div style="background-color:white;color:black;padding:10px 20px"><b>Volunteer number</b>: 07xxxxxx <a href="/login" class="text-danger">Please Login </a></div> 
+                        <div style="background-color:#ffb606;color:black;padding:10px 20px"><b>Description :</b></div>
+                        @endif
                         <div style="padding:20px 40px;color:black;font-weight:500;letter-spacing:0.5px;">{{$data->description}}</div>
                         <br>
                         <br>

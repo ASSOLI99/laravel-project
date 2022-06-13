@@ -48,6 +48,7 @@ class BookController extends Controller
     public function update($id)
     {
         $post = Book::find($id);
+        
         $post->state = 3;
         $post->update();
 

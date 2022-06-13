@@ -159,7 +159,7 @@ class userController extends Controller
         if ($password1 === $password2) {
             $password1 = Hash::make($password1);
             User::where('email', $email)->update(array('password' => $password1));
-            return redirect('create-post');
+            return redirect('/login');
 
 
         }else
