@@ -40,7 +40,7 @@
         }
 
         #frame {
-            width: 95%;
+            width: 123%;
             min-width: 360px;
             max-width: 1000px;
             height: 92vh;
@@ -958,10 +958,12 @@ Website: http://emilcarlsson.se/
                         </li>
                     </ul>
                 </div>
+
                 <div class="message-input">
                     <div class="wrap">
-                        <form wire:submit.prevent="render">
-                            <input onkeydown='scrollDown()' wire:model.defer="messageText" type="text" class="write_msg" placeholder="Type here...." style="border-radius:0px;width:297px" />
+                        <form action="/chat" method="post">
+                            @csrf
+                            <input  name="messageText" type="text" class="write_msg" placeholder="Type here...." style="border-radius:0px;width: 397px" />
                             <button class="msg_send_btn" type="submit" style="width:100px">Send</button>
                         </form>
                     </div>

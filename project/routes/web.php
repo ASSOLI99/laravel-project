@@ -6,7 +6,7 @@ use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\contactcontroller;
-
+use App\Http\livewire\Chat;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ordercontroller;
@@ -143,3 +143,4 @@ Route::post('/rest' , [userController::class , 'rested_password']);
 Route::get('/chat',function(){
     return view('chat/livechat');
 });
+Route::post('/chat',[Chat::class,'send']);
