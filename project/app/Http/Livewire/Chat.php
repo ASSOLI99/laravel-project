@@ -12,21 +12,20 @@ class Chat extends Component
 
     public $messageText;
 
-    public function render()
+    public function render(Request $request)
     {
         $messages = Message::with('user')->latest()->take(10)->get()->sortBy('id');
         $users = User::where('id', $messages[0]->user_id)->first();
         $userid = $users->id;
         $userfname = $users->Fname;
-        // Message::create(
         return view('livewire.chat', ['messages' => $messages, 'userid' => $userid, 'userfname' => $userfname]);
     }
     public function send(Request $request){
         $message = new Message;
-        $message->user_id = '1';
+        $message->user_id = session('id');
         $message->message_text = $request->messageText;
         $message->save();
-        return redirect('chat');
+        return redirect('/chat');
     }
 
 
