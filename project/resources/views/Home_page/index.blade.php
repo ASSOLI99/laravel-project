@@ -5,7 +5,7 @@
 
     <!-- Hero Slider -->
     <div class="hero_slider_container">
-        <div class="hero_slider owl-carousel">
+        <div class="hero_slider owl-carousel" style="height:100vh">
 
             <!-- Hero Slide -->
             <div class="hero_slide">
@@ -49,19 +49,23 @@
 
         </div>
 
-        <div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200"><i class="material-icons" style="font-size:45px; color:white;">&#xe314;</i></span></div>
-        <div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200"><i class="material-icons" style="font-size:45px;color:white; ">&#xe315;</i></span></div>
+        <div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200"><i class="material-icons" style="font-size:45px; color:white;    position: relative;
+    top: 50%;
+    transform: translateY(300%);">&#xe314;</i></span></div>
+        <div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200"><i class="material-icons" style="font-size:45px;color:white;    position: relative;
+    top: 50%;
+    transform: translateY(300%); ">&#xe315;</i></span></div>
     </div>
 
 </div>
 <!-- Popular -->
 
-<div class="popular page_section">
+<div class="popular page_section" style="margin-top:300px">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="section_title text-center">
-                    <h1>Popular Courses</h1>
+                    <h1>Books Category</h1>
                 </div>
             </div>
         </div>
