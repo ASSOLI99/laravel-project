@@ -6,7 +6,7 @@ use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\contactcontroller;
-use App\Http\livewire\Chat;
+
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ordercontroller;
@@ -52,19 +52,22 @@ Route::group([],function(){
         return view('/Admin/admins/create');
     });
     Route::delete('/admin/{id}',[AdminController::class, 'destroy']);
-    //posts
-    Route::get('/admin/posts',[PostController::class, 'index']);
+    //Book
+    Route::get('/admin/books',[BookController::class, 'index']);
+    Route::delete('/admin/Books/delete/{id}',[BookController::class, 'destroy']);
+    Route::put('/admin/book/edit/{id}',[BookController::class, 'editState']);
+    Route::get('/admin/book/edit/{id}/edit',[BookController::class, 'edit']);
     Route::get('/admin/posts/update',[PostController::class, 'update']);
-    //messages
-    Route::get('/admin/messages',[MessageConttoller::class,'index']);
-    Route::delete('/admin/message/delete/{id}',[MessageConttoller::class,'destroy']);
+    //contacts
+    Route::get('/admin/contacts',[ContactController::class,'index']);
+    Route::delete('/admin/contact/delete/{id}',[ContactController::class,'destroy']);
 
     //categories
     Route::get('/admin/category',[CategoryController::class, 'index']);
     Route::get('/admin/category/create',[CategoryController::class, 'create']);
     Route::post('/admin/category/create',[CategoryController::class, 'store']);
     Route::get('/admin/category/edit/{id}/edit',[CategoryController::class, 'edit']);
-    Route::get('/admin/category/edit/{id}',[CategoryController::class, 'update']);
+    Route::put('/admin/category/edit/{id}',[CategoryController::class, 'update']);
     Route::delete('/admin/category/delete/{id}',[CategoryController::class, 'destroy']);
 });
 // End Admin page route
@@ -143,4 +146,3 @@ Route::post('/rest' , [userController::class , 'rested_password']);
 Route::get('/chat',function(){
     return view('chat/livechat');
 });
-Route::post('/chat',[Chat::class,'send']);

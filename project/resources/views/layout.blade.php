@@ -67,7 +67,7 @@
 		</div>
 		<div class="header_side d-flex flex-row justify-content-center align-items-center">
 			@if(session()->has('name'))
-			<p  style="color: black ; margin-right: 20px; margin-top:15px ; font-size:20px ; font-weight:500"> <span>Welcome</span>  {{session('name')}}</p>
+			<p  style="color: black ; margin-right: 20px; margin-top:15px ; font-size:20px ; font-weight:500"> Welcome  {{session('name')}}</p>
 			@endif
 			<ul>
                 <div class="dropdown">
@@ -201,7 +201,7 @@
 
 			<!-- Newsletter -->
 
-			<div class="newsletter">
+			{{-- <div class="newsletter">
 				<div class="row">
 					<div class="col">
 						<div class="section_title text-center">
@@ -223,7 +223,7 @@
 					</div>
 				</div>
 
-			</div>
+			</div> --}}
 
 			<!-- Footer Content -->
 
@@ -241,7 +241,7 @@
 							</div>
 						</div>
 
-						<p class="footer_about_text">The general vision of the site is determined in raising the local, Arab and international cultural and scientific level, where a group of writers, intellectuals and academics are based on this site, who are interested in providing sound.</p>
+						<p class="footer_about_text">The general vision of the site is determined in raising the local, Arab and international cultural and scientific level.</p>
 
 					</div>
 
