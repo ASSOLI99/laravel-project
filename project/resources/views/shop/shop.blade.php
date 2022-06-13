@@ -28,7 +28,7 @@
 	<style>
 		#card {
 
-			border-style: outset;
+			border-style: initial;
 
 		}
 	</style>
@@ -88,15 +88,15 @@
 
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="#" class="link">home</a></li>
-					<li class="item-link"><span>Digital & Electronics</span></li>
+					<li class="item-link"><a href="/" class="link">home</a></li>
+					<li class="item-link"><span>Books & novels</span></li>
 				</ul>
 			</div>
 			<div class="row">
 
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
 					<div class="widget mercado-widget categories-widget">
-						<h2 class="widget-title">All Categories</h2>
+						<h2 class="widget-title">Book shelf</h2>
 						<div class="widget-content">
 							<ul class="list-category">
 
@@ -133,7 +133,7 @@
 
 					<div class="wrap-shop-control">
 
-						<h1 class="shop-title">Digital & Electronics</h1>
+						<h1 class="shop-title">Books & novels</h1>
 
 						<div class="wrap-right">
 
@@ -143,26 +143,26 @@
 									<option value="popularity">Sort by popularity</option>
 									<option value="rating">Sort by average rating</option>
 									<option value="date">Sort by newness</option>
-									<option value="price">Sort by price: low to high</option>
-									<option value="price-desc">Sort by price: high to low</option>
+									{{-- <option value="price">Sort by price: low to high</option>
+									<option value="price-desc">Sort by price: high to low</option> --}}
 								</select>
 							</div>
 
 							<div class="sort-item product-per-page">
 								<select name="post-per-page" class="use-chosen">
-									<option value="12" selected="selected">12 per page</option>
-									<option value="16">16 per page</option>
-									<option value="18">18 per page</option>
-									<option value="21">21 per page</option>
-									<option value="24">24 per page</option>
+									<option value="4" selected="selected">4 per page</option>
+									<option value="6">6 per page</option>
+									<option value="8">8 per page</option>
+									<option value="10">10 per page</option>
+									{{-- <option value="24">24 per page</option>
 									<option value="30">30 per page</option>
-									<option value="32">32 per page</option>
+									<option value="32">32 per page</option> --}}
 								</select>
 							</div>
 
 							<div class="change-display-mode">
 								<a href="#" class="grid-mode display-mode active"><i class="fa fa-th"></i>Grid</a>
-								<a href="list.html" class="list-mode display-mode"><i class="fa fa-th-list"></i>List</a>
+								{{-- <a href="/shop" class="list-mode display-mode"><i class="fa fa-th-list"></i>List</a> --}}
 							</div>
 
 						</div>
@@ -179,15 +179,15 @@
 							<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 " id="card">
 								<div class="product product-style-3 equal-elem ">
 									<div class="product-thumnail">
-										<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+										<a href="/post" title="book">
 											<figure><img src="{{asset('shop_assets/images/products/'.$item->book_image)}}"
-													alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+													alt="book"></figure>
 										</a>
 									</div>
 									<div class="product-info">
 										<div class="wrap-price"><span class="product-price">{{$item->name}}</span></div>
-										<a href="#" class="product-name"><span>{{$item->description}}</span></a>
-										<a href="single/{{$item->id}}" class="btn add-to-cart">view details</a>
+										<a href="/post" class="product-name"><span>{{$item->description}}</span></a>
+										<a href="single/{{$item->id}}" class="btn add-to-cart">view book</a>
 									</div>
 								</div>
 							</li>

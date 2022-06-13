@@ -198,7 +198,7 @@
 
 			<!-- Newsletter -->
 
-			<div class="newsletter">
+			{{-- <div class="newsletter">
 				<div class="row">
 					<div class="col">
 						<div class="section_title text-center">
@@ -220,7 +220,7 @@
 					</div>
 				</div>
 
-			</div>
+			</div> --}}
 
 			<!-- Footer Content -->
 
@@ -238,7 +238,7 @@
 							</div>
 						</div>
 
-						<p class="footer_about_text">The general vision of the site is determined in raising the local, Arab and international cultural and scientific level, where a group of writers, intellectuals and academics are based on this site, who are interested in providing sound.</p>
+						<p class="footer_about_text">The general vision of the site is determined in raising the local, Arab and international cultural and scientific level.</p>
 
 					</div>
 
