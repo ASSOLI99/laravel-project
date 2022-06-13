@@ -39,7 +39,7 @@
 
            
             <li style="list-style-type:none;">
-                <a href="{{url('admin/posts')}}" class='sidebar-link'>
+                <a href="{{url('admin/books')}}" class='sidebar-link'>
                     <i class="bi bi-grid-1x2-fill"></i>
                     <span>Posts</span>
                 </a>
@@ -51,9 +51,9 @@
                 </a>
             </li>
             <li style="list-style-type:none;">
-                <a href="{{url('admin/messages')}}" class='sidebar-link'>
+                <a href="{{url('admin/contacts')}}" class='sidebar-link'>
                     <i class="bi bi-envelope-paper"></i>
-                    <span>Messages</span>
+                    <span>Contacts</span>
                 </a>
             </li>
             <li style="list-style-type:none;">

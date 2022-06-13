@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="{{asset('assets/css/main/app.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/main/app-dark.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/main/change.css')}}">
     <link rel="shortcut icon" href="{{asset('assets/images/logo/favicon.svg')}}" type="image/x-icon">
     <link rel="shortcut icon" href="{{asset('assets/images/logo/favicon.png')}}" type="image/png">
 
@@ -45,20 +46,18 @@
                                 <tr>
                                     <th>NAME</th>
                                     <th>Email</th>
-                                    <th>phone</th>
                                     <th>Message</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($data as $row)
+                                @foreach($contacts as $row)
                                 <tr>
-                                    <td class="text-bold-500">{{$row->Fname}} {{$row->Lname}}</td>
+                                    <td class="text-bold-500">{{$row->name}}</td>
                                     <td>{{$row->email}}</td>
-                                    <td class="text-bold-500">{{$row->phone}}</td>
-                                    <td>{{$row->message_text}}</td>
+                                    <td class="my-message">{{$row->message}}</td>
                                     <td>
-                                        <form method="POST" action="/admin/message/delete/{{$row->id}}">
+                                        <form method="POST" action="/admin/contact/delete/{{$row->id}}">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Delete</button>
