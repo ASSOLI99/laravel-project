@@ -31,11 +31,13 @@ Route::get('/', [CategoryController::class,'show']);
 
 
 // Admin page route
-
+//login
 Route::get('/admin/login', function () {
 
     return view('Admin/admins/login');
 });
+
+Route::post('admin/login',[AdminController::class,'login']);
 Route::view('restrict' , 'admin/adminRestrict');
 
 Route::group(['middleware'=>['admin']],function(){
@@ -46,8 +48,8 @@ Route::group(['middleware'=>['admin']],function(){
     //users
     Route::get('/admin/users' ,[userController::class,'index']);
     Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
-    //login
-    Route::post('admin/login',[AdminController::class,'login']);
+    
+    
     //admins
     Route::get('/admins',[AdminController::class, 'index']);
     Route::post('/admins',[AdminController::class, 'store']);
