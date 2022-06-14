@@ -19,6 +19,7 @@ class PostController extends Controller
     public function singlePage($id){
         $data = Book::find($id);
         $userdata = User::where('id',$data->user_id)->first();
+        session()->put('user_id',$userdata->Fname);
         return view('common/post',['data'=>$data,'userdata'=>$userdata]);
     }
 

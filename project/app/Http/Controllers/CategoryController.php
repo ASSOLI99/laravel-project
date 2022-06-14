@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CategoryController extends Controller
 {
@@ -63,7 +64,7 @@ class CategoryController extends Controller
     }
     public function store(Request $request){
         $formFields=$request->validate([
-            'name'=>'required',
+            'name'=>['required',Rule::unique('catigory','name')],
             'image'=>'required'
         ]);
 

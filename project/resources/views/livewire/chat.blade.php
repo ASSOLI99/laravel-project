@@ -1,4 +1,4 @@
-<div wire:poll>
+<div wire:poll wire:loading >
     <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
     <script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script>
     <script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script>
@@ -23,6 +23,7 @@
         body {
             display: flex;
             align-items: center;
+            width:88%;
             justify-content: center;
             min-height: 100vh;
             background: white;
@@ -710,7 +711,7 @@ Website: http://emilcarlsson.se/
                 <div id="profile">
                     <div class="wrap">
                         <img id="profile-img" src="http://emilcarlsson.se/assets/mikeross.png" class="online" alt="" />
-                        <p>Mike Ross</p>
+                        <p>{{$username->Fname}}  {{$username->Lname}}</p>
                         <i class="fa fa-chevron-down expand-button" aria-hidden="true"></i>
                         <div id="status-options">
                             <ul>
@@ -740,20 +741,10 @@ Website: http://emilcarlsson.se/
                 </div>
                 <div id="search">
                     <label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
-                    <input type="text" placeholder="Search contacts..." />
+                    <input type="text" placeholder="Search contacts..." style="margin-bottom:10px" />
                 </div>
                 <div id="contacts">
                     <ul>
-                        <li class="contact">
-                            <div class="wrap">
-                                <span class="contact-status online"></span>
-                                <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
-                                <div class="meta">
-                                    <p class="name">Louis Litt</p>
-                                    <p class="preview">You just got LITT up, Mike.</p>
-                                </div>
-                            </div>
-                        </li>
                         <li class="contact active">
                             <div class="wrap">
                                 <span class="contact-status busy"></span>
@@ -778,19 +769,31 @@ Website: http://emilcarlsson.se/
                     <ul>
                         <li class="replies">
                             @forelse($messages as $message)
-                            @if ($message->user_id == $userid )
+                            @if ($message->user_id == session('id'))
                             <!-- Reciever Message-->
-                            <div class="outgoing_msg">
-                                <div class="sent_msg">
-                                        <p>{{ $message->message_text }}</p>
-                                        <span class="time_date">
-                                            {{ $message->created_at->diffForHumans(null, false, false) }}</span>
+                            <div class="incoming_msg">
+                                <div class="received_msg" style="color:black;margin-top:10px">
+                                    <div class="received_withd_msg" style="color:black">
+                                                                                  <p>{{ $message->message_text }}</p><br><br><br><br>
+                                            <span
+                                                class="time_date" style="float:right;display:flex;border-radius:10px;padding:3px;    position: relative;
+    top: -13px;">{{ $message->created_at->diffForHumans(null, false, false) }}</span>
+                                    </div>
                                 </div>
                             </div>
                             @else
+                            <div class="outgoing_msg">
+                                <div class="sent_msg">
+                                        <p>{{ $message->message_text }}</p>
+                                        <br><br><br><br>
+                                        <span class="time_date" style="border-radius:10px;padding:3px;    position: relative;
+    top: -10px;">
+                                            {{ $message->created_at->diffForHumans(null, false, false) }}</span>
+                                </div>
+                            </div>
                             <style>
                                 #frame .content .messages ul li.replies .outgoing_msg p {
-                                    background: #2c3e50;
+                                    background: black;
                                     float: left;
                                     color: white;
                                     margin-bottom: 5px;
@@ -810,15 +813,6 @@ Website: http://emilcarlsson.se/
                                     flex-direction: column;
                                 }
                             </style>
-                            <div class="incoming_msg">
-                                <div class="received_msg" style="color:black">
-                                    <div class="received_withd_msg" style="color:black">
-                                                                                  <p>{{ $message->message_text }}</p>
-                                            <span
-                                                class="time_date" style="float:right;display:flex;">{{ $message->created_at->diffForHumans(null, false, false) }}</span>
-                                    </div>
-                                </div>
-                            </div>
                             @endif
                             @empty
                             <p>nothing</p>
@@ -831,8 +825,8 @@ Website: http://emilcarlsson.se/
                     <div class="wrap">
                         <form action="/chat" method="post">
                             @csrf
-                            <input  name="messageText" type="text" class="write_msg" placeholder="Type here...." style="border-radius:0px;width: 397px" />
-                            <button class="msg_send_btn" type="submit" style="width:100px">Send</button>
+                            <input  name="messageText" type="text" class="write_msg" placeholder="Type here...." style="border-radius:20px;width:300px" />
+                            <button class="msg_send_btn" type="submit" style="width:100px;border-radius:20px">Send</button>
                         </form>
                     </div>
                 </div>

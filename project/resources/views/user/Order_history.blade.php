@@ -70,16 +70,18 @@
                                             @else
                                             <div class="pull-right"><label class="label label-info">Hidden</label></div> 
                                             @endif
-                                            <span><strong>Book name : {{$item->name}}</strong></span> 	&nbsp;	&nbsp; 	&nbsp;<span class="label label-info">	&nbsp; Region :
-                                                {{$item->address}}</span><br /><span style=" font-weight: bold;color : black">Description :</span>{{$item->description}} <br><span style=" font-weight: bold;color : black">Publisher :</span>  {{$item->publisher}} <br>
-                                                <span style=" font-weight: bold;color : black">Author :</span>  {{$item->author}} <br />
+                                            <span><strong><span style=" font-weight: bold;color : black">Book name : </span>{{$item->name}}</strong></span> 	&nbsp;	&nbsp; 	&nbsp;<span class="label label-info">	&nbsp; Region :
+                                                {{$item->address}}</span><br /><span style=" font-weight: bold;color : black">Description : </span>{{$item->description}} <br><span style=" font-weight: bold;color : black">Publisher : </span>  {{$item->publisher}} <br>
+                                                <span style=" font-weight: bold;color : black">Author : </span>  {{$item->author}} <br />
                                                 
 
+                                               @if({{$item->state}} !=2)
                                                 <form class="d-inline" action="{{url('update/'.$item->id)}}" method="POST">
                                                     @csrf
                                                      <input type="hidden" value="{{$item->id}}">
                                                      <input class="btn btn-info btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Disable ">
                                                 </form>
+                                                @endif
                                                 
                                                 <form class="d-inline" action="{{url('delete/'.$item->id)}}" method="POST">
                                                     @csrf

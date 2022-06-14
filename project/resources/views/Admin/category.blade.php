@@ -28,7 +28,7 @@
 
 <div class="page-heading">
     @if(session()->has('message'))
-    <div class="alert alert-primary" role="alert">
+    <div class="alert alert-warning" role="alert">
         {{session('message')}}
       </div>
 
