@@ -7,13 +7,13 @@
                         <div class="card-body px-3 py-4-5">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div class="stats-icon purple">
-                                        <i class="iconly-boldShow"></i>
+                                    <div class="stats-icon green ">
+                                        <i class="bi bi-book-fill mb-3 me-2"></i>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Profile Views</h6>
-                                    <h6 class="font-extrabold mb-0">112.000</h6>
+                                    <h6 class="text-muted font-semibold">Books</h6>
+                                    <h6 class="font-extrabold mb-0">{{count($books)}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <h6 class="text-muted font-semibold">Subscribers</h6>
-                                    <h6 class="font-extrabold mb-0">183.000</h6>
+                                    <h6 class="font-extrabold mb-0">{{count($users)}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -42,12 +42,12 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="stats-icon green ">
-                                        <i class="bi bi-envelope-fill mb-3 me-2""></i>
+                                        <i class="bi bi-envelope-fill mb-3 me-2"></i>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
                                     <h6 class="text-muted font-semibold">Messages</h6>
-                                    <h6 class="font-extrabold mb-0">80.000</h6>
+                                    <h6 class="font-extrabold mb-0">{{count($contacts)}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -63,8 +63,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Posts</h6>
-                                    <h6 class="font-extrabold mb-0">112</h6>
+                                    <h6 class="text-muted font-semibold">types</h6>
+                                    <h6 class="font-extrabold mb-0">{{count($categories)}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -77,80 +77,17 @@
                         <div class="card-header">
                             <h4>Profile Visit</h4>
                         </div>
-                        <div class="card-body">
-                            <div id="chart-profile-visit"></div>
+                        <div class="card-body" style="fill: green !important">
+                            <div id="chart-profile-visit" style="fill: green !important"></div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-xl-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Profile Visit</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center">
-                                        <svg class="bi text-primary" width="32" height="32" fill="blue"
-                                            style="width:10px">
-                                            <use
-                                                xlink:href="assets/images/bootstrap-icons.svg#circle-fill" />
-                                        </svg>
-                                        <h5 class="mb-0 ms-3">Europe</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <h5 class="mb-0">862</h5>
-                                </div>
-                                <div class="col-12">
-                                    <div id="chart-europe"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center">
-                                        <svg class="bi text-success" width="32" height="32" fill="blue"
-                                            style="width:10px">
-                                            <use
-                                                xlink:href="assets/images/bootstrap-icons.svg#circle-fill" />
-                                        </svg>
-                                        <h5 class="mb-0 ms-3">America</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <h5 class="mb-0">375</h5>
-                                </div>
-                                <div class="col-12">
-                                    <div id="chart-america"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center">
-                                        <svg class="bi text-danger" width="32" height="32" fill="blue"
-                                            style="width:10px">
-                                            <use
-                                                xlink:href="assets/images/bootstrap-icons.svg#circle-fill" />
-                                        </svg>
-                                        <h5 class="mb-0 ms-3">Indonesia</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <h5 class="mb-0">1025</h5>
-                                </div>
-                                <div class="col-12">
-                                    <div id="chart-indonesia"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-12 col-xl-8">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Latest Comments</h4>
+                            <h4>Latest messages</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -158,37 +95,31 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Comment</th>
+                                            <th>message</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="col-3">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-md">
-                                                        <img src="assets/images/faces/5.jpg">
-                                                    </div>
-                                                    <p class="font-bold ms-3 mb-0">Si Cantik</p>
-                                                </div>
-                                            </td>
-                                            <td class="col-auto">
-                                                <p class=" mb-0">Congratulations on your graduation!</p>
-                                            </td>
-                                        </tr>
+                                        @php
+                                        $end=count($contacts);
+                                        @endphp
+                                        
+                                        @foreach ($contacts->slice($end-2,2) as $contact)
                                         <tr>
                                             <td class="col-3">
                                                 <div class="d-flex align-items-center">
                                                     <div class="avatar avatar-md">
                                                         <img src="assets/images/faces/2.jpg">
                                                     </div>
-                                                    <p class="font-bold ms-3 mb-0">Si Ganteng</p>
+                                                    <p class="font-bold ms-3 mb-0">{{$contact->name}}
+                                                    </p>
                                                 </div>
                                             </td>
                                             <td class="col-auto">
-                                                <p class=" mb-0">Wow amazing design! Can you make another tutorial for
-                                                    this design?</p>
+                                                <p class=" mb-0">{{$contact->message}}</p>
                                             </td>
                                         </tr>
+                                        @endforeach
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -204,9 +135,9 @@
                         <div class="avatar avatar-xl">
                             <img src="assets/images/faces/1.jpg" alt="Face 1">
                         </div>
-                        <div class="ms-3 name overflow-hidden">
-                            <h5 class="font-bold">Welcom Admin</h5>
-                            <h6 class="text-muted mb-0">{{session()->get('adminEmail');}}</h6>
+                        <div class="ms-3 name">
+                            <h5 class="font-bold">Welcome</h5>
+                            <h6 class="text-muted mb-0">{{$admin[0]['name']}}</h6>
                         </div>
                     </div>
                 </div>
@@ -216,35 +147,23 @@
                     <h4>Recent Messages</h4>
                 </div>
                 <div class="card-content pb-4">
-                    <div class="recent-message d-flex px-4 py-3">
+                   
+                    @php
+                    $endU=count($users);
+                    @endphp
+                    
+                    @foreach ($users->slice($endU-3,3) as $user)
+                    <div class="recent-message d-flex px-4 py-3 overflow-hidden">
                         <div class="avatar avatar-lg">
                             <img src="assets/images/faces/4.jpg">
                         </div>
                         <div class="name ms-4">
-                            <h5 class="mb-1">Hank Schrader</h5>
-                            <h6 class="text-muted mb-0">@johnducky</h6>
+                            <h5 class="mb-1">{{$user->Fname}}</h5>
                         </div>
                     </div>
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <img src="assets/images/faces/5.jpg">
-                        </div>
-                        <div class="name ms-4">
-                            <h5 class="mb-1">Dean Winchester</h5>
-                            <h6 class="text-muted mb-0">@imdean</h6>
-                        </div>
-                    </div>
-                    <div class="recent-message d-flex px-4 py-3">
-                        <div class="avatar avatar-lg">
-                            <img src="assets/images/faces/1.jpg">
-                        </div>
-                        <div class="name ms-4">
-                            <h5 class="mb-1">John Dodol</h5>
-                            <h6 class="text-muted mb-0">@dodoljohn</h6>
-                        </div>
-                    </div>
+                    @endforeach
                     <div class="px-4">
-                        <button class='btn btn-block btn-xl btn-outline-primary font-bold mt-3'>Start Conversation</button>
+                        <button class='btn btn-block btn-xl btn-outline-primary font-bold mt-3'>All Users</button>
                     </div>
                 </div>
             </div>
