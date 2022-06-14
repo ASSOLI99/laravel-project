@@ -28,6 +28,12 @@
             </header>
 
 <div class="page-heading">
+    @if(session()->has('message'))
+    <div class="alert alert-warning" role="alert">
+        {{session('message')}}
+      </div>
+
+@endif
     <h3><a href="/dashboard" class="text-warning">Dashboard</a><span> / Contacts</span></h3>
 </div>
 <section class="section">

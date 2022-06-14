@@ -187,9 +187,9 @@ class userController extends Controller
     public function view(Request $req)
     {
 
-        if (isset($req->user_img)) {
+
             $req->session()->put('user_img', 'avatar.png');
-        }
+        
 
 
         if (isset($req->user_img)) {
