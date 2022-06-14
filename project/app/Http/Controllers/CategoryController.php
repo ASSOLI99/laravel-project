@@ -50,6 +50,7 @@ class CategoryController extends Controller
     public function show()
     {
         $catig = Category::all();
+        dd($catig);
         return view('Home_page.index', ['catig'=>$catig]);
 
     }

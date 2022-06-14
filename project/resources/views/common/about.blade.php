@@ -180,7 +180,7 @@
 						<div class="col-lg-4 col-md-6">
 							<div class="member">
 							  <div class="member-img">
-								  <img src="style/images/teacher_3.jpg" class="img-fluid" alt="">
+								  <img style="width: 100px" src="https://www.pngitem.com/pimgs/m/514-5149286_profile-logo-hd-png-download.png" class="img-fluid" alt="">
 							  </div>
 								<div class="member-info">
 									<h4>Kaled Bani_amer</h4>
