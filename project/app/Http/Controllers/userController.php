@@ -26,7 +26,7 @@ class userController extends Controller
             'lname' => 'required|max:255|regex:/(^([a-zA-Z]+)(\d+)?$)/u',
             'email' => 'required|unique:user|email',
             'phone' => 'required|regex:/^([0]{1}[7-9]{1})([0-9]{8})$/|digits:10|unique:user,phone',
-            'pass' => 'required|max:25|min:8|',
+            'pass' => 'required|max:25|min:8|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
             'pass2' => 'required|max:25|min:8|',
             'pass2' => 'required|max:25|min:8|',
             'address' => 'required',
