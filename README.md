@@ -10,6 +10,9 @@
  <h2>💼mockup & wireframe</h2>
  <h4>https://www.figma.com/file/HZUVezcdrwyDN0AzzZJqFT/Laravel-Project?node-id=0%3A1</h4>
  
+ <h2>📃 Miro</h2>
+ <h4>https://trello.com/b/8smm255G/laravel-group-1</h4>
+ 
 <h4> 🛠 &nbsp;We use</h4>
 
 - &nbsp;
