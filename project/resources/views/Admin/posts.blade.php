@@ -49,9 +49,10 @@
                             <thead class="thead-dark">
                                 <tr>
                                     <th>Image</th>
-                                    <th>title</th>
+                                    <th>User Id</th>
                                     <th>Publisher</th>
-                                    <th>State</th>
+                                    <th>Description</th>
+                                    <th>status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -60,15 +61,26 @@
                                 @foreach ($books as $book)
                                 <tr>
                                     <td class="text-bold-500"><img src="{{asset('storage/'.$book->book_image)}}" width="80px" alt=""></td>
+                                    <td>{{$book['user_id']}}</td>
                                     <td>{{$book['name']}}</td>
-                                    <td class="text-bold-500">{{$book['publisher']}}</td>
-                                    <td>{{$book['state']}}</td>
+                                    <td class="text-bold-500">{{$book['description']}}</td>
                                     <td>
-                                        <div>
-                                            <a class="btn btn-warning" href="/admin/book/edit/{{$book['id']}}/edit">
-                                                <i class="bi bi-pencil-square"></i> Edit
-                                            </a>
-                                        </div>
+                                        @if($book['state']==0 || $book['state']==1)
+                                        <span class="text-warning">Approved</span>
+                                        @else
+                                        <span class="text-danger">Restricted</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <form action="/admin/book/edit/{{$book->id}}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                              <select onchange="this.form.submit()" class="form-select" name="state" aria-label="state of the book">
+                                                <option value="0">Chose state</option>
+                                                <option value="1">Approve</option>
+                                                <option value="2">Restrict</option>
+                                              </select>
+                                          </form>
                                     </td>
                                     <td>
                                         <form method="POST" action="/admin/Books/delete/{{$book['id']}}">
