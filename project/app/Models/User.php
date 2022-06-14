@@ -20,7 +20,7 @@ class User extends Authenticatable
      */
 
     protected $table = 'user';
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
     protected $fillable = [
         'name',
         'email',
