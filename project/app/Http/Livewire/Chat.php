@@ -11,14 +11,14 @@ class Chat extends Component
 {
 
     public $messageText;
-
     public function render(Request $request)
     {
         $messages = Message::with('user')->latest()->take(10)->get()->sortBy('id');
         $users = User::where('id', $messages[0]->user_id)->first();
         $userid = $users->id;
-        $userfname = $users->Fname;
-        return view('livewire.chat', ['messages' => $messages, 'userid' => $userid, 'userfname' => $userfname]);
+        $username = User::where('id',session('id'))->first();
+        $userfname = session('user_id');
+        return view('livewire.chat', ['messages' => $messages, 'userid' => $userid, 'userfname' => $userfname,'username' => $username]);
     }
     public function send(Request $request){
         $message = new Message;
