@@ -51,6 +51,7 @@
                             <thead class="thead-dark">
                                 <tr>
                                     <th>NAME</th>
+                                    <th>User Id</th>
                                     <th>Email</th>
                                     <th>phone</th>
                                     <th>LOCATION</th>
@@ -61,6 +62,7 @@
                                 @foreach ($users as $user)
                                 <tr>
                                 <td class="text-bold-500">{{$user['Fname']}} {{$user['Lname']}}</td>
+                                <td>{{$user['id']}}</td>
                                 <td>{{$user['email']}}</td>
                                 <td class="text-bold-500">{{$user['phone']}}</td>
                                 <td>{{$user['address']}}</td>

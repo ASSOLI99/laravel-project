@@ -34,10 +34,10 @@
 		      	<form action="/rest" class="signin-form" method="post">
 					@csrf
 		      		<div class="form-group mb-3">
-		      			<input type="text" class="form-control" name="reset_password" placeholder="New Password" required>
+		      			<input type="password" class="form-control" name="reset_password" placeholder="New Password" required>
 		      		</div>
 		      		<div class="form-group mb-3">
-		      			<input type="text" class="form-control" name="confirm_reset_password" placeholder="Confirm New Password" required>
+		      			<input type="password" class="form-control" name="confirm_reset_password" placeholder="Confirm New Password" required>
 		      		</div>
 
                       <div class="form-group mb-3">

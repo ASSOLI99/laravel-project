@@ -241,8 +241,10 @@
 						<!-- Logo -->
 						<div class="logo_container">
 							<div class="logo">
-								<img style="width: 50px " src="{{asset('layout/images/logo.png')}}" alt="">
-								<span>Books</span>
+
+								<img src="{{asset('layout/images/logo.png')}}" height="60px" width="60px" alt="">
+								<span>Shine</span>
+
 							</div>
 						</div>
 

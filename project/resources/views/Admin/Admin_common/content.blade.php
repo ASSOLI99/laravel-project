@@ -137,7 +137,9 @@
                         </div>
                         <div class="ms-3 name">
                             <h5 class="font-bold">Welcome</h5>
+                            @if(isset($admin[0]))
                             <h6 class="text-muted mb-0">{{$admin[0]['name']}}</h6>
+                            @endif
                         </div>
                     </div>
                 </div>
