@@ -51,11 +51,11 @@
 				@enderror 
 	              <input id="password-field" type="password" name="pass" class="form-control" placeholder="Set Password"  style="margin-bottom: 10px" required>
 				<ul>
-				 	<li style="text-shadow: 0 0 3px #9d9d9d;">One Uppercase letter.</li>
+				 	<li style="text-shadow: 0 0 3px #9d9d9d;">one Uppercase letter.</li>
 					<li style="text-shadow: 0 0 3px #9d9d9d;">one Lower case letter.</li>
 					<li style="text-shadow: 0 0 3px #9d9d9d;">one number.</li>
 					<li style="text-shadow: 0 0 3px #9d9d9d;">one special character.</li>
-					<li style="text-shadow: 0 0 3px #9d9d9d;">at least 6 characters long.</li>
+					<li style="text-shadow: 0 0 3px #9d9d9d;">at least 8 characters long.</li>
 				</ul>
 				  @error('pass')
 				  <div style="color: #ff0000;text-shadow: 0px 1px 8px #ff0202;">{{$message}}</div>
@@ -95,17 +95,10 @@
 	            <div class="form-group">
 	            	<button type="submit" class="form-control btn btn-primary submit px-3" name="signup">Sign Up</button>
 	            </div>
-	            <div class="form-group d-md-flex">
-	            	<div class="w-50">
-		            	{{-- <label class="checkbox-wrap checkbox-primary">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label> --}}
+								<div class="">
+									Have an account?<a href="http://localhost:8000/login" style="color: #fff;text-decoration:underline"> Signin</a>
 								</div>
-								<div class="w-50 text-md-right">
-									<a href="http://localhost:8000/login" style="color: #fff">Have an account?</a>
-								</div>
-	            </div>
+
 	          </form>
 	          
 		      </div>
