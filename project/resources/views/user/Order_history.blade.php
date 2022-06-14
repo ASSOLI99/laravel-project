@@ -75,12 +75,13 @@
                                                 <span style=" font-weight: bold;color : black">Author : </span>  {{$item->author}} <br />
                                                 
 
-                                               {{-- @if({{$item->name}} !=2) --}}
+                                               @if({{$item->state}} !=2)
                                                 <form class="d-inline" action="{{url('update/'.$item->id)}}" method="POST">
                                                     @csrf
                                                      <input type="hidden" value="{{$item->id}}">
                                                      <input class="btn btn-info btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Disable ">
                                                 </form>
+                                                @endif
                                                 
                                                 <form class="d-inline" action="{{url('delete/'.$item->id)}}" method="POST">
                                                     @csrf

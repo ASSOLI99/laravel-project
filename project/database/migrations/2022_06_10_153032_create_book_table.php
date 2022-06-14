@@ -24,7 +24,7 @@ class CreateBookTable extends Migration
             $table->string('author');
             $table->string('book_image');
             $table->string('publishing_year');
-            $table->string('state')->default('0');
+            $table->string('state')->default('2');
             $table->timestamps();
 
             
