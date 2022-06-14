@@ -11,6 +11,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ordercontroller;
 use App\Http\Controllers\MessageConttoller;
+use App\Http\Controllers\DashboardController;
 
 
 
@@ -42,9 +43,7 @@ Route::view('restrict' , 'admin/adminRestrict');
 
 Route::group(['middleware'=>['admin']],function(){
     //dashboard
-    Route::get('/dashboard', function () {
-        return view('Admin.index');
-    });
+    Route::get('/dashboard' ,[DashboardController::class,'index']);
     //users
     Route::get('/admin/users' ,[userController::class,'index']);
     Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
