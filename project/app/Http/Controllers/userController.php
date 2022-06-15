@@ -181,12 +181,12 @@ class userController extends Controller
 
 
         $req->session()->put('user_img', 'avatar.png');
-
+        $user_id = session('id');
 
 
         if (isset($req->user_img)) {
 
-            $user_id = session('id');
+
             if ($req->hasfile('user_img')) {
 
                 $img = $req->file('user_img');
@@ -194,10 +194,6 @@ class userController extends Controller
                 $img->move('user_img/', $imgname);
 
                 $req->session()->put('user_img', $imgname);
-                // $user = User::find(1);
-                // $user->user_img =  $imgname;
-                // $user->update();
-
             }
         }
         if (isset($req->update)) {
@@ -213,8 +209,7 @@ class userController extends Controller
             $user->update();
         }
 
-        // $id = session('id');
-        $user = User::find( $user_id);
+        $user = User::find($user_id);
 
         return view('user/user_profile', ['user' => $user]);
     }

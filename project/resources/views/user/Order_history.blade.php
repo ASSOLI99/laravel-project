@@ -26,7 +26,7 @@
             <div class="module-inner">
                 <div class="side-bar">
                     <div class="user-info">
-                        <img class=" center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="" style="width: 100px ; height:auto ; border-radius:50%">
+                        <img class=" center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="" style="width: 160px ; height:auto ; border-radius:15%"">
                     </div>
             		<nav class="side-menu">
         				<ul class="nav">
