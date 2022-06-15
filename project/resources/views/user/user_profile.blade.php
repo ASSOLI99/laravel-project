@@ -32,7 +32,7 @@
             		<nav class="side-menu">
         				<ul class="nav">
         					<li class="active"><a href="#"><span class="fa fa-user"></span> Profile</a></li>
-        					<li><a href="{{url('order/'.session('id'))}}"><span class="fa fa-credit-card"></span> Order history</a></li>
+        					<li><a href="{{url('order/'.session('id'))}}"><span class="fa fa-credit-card"></span> Post history</a></li>
         				</ul>
         			</nav>
                 </div>
