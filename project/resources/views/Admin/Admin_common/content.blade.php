@@ -146,7 +146,7 @@
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h4>Recent Messages</h4>
+                    <h4>Recent Users</h4>
                 </div>
                 <div class="card-content pb-4">
                    
@@ -165,7 +165,7 @@
                     </div>
                     @endforeach
                     <div class="px-4">
-                        <button class='btn btn-block btn-xl btn-outline-primary font-bold mt-3'>All Users</button>
+                        <a class='btn btn-block btn-xl btn-outline-primary font-bold mt-3' href="/admin/users">All Users</a>
                     </div>
                 </div>
             </div>

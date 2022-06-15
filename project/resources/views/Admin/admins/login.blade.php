@@ -21,11 +21,11 @@
                 <a><img src="{{asset('image/logo.png')}}"  alt="Logo"></a>
             </div>
             <h1 class="auth-title">Log in.</h1>
-            <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
+            <p class="auth-subtitle">Log in with your data that you entered during registration.</p>
 
             <form action="{{url('admin/login')}}" method="post">
                 @csrf
-                <div class="form-group position-relative has-icon-left mb-4">
+                <div class="form-group position-relative has-icon-left">
                     <input type="email" name="email" class="form-control form-control-xl" placeholder="Email">
                     <div class="form-control-icon"> 
                         <i class="bi bi-person"></i>

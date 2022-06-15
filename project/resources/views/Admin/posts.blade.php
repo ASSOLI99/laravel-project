@@ -68,7 +68,7 @@
                                         @if($book['state']==0 || $book['state']==1)
                                         <span class="text-warning">Approved</span>
                                         @else
-                                        <span class="text-danger">Restricted</span>
+                                        <span class="text-danger">Pending</span>
                                         @endif
                                     </td>
                                     <td>
@@ -78,7 +78,7 @@
                                               <select onchange="this.form.submit()" class="form-select" name="state" aria-label="state of the book">
                                                 <option value="0">Chose state</option>
                                                 <option value="1">Approve</option>
-                                                <option value="2">Restrict</option>
+                                                <option value="2">Pend</option>
                                               </select>
                                           </form>
                                     </td>
