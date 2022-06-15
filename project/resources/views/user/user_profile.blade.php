@@ -27,7 +27,7 @@
             <div class="module-inner">
                 <div class="side-bar">
                     <div class="user-info">
-                        <img class="  center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="" style="width: 100px ; height:auto ; border-radius:50%">
+                        <img class="  center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="" style="width: 160px ; height:auto ; border-radius:15%">
                     </div>
             		<nav class="side-menu">
         				<ul class="nav">
@@ -44,7 +44,7 @@
                             <h3 class="fieldset-title">Personal Info</h3>
                             <div class="form-group avatar">
                                 <figure class="figure col-md-2 col-sm-3 col-xs-12">
-                                    <img class="img-rounded img-responsive" src="{{asset('user_img/'.session('user_img'))}}" alt=""  name="user_image">
+                                    <img class="img-rounded img-responsive" src="{{asset('user_img/'.session('user_img'))}}" alt=""  name="user_image" style="width: 100px">
                                     <input type="hidden" value="{{session('user_img')}}" name="user_image">
                                 </figure>
                                 <div class="form-inline col-md-10 col-sm-9 col-xs-12">  
@@ -55,42 +55,56 @@
                             <div class="form-group">
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">First name</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="{{$user->Fname}}" name="Fname">
+                                    <input type="text" class="form-control" value="{{$user->Fname}}" name="Fname" style="color: black ; font-size:13px" >
+                                    @error('Fname')<div class="form-text text-danger">{{$message}}</div>@enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Last name</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="{{$user->Lname}}" name="Lname">
+                                    <input type="text" class="form-control" value="{{$user->Lname}}" name="Lname" style="color: black; font-size:13px">
+                                    @error('Lname')<div class="form-text text-danger">{{$message}}</div>@enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Email</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="{{$user->email}}" name="email">
+                                    <input type="text" class="form-control" value="{{$user->email}}" name="email" style="color: black; font-size:13px">
+                                    @error('email')<div class="form-text text-danger">{{$message}}</div>@enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Address</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="{{$user->address}}" name="address">
+                                    <input type="text" class="form-control" value="{{$user->address}}" name="address" style="color: black; font-size:13px">
+                                    @error('address')<div class="form-text text-danger">{{$message}}</div>@enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Phone Number</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="{{$user->phone}}" name="phone">
+                                    <input type="text" class="form-control" value="{{$user->phone}}" name="phone" style="color: black; font-size:13px">
+                                    @error('phone')<div class="form-text text-danger">{{$message}}</div>@enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">PassWord</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="{{$user->password}}" name="password"> 
+                                    <input type="password" class="form-control" value="" name="password" style="color: black; font-size:13px"> 
+                                    @error('password')<div class="form-text text-danger">{{$message}}</div>
+                                    <ul>
+                                       <li style="text-shadow: 0 0 1px #ff0000;">*one Uppercase letter.</li>
+                                       <li style="text-shadow: 0 0 1px #fa0000;">*one Lower case letter.</li>
+                                       <li style="text-shadow: 0 0 1px #ff0000;">*one number.</li>
+                                       <li style="text-shadow: 0 0 1px #ff0000;">*one special character.</li>
+                                       <li style="text-shadow: 0 0 1px #ff0000;">*at least 8 characters long.</li>
+                                   </ul>
+                                   @enderror
                                 </div>
                             </div>
 

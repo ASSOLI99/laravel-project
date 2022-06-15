@@ -38,7 +38,7 @@
         <div class="mb-3">
           <label for="exampleInputAddress1" class="form-label">Address</label>
           <input type="text" name="address" value="{{old('address')}}" class="form-control" id="exampleInputAddress1">
-          @error('phone')
+          @error('address')
           <div class="form-text text-danger">{{$message}}</div>
           @enderror
         </div>
@@ -49,6 +49,13 @@
           <div class="form-text text-danger">{{$message}}</div>
           @enderror
         </div>
+        <ul>
+					<li>one Uppercase letter.</li>
+				   <li>one Lower case letter.</li>
+				   <li>one number.</li>
+				   <li>one special character.</li>
+				   <li>at least 8 characters long.</li>
+			   </ul>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
           <input type="password" name="password_confirmation" class="form-control">
@@ -56,7 +63,7 @@
           <div class="form-text text-danger">{{$message}}</div>
           @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-warning">Create</button>
       </form>
     </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

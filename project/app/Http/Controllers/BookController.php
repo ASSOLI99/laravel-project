@@ -20,6 +20,8 @@ class BookController extends Controller
     {
         if (isset($req->cat_id)) {
             $book = Book::where('catigory_id', $req->cat_id)->get();
+        }elseif(isset($req->search)){
+            $book = Book::where('name','LIKE', "%{$req->search}%")->orWhere('author','LIKE', "%{$req->search}%")->get();
         } else {
             $book = Book::all();
         }
@@ -49,6 +51,16 @@ class BookController extends Controller
         $post = Book::find($id);
         
         $post->state = 0;
+        $post->update();
+
+        return  redirect('/order/'.session('id'))->with('flash_message', 'data Updated!');
+    }
+
+    public function enable($id)
+    {
+        $post = Book::find($id);
+        
+        $post->state = 1;
         $post->update();
 
         return  redirect('/order/'.session('id'))->with('flash_message', 'data Updated!');

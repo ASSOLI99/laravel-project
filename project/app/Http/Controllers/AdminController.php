@@ -21,8 +21,8 @@ class AdminController extends Controller
         $formFields=$request->validate([
             'name'=>['required','min:5'],
             'email'=>['required','email',Rule::unique('admin','email')],
-            'password'=>'required|confirmed|min:8',
-            'phone'=>'required|min:10',
+            'password'=>'required|confirmed|min:8|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}$/',
+            'phone'=>'required|regex:/^([0]{1}[7-9]{1})([0-9]{8})$/|digits:10|unique:user,phone',
             'address'=>'required'
         ]);
 
@@ -36,12 +36,14 @@ class AdminController extends Controller
         $email=$request->email;
         $password=$request->password;
         $data= Admin::where('email',$email)->first();
+    //    $request->session()->put('adminEmail',$data['email']);
+
         
         if(isset($data)){
         
         if(Hash::check($password,$data->password)==true){
         
-           
+            $request->session()->put('adminEmail',$data['email']);
             return redirect('dashboard');
         }else
         {
@@ -51,7 +53,6 @@ class AdminController extends Controller
 
        }else
        {
-           $request->session()->put('adminEmail',$data['email']);
            return redirect('admin/login')->with('message' , 'Email Incorrect'); 
        }
     }

@@ -61,8 +61,9 @@
 						<li class="main_nav_item"><a href="/login">login</a></li>
                        @endif
                         <li class="main_nav_item">
-                            <form action="">
-                                <input type="text" class="black form-control search-input">
+                            <form method="POST" action="/shop" accept-charset="UTF-8">
+								{{ csrf_field() }}
+                                <input type="text" name="search" class="black form-control search-input">
                                 <button type="submit" class="btn btn-warning" style="margin-bottom:5px;"><i class="fas fa-search"></i></button>
                             </form>
                         </li>
@@ -72,11 +73,11 @@
 		</div>
 		<div class="header_side d-flex flex-row justify-content-center align-items-center">
 			@if(session()->has('name'))
-			<p  style="color: black ; margin-right: 20px; margin-top:15px ; font-size:20px ; font-weight:500"> Welcome  {{session('name')}}</p>
+			<p  style="color: black ; margin-right: 20px; margin-top:15px ; font-size:20px ; font-weight:500"> {{session('name')}}</p>
 			@endif
 			<ul>
                 <div class="dropdown">
-                    <a class="dropbtn"><i class="material-icons" style="font-size:50px;color:black;margin-top:5px;">&#xe853;</i></a>
+                    <a class="dropbtn"><img style="width: 70px;height: 60px;border-radius: 50%; " src="{{asset('user_img/'.session('user_img'))}}" alt=""></a>
                     <div class="dropdown-content">
 						@if(session()->has('name'))
 
@@ -295,15 +296,15 @@
 									Jordan
 								</li>
 								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="{{asset('layout/images/smartphone.svg')}}" alt="https://www.flaticon.com/authors/lucy-g">
+									<div class="contact_info_icon">
+										<a href="tel:123-456-7890" style="text-decoration:none;color:#a5a5a5 ">		<img src="style/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									0034 37483 2445 322
+									0775673452</a>
 								</li>
 								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="{{asset('layout/images/envelope.svg')}}" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hellobooks@company.com
+									<div class="contact_info_icon">
+										<a href = "mailto: shineorg@company.com" style="text-decoration:none;color:#a5a5a5 "><img src="style/images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
+									</div>shineorg@company.com</a>
 								</li>
 							</ul>
 						</div>

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-	
+
 	<!-- Home -->
 
 	<div class="home">
@@ -44,8 +44,8 @@
 
 				<div class="col-lg-4">
 					<div class="about">
-						<div class="about_title">Join us</div>
-						<p class="about_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Etiam eu purus nec eros varius luctus. Praesent finibus risus facilisis ultricies. Etiam eu purus nec eros varius luctus.</p>
+						<div class="about_title">Find us</div>
+						<p class="about_text">We work on providing better online association for readers.Easy and smooth describes our vision on facilitating the exchange process. </p>
 
 						<div class="contact_info">
 							<ul>
@@ -57,14 +57,14 @@
 								</li>
 								<li class="contact_info_item">
 									<div class="contact_info_icon">
-										<img src="style/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
+										<a href="tel:123-456-7890" style="text-decoration:none;color:#a5a5a5 ">		<img src="style/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									0777777777
+									0775673452</a>
 								</li>
 								<li class="contact_info_item">
 									<div class="contact_info_icon">
-										<img src="style/images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hello@company.com
+										<a href = "mailto: shineorg@company.com" style="text-decoration:none;color:#a5a5a5 "><img src="style/images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
+									</div>shineorg@company.com</a>
 								</li>
 							</ul>
 						</div>

@@ -50,16 +50,17 @@
 				  <div style="color: #ff0000;text-shadow: 0px 1px 8px #ff0202;">{{$message}}</div>
 				@enderror 
 	              <input id="password-field" type="password" name="pass" class="form-control" placeholder="Set Password"  style="margin-bottom: 10px" required>
+
+				  @error('pass')
+				  <div style="color: #ff0000;text-shadow: 0px 1px 8px #ff0202;">{{$message}}</div>
+				@enderror 
 				<ul>
-				 	<li style="text-shadow: 0 0 3px #9d9d9d;">one Uppercase letter.</li>
+					<li style="text-shadow: 0 0 3px #9d9d9d;">one Uppercase letter.</li>
 					<li style="text-shadow: 0 0 3px #9d9d9d;">one Lower case letter.</li>
 					<li style="text-shadow: 0 0 3px #9d9d9d;">one number.</li>
 					<li style="text-shadow: 0 0 3px #9d9d9d;">one special character.</li>
 					<li style="text-shadow: 0 0 3px #9d9d9d;">at least 8 characters long.</li>
 				</ul>
-				  @error('pass')
-				  <div style="color: #ff0000;text-shadow: 0px 1px 8px #ff0202;">{{$message}}</div>
-				@enderror 
 
 				  <input id="password-field"  type="password" name="pass2" class="form-control " placeholder="Confirm Password"  style="margin-bottom: 10px" required>  
 				  @error('pass2')

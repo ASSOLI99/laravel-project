@@ -26,7 +26,7 @@
             <div class="module-inner">
                 <div class="side-bar">
                     <div class="user-info">
-                        <img class=" center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="" style="width: 100px ; height:auto ; border-radius:50%">
+                        <img class=" center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="" style="width: 160px ; height:auto ; border-radius:15%"">
                     </div>
             		<nav class="side-menu">
         				<ul class="nav">
@@ -64,22 +64,30 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             @if ($item->state == 2)
-                                            <div class="pull-right"><label class="label label-info">pending</label></div>
+                                            <div style="font-size: 20px ; margin:10px" class="pull-right"><label class="label label-info">pending</label></div>
                                             @elseif($item->state == 1)
-                                            <div class="pull-right"><label class="label label-info">Posted</label></div> 
+                                            <div style="font-size: 20px ; margin:10px" class="pull-right"><label class="label label-info">Posted</label></div> 
                                             @else
-                                            <div class="pull-right"><label class="label label-info">Hidden</label></div> 
+                                            <div style="font-size: 20px ; margin:10px" class="pull-right"><label class="label label-info">Hidden</label></div> 
                                             @endif
-                                            <span><strong><span style=" font-weight: bold;color : black">Book name : </span>{{$item->name}}</strong></span> 	&nbsp;	&nbsp; 	&nbsp;<span class="label label-info">	&nbsp; Region :
+                                            <span><strong><span style=" font-weight: bold;color : black">Book name : </span>{{$item->name}}</strong></span> 	&nbsp;	&nbsp; 	&nbsp;<span style="font-size: 12.5px" class="label label-info">	&nbsp; Region :
                                                 {{$item->address}}</span><br /><span style=" font-weight: bold;color : black">Description : </span>{{$item->description}} <br><span style=" font-weight: bold;color : black">Publisher : </span>  {{$item->publisher}} <br>
                                                 <span style=" font-weight: bold;color : black">Author : </span>  {{$item->author}} <br />
                                                 
-
-                                               @if({{$item->state}} !=2)
+<br>
+                                               @if( $item->state == 1)
                                                 <form class="d-inline" action="{{url('update/'.$item->id)}}" method="POST">
                                                     @csrf
                                                      <input type="hidden" value="{{$item->id}}">
-                                                     <input class="btn btn-info btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Disable ">
+                                                     <input class="btn btn-warning btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Disable ">
+                                                </form>
+                                                @endif
+
+                                                @if( $item->state == 0)
+                                                <form class="d-inline" action="{{url('enable/'.$item->id)}}" method="POST">
+                                                    @csrf
+                                                     <input type="hidden" value="{{$item->id}}">
+                                                     <input class="btn btn-success btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Eable ">
                                                 </form>
                                                 @endif
                                                 
