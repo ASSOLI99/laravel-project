@@ -56,6 +56,7 @@
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">First name</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
                                     <input type="text" class="form-control" value="{{$user->Fname}}" name="Fname" style="color: black ; font-size:13px" >
+                                    @error('Fname')<div class="form-text text-danger">{{$message}}</div>@enderror
                                 </div>
                             </div>
 
@@ -63,6 +64,7 @@
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Last name</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
                                     <input type="text" class="form-control" value="{{$user->Lname}}" name="Lname" style="color: black; font-size:13px">
+                                    @error('Lname')<div class="form-text text-danger">{{$message}}</div>@enderror
                                 </div>
                             </div>
 
@@ -70,6 +72,7 @@
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Email</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
                                     <input type="text" class="form-control" value="{{$user->email}}" name="email" style="color: black; font-size:13px">
+                                    @error('email')<div class="form-text text-danger">{{$message}}</div>@enderror
                                 </div>
                             </div>
 
@@ -77,6 +80,7 @@
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Address</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
                                     <input type="text" class="form-control" value="{{$user->address}}" name="address" style="color: black; font-size:13px">
+                                    @error('address')<div class="form-text text-danger">{{$message}}</div>@enderror
                                 </div>
                             </div>
 
@@ -84,13 +88,23 @@
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">Phone Number</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
                                     <input type="text" class="form-control" value="{{$user->phone}}" name="phone" style="color: black; font-size:13px">
+                                    @error('phone')<div class="form-text text-danger">{{$message}}</div>@enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-2 col-sm-3 col-xs-12 control-label">PassWord</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="password" class="form-control" value="{{$user->password}}" name="password" style="color: black; font-size:13px"> 
+                                    <input type="password" class="form-control" value="" name="password" style="color: black; font-size:13px"> 
+                                    @error('password')<div class="form-text text-danger">{{$message}}</div>
+                                    <ul>
+                                       <li style="text-shadow: 0 0 1px #ff0000;">*one Uppercase letter.</li>
+                                       <li style="text-shadow: 0 0 1px #fa0000;">*one Lower case letter.</li>
+                                       <li style="text-shadow: 0 0 1px #ff0000;">*one number.</li>
+                                       <li style="text-shadow: 0 0 1px #ff0000;">*one special character.</li>
+                                       <li style="text-shadow: 0 0 1px #ff0000;">*at least 8 characters long.</li>
+                                   </ul>
+                                   @enderror
                                 </div>
                             </div>
 
