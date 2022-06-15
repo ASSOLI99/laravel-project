@@ -58,6 +58,7 @@ class userController extends Controller
         $email = $request->email;
         $password = $request->pass;
         $data = User::where('email', $email)->first();
+        session()->put('user_img','log.png');
 
         if (isset($data)) {
 

@@ -36,7 +36,7 @@ class BookController extends Controller
     public function view(Request $req)
     {
 
-        $user = User::find(1);
+        $user = User::find(session('id'));
         $book = Book::where('user_id', $req->id)->get();
 
 
