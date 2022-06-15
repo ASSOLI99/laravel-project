@@ -83,7 +83,7 @@
 
 
     @section('content')
-		
+
 
 	<!-- Home -->
 
@@ -125,7 +125,7 @@
 						<div class="col-lg-4 col-md-6">
 							<div class="member">
 							  <div class="member-img" >
-								  <img src="style/images/teacher_3.jpg" class="img-fluid" alt="">
+								  <img src="style/images/name1.png" class="img-fluid" alt="">
 							  </div>
 								<div class="member-info">
 									<h4>Aiman jaradat</h4>
@@ -144,7 +144,7 @@
 						<div class="col-lg-4 col-md-6">
 							<div class="member">
 							  <div class="member-img">
-								  <img src="style/images/teacher_3.jpg" class="img-fluid" alt="">
+								  <img src="style/images/name2.png" class="img-fluid" alt="">
 							  </div>
 								<div class="member-info">
 									<h4>Abdullah assoli</h4>
@@ -162,7 +162,7 @@
 						<div class="col-lg-4 col-md-6">
 							<div class="member">
 							  <div class="member-img">
-								  <img src="style/images/teacher_3.jpg" class="img-fluid" alt="">
+								  <img src="style/images/name3.png" class="img-fluid" alt="">
 							  </div>
 								<div class="member-info">
 									<h4>Baha Zyoud</h4>
@@ -180,7 +180,7 @@
 						<div class="col-lg-4 col-md-6">
 							<div class="member">
 							  <div class="member-img">
-								  <img src="style/images/teacher_3.jpg" class="img-fluid" alt="">
+								  <img src="style/images/name6.png" class="img-fluid" alt="">
 							  </div>
 								<div class="member-info">
 									<h4>Kaled Bani_amer</h4>
@@ -199,7 +199,7 @@
 						<div class="col-lg-4 col-md-6">
 							<div class="member">
 							  <div class="member-img">
-								  <img src="style/images/teacher_1.jpg" class="img-fluid" alt="">
+								  <img src="style/images/name4.png" class="img-fluid" alt="">
 							  </div>
 								<div class="member-info">
 									<h4>Tasnem Baibars</h4>
@@ -218,7 +218,7 @@
 						<div class="col-lg-4 col-md-6">
 							<div class="member">
 							  <div class="member-img">
-								  <img src="style/images/teacher_1.jpg" class="img-fluid" alt="">
+								  <img src="style/images/name5.png" class="img-fluid" alt="">
 							  </div>
 								<div class="member-info">
 									<h4>shifa alkasasbeh</h4>
@@ -240,4 +240,4 @@
 
 	<!-- Footer -->
 
-@endsection	
+@endsection
