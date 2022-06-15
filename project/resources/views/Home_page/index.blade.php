@@ -83,7 +83,7 @@
                     </div>
                     <div class="price_box d-flex flex-row align-items-center">
                         <div class="course_author_image">
-                            <img src="layout/images/hom12.jpg" id="cat" alt="https://unsplash.com/@mehdizadeh">
+                            <img src="layout/images/small.jpg" id="cat" alt="https://unsplash.com/@mehdizadeh">
                         </div>
                         <div class="course_author_name"><span>publisher</span></div>
                         <div class="course_price d-flex flex-column align-items-center justify-content-center"><span><a href="{{url('/shop')}}"><span><i class="material-icons" style="font-size:35px; color:white;margin-top:10px;">&#xe315;</i></span></a></span></div>
