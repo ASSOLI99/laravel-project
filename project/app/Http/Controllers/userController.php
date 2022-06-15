@@ -26,7 +26,7 @@ class userController extends Controller
             'lname' => 'required|max:255|regex:/(^([a-zA-Z]+)(\d+)?$)/u',
             'email' => 'required|unique:user|email',
             'phone' => 'required|regex:/^([0]{1}[7-9]{1})([0-9]{8})$/|digits:10|unique:user,phone',
-            'pass' => 'required|max:25|min:8|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/',
+            'pass' => 'required|max:25|min:8|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}$/',
             'pass2' => 'required|max:25|min:8|',
             'pass2' => 'required|max:25|min:8|',
             'address' => 'required',
@@ -149,7 +149,7 @@ class userController extends Controller
         $password2 = $request->confirm_reset_password;
         $email = $request->email_reset;
         $request->validate([
-            'reset_password' => 'required|min:8|max:25|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/',
+            'reset_password' => 'required|min:8|max:25|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}$/',
             'confirm_reset_password' => 'required|min:8|max:25',
         ]);
         if ($password1 === $password2) {
@@ -209,7 +209,7 @@ class userController extends Controller
                     'address' => 'required',
                     'email' => 'required|email',
                     'phone' => 'required|regex:/^([0]{1}[7-9]{1})([0-9]{8})$/|digits:10',
-                    'password' => 'required|max:25|min:8|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/',
+                    'password' => 'required|max:25|min:8|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}$/',
 
                 ]);
 

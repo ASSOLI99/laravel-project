@@ -21,7 +21,7 @@ class AdminController extends Controller
         $formFields=$request->validate([
             'name'=>['required','min:5'],
             'email'=>['required','email',Rule::unique('admin','email')],
-            'password'=>'required|confirmed|min:8|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/',
+            'password'=>'required|confirmed|min:8|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}$/',
             'phone'=>'required|regex:/^([0]{1}[7-9]{1})([0-9]{8})$/|digits:10|unique:user,phone',
             'address'=>'required'
         ]);
