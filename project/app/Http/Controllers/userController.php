@@ -122,7 +122,7 @@ class userController extends Controller
 
     public function sendRestEmail($email, $token)
     {
-        // $user = User::where('email' , $email)->first();
+       // $user = User::where('email' , $email)->first();
 
 
         $link = asset('/reset_password?token=' . $token . '&email=' . $email);
