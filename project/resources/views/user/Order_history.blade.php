@@ -74,12 +74,20 @@
                                                 {{$item->address}}</span><br /><span style=" font-weight: bold;color : black">Description : </span>{{$item->description}} <br><span style=" font-weight: bold;color : black">Publisher : </span>  {{$item->publisher}} <br>
                                                 <span style=" font-weight: bold;color : black">Author : </span>  {{$item->author}} <br />
                                                 
-
-                                               @if({{$item->state}} !=2)
+<br>
+                                               @if( $item->state == 1)
                                                 <form class="d-inline" action="{{url('update/'.$item->id)}}" method="POST">
                                                     @csrf
                                                      <input type="hidden" value="{{$item->id}}">
-                                                     <input class="btn btn-info btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Disable ">
+                                                     <input class="btn btn-warning btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Disable ">
+                                                </form>
+                                                @endif
+
+                                                @if( $item->state == 0)
+                                                <form class="d-inline" action="{{url('enable/'.$item->id)}}" method="POST">
+                                                    @csrf
+                                                     <input type="hidden" value="{{$item->id}}">
+                                                     <input class="btn btn-success btn-xs glyphicon glyphicon-trash" style="font-size: 13.5px" type="submit" value="Eable ">
                                                 </form>
                                                 @endif
                                                 

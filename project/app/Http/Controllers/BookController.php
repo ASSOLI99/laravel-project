@@ -54,6 +54,16 @@ class BookController extends Controller
         return  redirect('/order/'.session('id'))->with('flash_message', 'data Updated!');
     }
 
+    public function enable($id)
+    {
+        $post = Book::find($id);
+        
+        $post->state = 1;
+        $post->update();
+
+        return  redirect('/order/'.session('id'))->with('flash_message', 'data Updated!');
+    }
+
     public function delete($id)
     {
         $post = Book::find($id);
