@@ -52,12 +52,12 @@ class userController extends Controller
         }
     }
 
-    public function login(Request $request)
-    {
+       public function login(Request $request)
+       {
 
-        $email = $request->email;
-        $password = $request->pass;
-        $data = User::where('email', $email)->first();
+        $email=$request->email;
+        $password=$request->pass;
+        $data= User::where('email',$email)->first();
 
         if (isset($data)) {
 
@@ -76,22 +76,26 @@ class userController extends Controller
 
     public function logout()
     {
-        if (session()->has('name')) {
+        if(session()->has('name'))
+
+        {
             session()->pull('name');
             session()->pull('id');
             return redirect('/');
-        } else {
-            return redirect('login')->with('email_incorrect', 'Email Does not Exist');
-        }
+        }else
+       {
+        return redirect('login')->with('email_incorrect' , 'Email Does not Exist');
+       }
+
     }
 
     //reset password functions
 
     public function forget_password(Request $request)
     {
-        $user = User::where('email', $request->forget_email)->first();
+        $user = User::where('email' , $request->forget_email)->first();
 
-
+       
 
 
         $token =  $request->input('_token');
@@ -110,7 +114,7 @@ class userController extends Controller
 
 
         $tokenData = Forget::where('email', $request->forget_email)->first();
-
+   
         if ($this->sendRestEmail($user->email, $tokenData->token)) {
             return redirect('forget')->with('sent', 'Email Sent');
         } else {
@@ -123,7 +127,7 @@ class userController extends Controller
         // $user = User::where('email' , $email)->first();
 
 
-        $link = asset('/reset_password?token=' . $token . '&email=' . $email);
+        $link = asset('/reset_password?token='.$token.'&email='.$email);
 
         try {
             //Here send the link with CURL with an external email API 
@@ -149,16 +153,20 @@ class userController extends Controller
         $password2 = $request->confirm_reset_password;
         $email = $request->email_reset;
         $request->validate([
-            'reset_password' => 'required|min:8|max:25',
+            'reset_password' => 'required|min:8|max:25|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/',
             'confirm_reset_password' => 'required|min:8|max:25',
         ]);
         if ($password1 === $password2) {
             $password1 = Hash::make($password1);
             User::where('email', $email)->update(array('password' => $password1));
             return redirect('/login');
-        } else {
-            return redirect('resetpassword')->with('inn', 'Password Not match');
-        }
+
+
+        }else
+        {
+            return redirect('resetpassword')->with('inn' , 'Password Not match');
+
+        } 
         // return $request->input();
     }
 
@@ -180,8 +188,12 @@ class userController extends Controller
     {
 
 
+
         $req->session()->put('user_img', 'avatar.png');
         $user_id = session('id');
+
+            $req->session()->put('user_img', 'avatar.png');
+
 
 
         if (isset($req->user_img)) {
@@ -209,7 +221,12 @@ class userController extends Controller
             $user->update();
         }
 
+<<<<<<< HEAD
         $user = User::find($user_id);
+=======
+        // $id = session('id');
+        $user = User::find(1);
+>>>>>>> 1fcfd36aa2d8e6d1688022fc6e870df0bf7b1753
 
         return view('user/user_profile', ['user' => $user]);
     }
