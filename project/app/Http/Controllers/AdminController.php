@@ -36,6 +36,7 @@ class AdminController extends Controller
         $email=$request->email;
         $password=$request->password;
         $data= Admin::where('email',$email)->first();
+        $request->session()->put('adminEmail',$data['email']);
         
         if(isset($data)){
         
