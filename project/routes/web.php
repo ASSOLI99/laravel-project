@@ -43,10 +43,10 @@ Route::view('restrict' , 'admin/adminRestrict');
 
 Route::group(['middleware'=>['admin']],function(){
     //dashboard
-    // Route::get('/dashboard' ,[DashboardController::class,'index']);
-    // //users
-    // Route::get('/admin/users' ,[userController::class,'index']);
-    // Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
+    Route::get('/dashboard' ,[DashboardController::class,'index']);
+    //users
+    Route::get('/admin/users' ,[userController::class,'index']);
+    Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
 
 
     //admins

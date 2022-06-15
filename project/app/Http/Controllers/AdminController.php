@@ -36,13 +36,12 @@ class AdminController extends Controller
         $email=$request->email;
         $password=$request->password;
         $data= Admin::where('email',$email)->first();
-       // $request->session()->put('adminEmail',$data['email']);
         
         if(isset($data)){
         
         if(Hash::check($password,$data->password)==true){
         
-           
+            $request->session()->put('adminEmail',$data['email']);
             return redirect('dashboard');
         }else
         {
@@ -52,7 +51,6 @@ class AdminController extends Controller
 
        }else
        {
-           $request->session()->put('adminEmail',$data['email']);
            return redirect('admin/login')->with('message' , 'Email Incorrect'); 
        }
     }
