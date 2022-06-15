@@ -1,9 +1,10 @@
-<div wire:poll wire:loading >
+<div wire:poll >
     <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
     <script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script>
     <script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script>
     <meta charset='UTF-8'>
     <meta name="robots" content="noindex">
+    <!-- <meta http-equiv="refresh" content="5"> -->
     <link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
     <link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
     <link rel="canonical" href="https://codepen.io/emilcarlsson/pen/ZOQZaV?limit=all&page=74&q=contact+" />
@@ -765,7 +766,7 @@ Website: http://emilcarlsson.se/
                         <i class="fa fa-instagram" aria-hidden="true"></i>
                     </div>
                 </div>
-                <div class="messages align-items-center">
+                <div class="class messages align-items-center">
                     <ul>
                         <li class="replies">
                             @forelse($messages as $message)
@@ -886,6 +887,11 @@ Website: http://emilcarlsson.se/
                     return false;
                 }
             });
+            let counter = 1;
+            setInterval(() => {
+                counter++;
+                if(counter>5) location.reload();
+            }, 1000);
             //# sourceURL=pen.js
         </script>
 </div>
