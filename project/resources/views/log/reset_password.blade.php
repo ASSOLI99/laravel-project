@@ -21,7 +21,7 @@
 				
 				<div class="col-md-6 text-center mb-3">
 					
-					<h2 class="heading-section">Forget Password </h2>
+					<h2 class="heading-section">Reset Password </h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
