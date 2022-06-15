@@ -402,12 +402,12 @@ section
 }
 .header_side span
 {
-	display: block;
+	display: inline-block;
 	position: relative;
 	font-size: 18px;
 	font-weight: 500;
 	color: #FFFFFF;
-	padding-left: 12px;
+	padding-left: 2px;
 }
 
 /*********************************
