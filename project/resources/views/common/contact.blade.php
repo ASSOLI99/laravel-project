@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-	
+
 	<!-- Home -->
 
 	<div class="home">
