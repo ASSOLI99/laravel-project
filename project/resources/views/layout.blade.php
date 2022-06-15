@@ -296,15 +296,15 @@
 									Jordan
 								</li>
 								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="{{asset('layout/images/smartphone.svg')}}" alt="https://www.flaticon.com/authors/lucy-g">
+									<div class="contact_info_icon">
+										<a href="tel:123-456-7890" style="text-decoration:none;color:#a5a5a5 ">		<img src="style/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									0034 37483 2445 322
+									0775673452</a>
 								</li>
 								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="{{asset('layout/images/envelope.svg')}}" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hellobooks@company.com
+									<div class="contact_info_icon">
+										<a href = "mailto: shineorg@company.com" style="text-decoration:none;color:#a5a5a5 "><img src="style/images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
+									</div>shineorg@company.com</a>
 								</li>
 							</ul>
 						</div>
