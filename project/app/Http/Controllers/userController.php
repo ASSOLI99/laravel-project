@@ -180,7 +180,7 @@ class userController extends Controller
     {
 
 
-        if(!session()->has('user_img')) {
+        if (!session()->has('user_img')) {
             $req->session()->put('user_img', 'avatar.png');
         }
 
@@ -225,7 +225,7 @@ class userController extends Controller
                     if ($req->input('user_image') != 'avatar.png') {
                         $user->user_img = $req->input('user_image');
                     }
-
+                    $req->session()->put('name', $req->input('Fname'));
                     $user->update();
                 }
             } else {
@@ -249,6 +249,7 @@ class userController extends Controller
                     if ($req->input('user_image') != 'avatar.png') {
                         $user->user_img = $req->input('user_image');
                     }
+                    $req->session()->put('name', $req->input('Fname'));
                     $user->update();
                 }
             }

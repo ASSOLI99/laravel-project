@@ -76,7 +76,7 @@
 			@endif
 			<ul>
                 <div class="dropdown">
-                    <a class="dropbtn"><i class="material-icons" style="font-size:50px;color:black;margin-top:5px;">&#xe853;</i></a>
+                    <a class="dropbtn"><img style="width: 75px ; height:auto ;border-radius:50%  " src="{{asset('user_img/'.session('user_img'))}}" alt=""></a>
                     <div class="dropdown-content">
 						@if(session()->has('name'))
 
