@@ -122,7 +122,7 @@
                 <div class="icon_container d-flex flex-column justify-content-end">
                     <img src="{{asset('layout/images/earth-globe.svg')}}" alt="">
                 </div>
-                <h3>Online uniting</h3>
+                <h3>Online association</h3>
                 <p>In books we help you to find and share the books you want so bad.</p>
             </div>
 
