@@ -153,7 +153,7 @@ class userController extends Controller
         $password2 = $request->confirm_reset_password;
         $email = $request->email_reset;
         $request->validate([
-            'reset_password' => 'required|min:8|max:25',
+            'reset_password' => 'required|min:8|max:25|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/',
             'confirm_reset_password' => 'required|min:8|max:25',
         ]);
         if ($password1 === $password2) {
@@ -188,11 +188,16 @@ class userController extends Controller
     {
 
 
+
+        $req->session()->put('user_img', 'avatar.png');
+        $user_id = session('id');
+
             $req->session()->put('user_img', 'avatar.png');
-        
+
 
 
         if (isset($req->user_img)) {
+
 
             if ($req->hasfile('user_img')) {
 
@@ -201,14 +206,11 @@ class userController extends Controller
                 $img->move('user_img/', $imgname);
 
                 $req->session()->put('user_img', $imgname);
-                // $user = User::find(1);
-                // $user->user_img =  $imgname;
-                // $user->update();
-
             }
         }
         if (isset($req->update)) {
 
+            
             $user = User::find(1);
             $user->Fname = $req->input('Fname');
             $user->Lname = $req->input('Lname');
@@ -220,8 +222,11 @@ class userController extends Controller
             $user->update();
         }
 
-        // $id = session('id');
-        $user = User::find(1);
+
+        $user = User::find($user_id);
+
+        $user_id = session('id');
+        $user = User::find($user_id);
 
         return view('user/user_profile', ['user' => $user]);
     }

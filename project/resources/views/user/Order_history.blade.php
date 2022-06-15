@@ -26,7 +26,7 @@
             <div class="module-inner">
                 <div class="side-bar">
                     <div class="user-info">
-                        <img class=" center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="" style="width: 100px ; height:auto ; border-radius:50%">
+                        <img class=" center-block" src="{{asset('user_img/'.$user->user_img)}}" alt="" style="width: 160px ; height:auto ; border-radius:15%"">
                     </div>
             		<nav class="side-menu">
         				<ul class="nav">
@@ -64,11 +64,11 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             @if ($item->state == 2)
-                                            <div style="font-size: 20px" class="pull-right"><label class="label label-info">pending</label></div>
+                                            <div style="font-size: 20px ; margin:10px" class="pull-right"><label class="label label-info">pending</label></div>
                                             @elseif($item->state == 1)
-                                            <div style="font-size: 20px" class="pull-right"><label class="label label-info">Posted</label></div> 
+                                            <div style="font-size: 20px ; margin:10px" class="pull-right"><label class="label label-info">Posted</label></div> 
                                             @else
-                                            <div style="font-size: 20px" class="pull-right"><label class="label label-info">Hidden</label></div> 
+                                            <div style="font-size: 20px ; margin:10px" class="pull-right"><label class="label label-info">Hidden</label></div> 
                                             @endif
                                             <span><strong><span style=" font-weight: bold;color : black">Book name : </span>{{$item->name}}</strong></span> 	&nbsp;	&nbsp; 	&nbsp;<span style="font-size: 12.5px" class="label label-info">	&nbsp; Region :
                                                 {{$item->address}}</span><br /><span style=" font-weight: bold;color : black">Description : </span>{{$item->description}} <br><span style=" font-weight: bold;color : black">Publisher : </span>  {{$item->publisher}} <br>

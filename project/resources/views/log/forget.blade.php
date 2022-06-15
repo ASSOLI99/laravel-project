@@ -15,7 +15,7 @@
 	<body class="img js-fullheight" style="background-image: url(log/images/back10.jpg);">
 	
 
-	<section class="ftco-section" style="  padding: 17.2em">
+	<section class="ftco-section" style="  padding-bottom: 20em;padding-top: 14em;">
 		<div class="container">
 			<div class="row justify-content-center">
 				

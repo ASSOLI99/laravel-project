@@ -43,10 +43,10 @@ Route::view('restrict' , 'admin/adminRestrict');
 
 Route::group(['middleware'=>['admin']],function(){
     //dashboard
-    Route::get('/dashboard' ,[DashboardController::class,'index']);
-    //users
-    Route::get('/admin/users' ,[userController::class,'index']);
-    Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
+    // Route::get('/dashboard' ,[DashboardController::class,'index']);
+    // //users
+    // Route::get('/admin/users' ,[userController::class,'index']);
+    // Route::delete('/admin/user/{id}',[userController::class, 'destroy']);
 
 
     //admins
@@ -132,8 +132,8 @@ Route::post('delete/{id}',[BookController::class,'delete']);
 Route::get('update/{id}',[BookController::class,'update']);
 Route::post('update/{id}',[BookController::class,'update']);
 
-Route::get('enable/{id}',[BookController::class,'update']);
-Route::post('enable/{id}',[BookController::class,'update']);
+Route::get('enable/{id}',[BookController::class,'enable']);
+Route::post('enable/{id}',[BookController::class,'enable']);
 
 //shop
 // Route::view('shop', 'shop/shop');
