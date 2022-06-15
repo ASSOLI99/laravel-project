@@ -222,12 +222,11 @@ class userController extends Controller
             $user->update();
         }
 
-<<<<<<< HEAD
+
         $user = User::find($user_id);
-=======
-        // $id = session('id');
-        $user = User::find(1);
->>>>>>> 1fcfd36aa2d8e6d1688022fc6e870df0bf7b1753
+
+        $user_id = session('id');
+        $user = User::find($user_id);
 
         return view('user/user_profile', ['user' => $user]);
     }
