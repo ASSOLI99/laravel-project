@@ -209,6 +209,7 @@ class userController extends Controller
         }
         if (isset($req->update)) {
 
+            
             $user = User::find(1);
             $user->Fname = $req->input('Fname');
             $user->Lname = $req->input('Lname');
