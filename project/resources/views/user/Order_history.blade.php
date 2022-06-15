@@ -64,13 +64,13 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             @if ($item->state == 2)
-                                            <div class="pull-right"><label class="label label-info">pending</label></div>
+                                            <div style="font-size: 20px" class="pull-right"><label class="label label-info">pending</label></div>
                                             @elseif($item->state == 1)
-                                            <div class="pull-right"><label class="label label-info">Posted</label></div> 
+                                            <div style="font-size: 20px" class="pull-right"><label class="label label-info">Posted</label></div> 
                                             @else
-                                            <div class="pull-right"><label class="label label-info">Hidden</label></div> 
+                                            <div style="font-size: 20px" class="pull-right"><label class="label label-info">Hidden</label></div> 
                                             @endif
-                                            <span><strong><span style=" font-weight: bold;color : black">Book name : </span>{{$item->name}}</strong></span> 	&nbsp;	&nbsp; 	&nbsp;<span class="label label-info">	&nbsp; Region :
+                                            <span><strong><span style=" font-weight: bold;color : black">Book name : </span>{{$item->name}}</strong></span> 	&nbsp;	&nbsp; 	&nbsp;<span style="font-size: 12.5px" class="label label-info">	&nbsp; Region :
                                                 {{$item->address}}</span><br /><span style=" font-weight: bold;color : black">Description : </span>{{$item->description}} <br><span style=" font-weight: bold;color : black">Publisher : </span>  {{$item->publisher}} <br>
                                                 <span style=" font-weight: bold;color : black">Author : </span>  {{$item->author}} <br />
                                                 
