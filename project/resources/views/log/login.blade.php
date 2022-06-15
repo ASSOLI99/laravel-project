@@ -55,12 +55,12 @@
 				<div class="row">
 					<div class="form-group col-6" >
 							<div class="w-30 text-md-left">
-								<a href="/signup" style="color: #fff">Signup</a>
+								Don't have account?<a href="/signup" style="color: #fff;text-decoration:underline"> SignUp</a>
 							</div>
 					</div>
 				<div class="form-group col-6">
 						<div class="w-30 text-md-left">
-							<a href="/forget" style="color: #fff">Forgot Password</a>
+							Or Forgot Password?<a href="/forget" style="color: #fff;text-decoration:underline"> reset Password</a>
 						</div>
 	            </div>
 			</div>

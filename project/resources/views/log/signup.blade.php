@@ -36,37 +36,44 @@
 		      	<form action="signup" class="signin-form" method="post">
 					@csrf
 		      		<div class="form-group ">
-		      	  <input type="text" class="form-control" placeholder="Firstname" name="fname"  style="margin-bottom: 10px" required>
+		      	  <input type="text" value="{{old('fname')}}" class="form-control" placeholder="Firstname" name="fname"  style="margin-bottom: 10px" required>
 				  @error('fname')
-					  <div style="color: #de9c2e">{{$message}}</div>
+					  <div style="color: #ff0000;text-shadow: 0px 1px 8px #ff0202;">{{$message}}</div>
 				  @enderror 
-				  <input type="text" class="form-control" placeholder="Lastname" name="lname"  style="margin-bottom: 10px" required>
+				  <input type="text" value="{{old('lname')}}" class="form-control" placeholder="Lastname" name="lname"  style="margin-bottom: 10px" required>
 				  @error('lname')
-				  <div style="color: #de9c2e">{{$message}}</div>
+				  <div style="color: #ff0000;text-shadow: 0px 1px 8px #ff0202;">{{$message}}</div>
 				@enderror 
-				  <input type="email" name="email" id="" class="form-control" placeholder="Email"  style="margin-bottom: 10px" required>
+				  <input type="email" value="{{old('email')}}" name="email" id="" class="form-control" placeholder="Email"  style="margin-bottom: 10px" required>
 
 				  @error('email')
-				  <div style="color: #de9c2e">{{$message}}</div>
+				  <div style="color: #ff0000;text-shadow: 0px 1px 8px #ff0202;">{{$message}}</div>
 				@enderror 
 	              <input id="password-field" type="password" name="pass" class="form-control" placeholder="Set Password"  style="margin-bottom: 10px" required>
+				<ul>
+				 	<li style="text-shadow: 0 0 3px #9d9d9d;">one Uppercase letter.</li>
+					<li style="text-shadow: 0 0 3px #9d9d9d;">one Lower case letter.</li>
+					<li style="text-shadow: 0 0 3px #9d9d9d;">one number.</li>
+					<li style="text-shadow: 0 0 3px #9d9d9d;">one special character.</li>
+					<li style="text-shadow: 0 0 3px #9d9d9d;">at least 8 characters long.</li>
+				</ul>
 				  @error('pass')
-				  <div style="color: #de9c2e">{{$message}}</div>
+				  <div style="color: #ff0000;text-shadow: 0px 1px 8px #ff0202;">{{$message}}</div>
 				@enderror 
 
-				  <input id="password-field" type="password" name="pass2" class="form-control " placeholder="Confirm Password"  style="margin-bottom: 10px" required>  
+				  <input id="password-field"  type="password" name="pass2" class="form-control " placeholder="Confirm Password"  style="margin-bottom: 10px" required>  
 				  @error('pass2')
-				  <div style="color: #de9c2e">{{$message}}</div>
+				  <div style="color: #ff0000;text-shadow: 0px 1px 8px #ff0202;">{{$message}}</div>
 				@enderror 
 				 
-				  <input type="text" name="phone" id="" class="form-control" placeholder="Phone number"  style="margin-bottom: 10px" required>
+				  <input type="text" value="{{old('phone')}}" name="phone" id="" class="form-control" placeholder="Phone number"  style="margin-bottom: 10px" required>
 
 				  @error('phone')
-				  <div style="color: #de9c2e">{{$message}}</div>
+				  <div style="color: #ff0000;text-shadow: 0px 1px 8px #ff0202;">{{$message}}</div>
 				@enderror 
 
 	            </div>
-                <select class="form-control mb-3" name="address">
+                <select class="form-control mb-3" name="address" style="background-color:black">
                     <option disabled selected hidden > Select region</option>
 					<option value="amman" > Amman</option>
 					<option value="irbid"> Irbid</option>
@@ -83,22 +90,15 @@
                   </select>
 
 				  @error('address')
-				  <div style="color: #de9c2e">{{$message}}</div>
+				  <div style="color: #ff0000;text-shadow: 0px 1px 8px #ff0202;">{{$message}}</div>
 				@enderror 
 	            <div class="form-group">
 	            	<button type="submit" class="form-control btn btn-primary submit px-3" name="signup">Sign Up</button>
 	            </div>
-	            <div class="form-group d-md-flex">
-	            	<div class="w-50">
-		            	{{-- <label class="checkbox-wrap checkbox-primary">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label> --}}
+								<div class="">
+									Have an account?<a href="http://localhost:8000/login" style="color: #fff;text-decoration:underline"> Signin</a>
 								</div>
-								<div class="w-50 text-md-right">
-									<a href="http://localhost:8000/login" style="color: #fff">Have an account?</a>
-								</div>
-	            </div>
+
 	          </form>
 	          
 		      </div>

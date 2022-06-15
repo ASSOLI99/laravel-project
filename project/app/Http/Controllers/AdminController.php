@@ -41,15 +41,17 @@ class AdminController extends Controller
         
         if(Hash::check($password,$data->password)==true){
         
-            $request->session()->put('adminEmail',$data['email']);
+           
             return redirect('dashboard');
         }else
         {
+      
             return redirect('admin/login')->with('message' , 'Password Incorrect');
         }
 
        }else
        {
+           $request->session()->put('adminEmail',$data['email']);
            return redirect('admin/login')->with('message' , 'Email Incorrect'); 
        }
     }

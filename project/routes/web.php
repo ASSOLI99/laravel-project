@@ -132,6 +132,9 @@ Route::post('delete/{id}',[BookController::class,'delete']);
 Route::get('update/{id}',[BookController::class,'update']);
 Route::post('update/{id}',[BookController::class,'update']);
 
+Route::get('enable/{id}',[BookController::class,'update']);
+Route::post('enable/{id}',[BookController::class,'update']);
+
 //shop
 // Route::view('shop', 'shop/shop');
 //oute::get('shop' , [BookController::class , 'show']);

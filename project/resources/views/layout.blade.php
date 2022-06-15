@@ -72,7 +72,7 @@
 		</div>
 		<div class="header_side d-flex flex-row justify-content-center align-items-center">
 			@if(session()->has('name'))
-			<p  style="color: black ; margin-right: 20px; margin-top:15px ; font-size:20px ; font-weight:500"> Welcome  {{session('name')}}</p>
+			<p  style="color: black ; margin-right: 20px; margin-top:15px ; font-size:20px ; font-weight:500">  Welcome  {{session('name')}}</p>
 			@endif
 			<ul>
                 <div class="dropdown">
@@ -241,8 +241,10 @@
 						<!-- Logo -->
 						<div class="logo_container">
 							<div class="logo">
-								<img src="{{asset('layout/images/logo.png')}}" alt="">
-								<span>Books</span>
+
+								<img src="{{asset('layout/images/logo.png')}}" height="60px" width="60px" alt="">
+								<span>Shine</span>
+
 							</div>
 						</div>
 
