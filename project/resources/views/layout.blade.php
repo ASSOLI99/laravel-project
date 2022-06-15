@@ -61,8 +61,9 @@
 						<li class="main_nav_item"><a href="/login">login</a></li>
                        @endif
                         <li class="main_nav_item">
-                            <form action="">
-                                <input type="text" class="black form-control search-input">
+                            <form method="POST" action="/shop" accept-charset="UTF-8">
+								{{ csrf_field() }}
+                                <input type="text" name="search" class="black form-control search-input">
                                 <button type="submit" class="btn btn-warning" style="margin-bottom:5px;"><i class="fas fa-search"></i></button>
                             </form>
                         </li>
