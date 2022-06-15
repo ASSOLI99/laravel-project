@@ -73,11 +73,11 @@
 		</div>
 		<div class="header_side d-flex flex-row justify-content-center align-items-center">
 			@if(session()->has('name'))
-			<p  style="color: black ; margin-right: 20px; margin-top:15px ; font-size:20px ; font-weight:500">  Welcome  {{session('name')}}</p>
+			<p  style="color: black ; margin-right: 20px; margin-top:15px ; font-size:20px ; font-weight:500"> {{session('name')}}</p>
 			@endif
 			<ul>
                 <div class="dropdown">
-                    <a class="dropbtn"><img style="width: 75px ; height:auto ;border-radius:50%  " src="{{asset('user_img/'.session('user_img'))}}" alt=""></a>
+                    <a class="dropbtn"><img style="width: 70px;height: 60px;border-radius: 50%; " src="{{asset('user_img/'.session('user_img'))}}" alt=""></a>
                     <div class="dropdown-content">
 						@if(session()->has('name'))
 
