@@ -7,6 +7,27 @@
     /* background-color: #d1d1d1; */
     color: #145889;
 }
+
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #ffb606ed;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d69a0a;
+        }
 #team h2 {
     position: relative;
     padding: 0px 0px 15px;

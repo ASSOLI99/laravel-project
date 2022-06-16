@@ -12,7 +12,28 @@
     <link rel="shortcut icon" href="{{asset('assets/images/logo/favicon.png')}}" type="image/png">
 
 <link rel="stylesheet" href="{{asset('assets/css/shared/iconly.css')}}">
+<style>
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
 
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #ffb606ed;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d69a0a;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,7 +61,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                   
+
                     <h4 class="card-title">Edit Users</h4>
                     <h4 class="card-title"><a href="/admins/create" class="btn btn-warning fw-bold mt-3">Create Admin</a></h4>
 
@@ -73,11 +94,11 @@
                                             <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Delete</button>
                                             </form>
                                     </td>
-                                
-                                
+
+
                                 @else
                                     <td><a href="/admins/create" class="text-warning"> you are the last admin</a></td>
-                                
+
                                         @endif
                                 </tr>
                                 @endforeach
