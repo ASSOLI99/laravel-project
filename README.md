@@ -13,7 +13,7 @@
  <h2>📃 trello</h2>
  <h4>https://trello.com/b/8smm255G/laravel-group-1</h4>
  
-<h4> 🛠 &nbsp;We use</h4>
+<h2> 🛠 &nbsp;We use</h2>
 
 - &nbsp;
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="html" width="40" height="40"/>
